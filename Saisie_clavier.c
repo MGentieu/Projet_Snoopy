@@ -36,16 +36,11 @@ void saisie_float_utilisateur(float * ptFloat){
     *ptFloat = verif; //si tout est bon, la valeur pointée par ptInt est mise à jour.
 }
 
-void saisie_chaine_utilisateur(char chaine[],int length){
+void saisie_chaine_utilisateur(Chaine * maChaine){
 
-    if(length<2){ //vérifie que la chaine n'est pas vide.
-        printf("Erreur : chaine vide ou trop petite.\n");
-        exit(EXIT_FAILURE);
-    }
-    int len_temp = (length>STRING_MAX_LENGTH)? STRING_MAX_LENGTH : length;
-    printf("La longueur de la chaine est : %d\n",len_temp);
-    fgets(chaine, len_temp-1,stdin);
-    chaine[length-1]='\0';
+    printf("Taille de la chaine = %d\n", sizeof(maChaine->myStr));
+    fgets(maChaine->myStr, STRING_MAX_LENGTH-1,stdin);
+    maChaine->myStr[STRING_MAX_LENGTH-1]='\0';
     fflush(stdin);
 }
 

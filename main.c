@@ -7,11 +7,11 @@
 int main() {
 
 
-    char tab[STRING_MAX_LENGTH];
-    printf("taille du tableau : %d\n",sizeof(tab));
+    Chaine tab;
+    //printf("taille du tableau : %d\n",sizeof(tab));
 
-    saisie_chaine_utilisateur(tab, sizeof(tab)/sizeof(tab[0]));
-    printf("%s\n",tab);
+    saisie_chaine_utilisateur(&tab);
+    printf("%s\n",tab.myStr);
     char a;
     char b;
     char c;
