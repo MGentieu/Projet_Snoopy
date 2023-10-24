@@ -28,7 +28,7 @@ int main() {
     saisie_float_utilisateur(&f1);
     saisie_float_utilisateur(&f2);
     printf("%d, %d, %.2f, %.2f\n",n1,n2,f1,f2);
-
+    printf("babaistou");
 
     /*int n=1;
     do{
