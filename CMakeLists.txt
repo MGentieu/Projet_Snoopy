@@ -5,4 +5,9 @@ set(CMAKE_C_STANDARD 23)
 
 add_executable(Projet_Snoopy main.c
         saisie_clavier.h
-        Saisie_clavier.c)
+        Saisie_clavier.c
+        manip_fichiers_txt.h
+        gestion_du_temps.h
+        manip_affichage_console.h
+        Manip_affichage_console.c
+        Menu.c)
