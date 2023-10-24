@@ -42,9 +42,9 @@ void saisie_chaine_utilisateur(char chaine[],int length){
         printf("Erreur : chaine vide ou trop petite.\n");
         exit(EXIT_FAILURE);
     }
-
-    char temp[length];
-    fgets(chaine, length-1,stdin);
+    int len_temp = (length>STRING_MAX_LENGTH)? STRING_MAX_LENGTH : length;
+    printf("La longueur de la chaine est : %d\n",len_temp);
+    fgets(chaine, len_temp-1,stdin);
     chaine[length-1]='\0';
     fflush(stdin);
 }
