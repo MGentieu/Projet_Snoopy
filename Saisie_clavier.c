@@ -36,3 +36,20 @@ void saisie_float_utilisateur(float * ptFloat){
     *ptFloat = verif; //si tout est bon, la valeur pointée par ptInt est mise à jour.
 }
 
+void saisie_chaine_utilisateur(char chaine[],int length){
+
+    if(length<2){ //vérifie que la chaine n'est pas vide.
+        printf("Erreur : chaine vide ou trop petite.\n");
+        exit(EXIT_FAILURE);
+    }
+
+    char temp[length];
+    fgets(chaine, length-1,stdin);
+    chaine[length-1]='\0';
+    fflush(stdin);
+}
+
+void saisie_caractere_utilisateur(char * c){
+    *c=getchar();
+    fflush(stdin);
+}

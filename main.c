@@ -5,18 +5,35 @@
 #include "manip_affichage_console.h"
 
 int main() {
-    /*int n=0;
-    float f=0.0;
-    printf("Saisir un entier :");
-    saisie_entier_utilisateur(&n);
-    printf("\nSaisir un floatant :");
-    saisie_float_utilisateur(&f);
 
-    printf("entier = %d, floatant = %.2f\n", n, f);*/
-    int n=1;
+
+    char tab[STRING_MAX_LENGTH];
+    printf("taille du tableau : %d\n",sizeof(tab));
+
+    saisie_chaine_utilisateur(tab, sizeof(tab)/sizeof(tab[0]));
+    printf("%s\n",tab);
+    char a;
+    char b;
+    char c;
+    saisie_caractere_utilisateur(&a);
+    saisie_caractere_utilisateur(&b);
+    saisie_caractere_utilisateur(&c);
+    printf("%c, %c, %c\n",a,b,c);
+    int n1=0;
+    int n2=0;
+    float f1=0.0;
+    float f2=0.0;
+    saisie_entier_utilisateur(&n1);
+    saisie_entier_utilisateur(&n2);
+    saisie_float_utilisateur(&f1);
+    saisie_float_utilisateur(&f2);
+    printf("%d, %d, %.2f, %.2f\n",n1,n2,f1,f2);
+
+
+    /*int n=1;
     do{
         n=menu();
-    }while(n==1);
+    }while(n==1);*/
 
 
 
