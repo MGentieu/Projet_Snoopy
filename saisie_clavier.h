@@ -5,11 +5,9 @@
 #ifndef PROJET_SNOOPY_SAISIE_CLAVIER_H
 #define PROJET_SNOOPY_SAISIE_CLAVIER_H
 
-#define STRING_MAX_LENGTH 30
+#include "Structures.h"
 
-typedef struct Chaine{
-    char myStr[STRING_MAX_LENGTH];
-}Chaine;
+
 
 void saisie_entier_utilisateur(int *);
 void saisie_float_utilisateur(float *);
