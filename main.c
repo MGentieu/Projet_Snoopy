@@ -11,5 +11,44 @@ int main() {
 
     printf("entier = %d, floatant = %.2f\n", n, f);
 
+
+
+
+
+
+    ////////////////////////////////////////////////// MARTIN AU DESSUS : FRANKLIN EN DESSOUS
+
+
+
+
+
+
+
+
+
+    ////////////////////////////////////////////////// FRANKLIN AU DESSUS : KEETHAN EN DESSOUS
+
+
+
+
+
+
+
+
+
+
+
+    ////////////////////////////////////////////////// KEETHAN AU DESSUS : VALERE EN DESSOUS
+
+
+
+
+
+
+
+
+
+
+
     return 0;
 }
