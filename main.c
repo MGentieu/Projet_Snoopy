@@ -3,10 +3,11 @@
 #include "saisie_clavier.h"
 #include "gestion_du_temps.h"
 #include "manip_affichage_console.h"
+#include "manip_fichiers_txt.h"
 
 int main() {
 
-
+/*
     Chaine tab;
     //printf("taille du tableau : %d\n",sizeof(tab));
 
