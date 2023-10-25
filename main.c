@@ -3,7 +3,6 @@
 #include "saisie_clavier.h"
 #include "gestion_du_temps.h"
 #include "manip_affichage_console.h"
-#include "manip_fichiers_txt.h"
 
 int main() {
 
@@ -11,7 +10,7 @@ int main() {
     Chaine tab;
     //printf("taille du tableau : %d\n",sizeof(tab));
 
-    /*saisie_chaine_utilisateur(&tab);
+    saisie_chaine_utilisateur(&tab);
     printf("%s\n",tab.myStr);
     char a;
     char b;
@@ -39,6 +38,7 @@ int main() {
     printf("%c,%c,%c,%c\n",0x06,0x05,0xDB,0x0F);
     printf("%c,%c,%c,%c\n",0xC4,0x02,0x0B,0x0E);
 
+    printf("babaistou");
 
     /*int n=1;
     do{
