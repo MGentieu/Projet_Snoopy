@@ -7,6 +7,9 @@
 
 
 
-void write_plateau_vide();
+void write_fichier_plateau_Niveau1();
+void write_fichier_plateau_Niveau2();
+void write_fichier_plateau_Niveau3();
+void write_fichier_plateau_Niveau4();
 
 #endif //PROJET_SNOOPY_MANIP_FICHIERS_TXT_H
