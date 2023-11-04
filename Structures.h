@@ -8,7 +8,7 @@
 #define STRING_MAX_LENGTH 30
 
 typedef struct Plateau{
-    char maMatrice[10][20];
+    char maMatrice[10][20]; // Matrice d'entiers allant de 0 à 9. donc on peut utiliser char[][].
 }Plateau;
 
 typedef struct Chaine{
