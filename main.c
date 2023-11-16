@@ -5,6 +5,7 @@
 #include "gestion_du_temps.h"
 #include "manip_affichage_console.h"
 #include "manip_fichiers_txt.h"
+#include <conio.h>
 
 
 int main() {
@@ -17,11 +18,24 @@ int main() {
     write_mots_de_passe();
     system("cls");
 
+
     int n=1;
     do{
         n=menu();
     }while(n==1);
 
+    /*
+    Plateau p;
+    charge_plateau_Niveau1_depart(&p);
+    affiche_plateau_entier(&p);
+    system("pause");
+    goto_ligne_colonne(30,5);
+    while(!kbhit()){}
+    char c=(char)getch();
+    printf("%c",c);
+    goto_ligne_colonne(0,15);
+    system("pause");
+     */
 
     /*for(int i=0;i<128;i++){
         printf("%d : %c\n",i,i);

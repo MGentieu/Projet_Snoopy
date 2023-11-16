@@ -35,8 +35,13 @@ int menu(){
 
     switch(choix){
         case 1:
+            system("cls");
+            printf("Voici les regles.\n");
+            system("pause");
+            system("cls");
             break;
         case 2:
+            system("cls");
             //A partir des fichiers, on charge les 4 plateaux des 4 niveaux.
             charge_plateau_Niveau1_depart(&p1);
             charge_plateau_Niveau2_depart(&p2);
@@ -52,21 +57,34 @@ int menu(){
             printf("\n\n");
             affiche_plateau_entier(&p4);
             printf("\n\n");
-
+            system("pause");
+            system("cls");
 
             break;
         case 3:
+            system("cls");
+            system("pause");
+            system("cls");
             break;
         case 4:
             //read_un_mot(buf);
             //printf("%s\n",buf);
+            /*
             read_mots_de_passe(&mdp1, &mdp2, &mdp3, &mdp4);
             printf("%s\n",mdp1.myStr);
             printf("%s\n",mdp2.myStr);
             printf("%s\n",mdp3.myStr);
             printf("%s\n",mdp4.myStr);
+             */
+            system("cls");
+            option4();
+            system("pause");
+            system("cls");
             break;
         case 5:
+            system("cls");
+            system("pause");
+            system("cls");
             break;
         case 6:
             return 0;
