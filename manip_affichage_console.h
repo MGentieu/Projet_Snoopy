@@ -6,7 +6,7 @@
 #ifndef PROJET_SNOOPY_MANIP_AFFICHAGE_CONSOLE_H
 #define PROJET_SNOOPY_MANIP_AFFICHAGE_CONSOLE_H
 
-int menu();
+
 
 void goto_ligne_colonne(short,short);
 

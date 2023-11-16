@@ -15,6 +15,6 @@ typedef struct Chaine{
     char myStr[STRING_MAX_LENGTH];
 }Chaine;
 
-
+int compare_mots_de_passe(Chaine *, Chaine *);
 
 #endif //PROJET_SNOOPY_STRUCTURES_H

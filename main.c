@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include "Chargement_Niveaux.h"
 #include "saisie_clavier.h"
 #include "gestion_du_temps.h"
 #include "manip_affichage_console.h"
@@ -15,7 +15,7 @@ int main() {
     write_fichier_plateau_Niveau3();
     write_fichier_plateau_Niveau4();
     write_mots_de_passe();
-
+    system("cls");
 
     int n=1;
     do{

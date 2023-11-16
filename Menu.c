@@ -7,6 +7,7 @@
 #include "manip_affichage_console.h"
 #include "manip_fichiers_txt.h"
 #include "saisie_clavier.h"
+#include "Chargement_Niveaux.h"
 
 int menu(){
     int choix = 0;
@@ -51,6 +52,7 @@ int menu(){
             printf("\n\n");
             affiche_plateau_entier(&p4);
             printf("\n\n");
+
 
             break;
         case 3:

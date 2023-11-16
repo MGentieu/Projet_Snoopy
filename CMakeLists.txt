@@ -14,4 +14,5 @@ add_executable(Projet_Snoopy main.c
         Martin_espace_de_travail.c
         Structures.h
         Ecriture_fichiers_txt.c
-        Lecture_fichiers_txt.c)
+        Lecture_fichiers_txt.c
+        Chargement_Niveaux.h)

@@ -1,0 +1,11 @@
+//
+// Created by 33695 on 16/11/2023.
+//
+
+#ifndef PROJET_SNOOPY_CHARGEMENT_NIVEAUX_H
+#define PROJET_SNOOPY_CHARGEMENT_NIVEAUX_H
+
+int menu();
+void option4();
+
+#endif //PROJET_SNOOPY_CHARGEMENT_NIVEAUX_H

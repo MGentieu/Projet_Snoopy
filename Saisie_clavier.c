@@ -16,9 +16,10 @@ void saisie_entier_utilisateur(int * ptInt){
 
     if(endPtr == tab_entrees){ //Vérifie que l'entier saisi est bien un entier.
         printf("Ce n'etait pas un entier. Nous allons quitter le programme.\n");
-        exit(EXIT_FAILURE);
+        //exit(EXIT_FAILURE);
     }
     *ptInt = verif; //si tout est bon, la valeur pointée par ptInt est mise à jour.
+    fflush(stdin);
 }
 
 void saisie_float_utilisateur(float * ptFloat){
@@ -31,9 +32,10 @@ void saisie_float_utilisateur(float * ptFloat){
 
     if(endPtr == tab_entrees){ //Vérifie que l'entier saisi est bien un entier.
         printf("Ce n'etait pas un floatant. Nous allons quitter le programme.\n");
-        exit(EXIT_FAILURE);
+        //exit(EXIT_FAILURE);
     }
     *ptFloat = verif; //si tout est bon, la valeur pointée par ptInt est mise à jour.
+    fflush(stdin);
 }
 
 void saisie_chaine_utilisateur(Chaine * maChaine){
@@ -45,6 +47,6 @@ void saisie_chaine_utilisateur(Chaine * maChaine){
 }
 
 void saisie_caractere_utilisateur(char * c){
-    *c=getchar();
+    *c=(char)getchar();
     fflush(stdin);
 }
