@@ -6,6 +6,6 @@
 #define PROJET_SNOOPY_CHARGEMENT_NIVEAUX_H
 
 int menu();
-void option4();
+void option4_menu();
 
 #endif //PROJET_SNOOPY_CHARGEMENT_NIVEAUX_H

@@ -67,17 +67,8 @@ int menu(){
             system("cls");
             break;
         case 4:
-            //read_un_mot(buf);
-            //printf("%s\n",buf);
-            /*
-            read_mots_de_passe(&mdp1, &mdp2, &mdp3, &mdp4);
-            printf("%s\n",mdp1.myStr);
-            printf("%s\n",mdp2.myStr);
-            printf("%s\n",mdp3.myStr);
-            printf("%s\n",mdp4.myStr);
-             */
             system("cls");
-            option4();
+            option4_menu();
             system("pause");
             system("cls");
             break;

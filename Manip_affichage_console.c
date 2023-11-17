@@ -41,37 +41,38 @@ void affiche_plateau_entier(Plateau * ptPlateau){
 void affiche_char_selon_entier(char n){
     switch(n){
         case '0':
-            printf("%3c|",' ');
+            printf(" %c |",' ');
             break;
         case '1':
-            //printf("%3c|",0x06);
-            printf("%3c|",0x3D);
+            printf(" %c |",0x06);
+            //printf(" %c |",0x3D);
             break;
         case '2':
-            printf("%3c|",0x1A);
+            printf(" %c |",0x1A);
             break;
         case '3':
-            printf("%3c|",0x05);
+            printf(" %c |",0x05);
             break;
         case '4':
-            printf("%3c|",0xDC);
+            //printf(" %c |",0xDC);
+            printf(" %c |",0x16);
             break;
         case '5':
-            printf("%3c|",0x0F);
+            printf(" %c |",0x04);
             break;
         case '6':
-            printf("%3c|",0xC4);
+            printf(" %c |",0xC4);
             break;
         case '7':
-            //printf("%3c|",0x02);
-            printf("%3c|",0x12);
+            printf(" %c |",0x02);
+            //printf(" %c |",0x12);
             break;
         case '8':
-            printf("%3c|",0x13);
+            printf(" %c |",0x13);
             break;
         case '9':
-            //printf("%3c|",0x1F);
-            printf("%3c|",0x14);
+            //printf(" %c |",0x1F);
+            printf(" %c |",0x14);
             break;
         default :
             break;

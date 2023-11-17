@@ -26,13 +26,13 @@ int compare_mots_de_passe(Chaine * maChaine, Chaine * mdp){
     return 1;
 }
 
-void option4(){
+void option4_menu(){
     Chaine mdp1;
     Chaine mdp2;
     Chaine mdp3;
     Chaine mdp4;
     Chaine mdp_lu;
-    Plateau p1;
+    Plateau p;
     read_mots_de_passe(&mdp1, &mdp2, &mdp3, &mdp4);
     printf("%s\n",mdp1.myStr);
     printf("%s\n",mdp2.myStr);
@@ -49,9 +49,9 @@ void option4(){
     switch(n){
         case 1:
             if(compare_mots_de_passe(&mdp_lu,&mdp1)){
-                printf("Vous lancez le niveau 1.\n");
-                charge_plateau_Niveau1_depart(&p1);
-                affiche_plateau_entier(&p1);
+                system("cls");
+                charge_plateau_Niveau1_depart(&p);
+                affiche_plateau_entier(&p);
             }
             else{
                 printf("Pas de chargement 1.\n");
@@ -59,7 +59,9 @@ void option4(){
             break;
         case 2:
             if(compare_mots_de_passe(&mdp_lu,&mdp2)){
-                printf("Vous lancez le niveau 2.\n");
+                system("cls");
+                charge_plateau_Niveau2_depart(&p);
+                affiche_plateau_entier(&p);
             }
             else{
                 printf("Pas de chargement 2.\n");
@@ -67,7 +69,10 @@ void option4(){
             break;
         case 3:
             if(compare_mots_de_passe(&mdp_lu,&mdp3)){
-                printf("Vous lancez le niveau 3.\n");
+
+                system("cls");
+                charge_plateau_Niveau3_depart(&p);
+                affiche_plateau_entier(&p);
             }
             else{
                 printf("Pas de chargement 3.\n");
@@ -75,7 +80,9 @@ void option4(){
             break;
         case 4:
             if(compare_mots_de_passe(&mdp_lu,&mdp4)){
-                printf("Vous lancez le niveau 4.\n");
+                system("cls");
+                charge_plateau_Niveau4_depart(&p);
+                affiche_plateau_entier(&p);
             }
             else{
                 printf("Pas de chargement 4.\n");

@@ -23,23 +23,40 @@ int main() {
     do{
         n=menu();
     }while(n==1);
+    system("cls");
 
     /*
     Plateau p;
     charge_plateau_Niveau1_depart(&p);
     affiche_plateau_entier(&p);
     system("pause");
-    goto_ligne_colonne(30,5);
+    goto_ligne_colonne(29,5);
     while(!kbhit()){}
     char c=(char)getch();
     printf("%c",c);
     goto_ligne_colonne(0,15);
     system("pause");
-     */
+    system("cls");
+    charge_plateau_Niveau1_depart(&p);
+    affiche_plateau_entier(&p);
+    system("pause");
+    goto_ligne_colonne(29,5);
+    while(!kbhit()){}
+    c=(char)getch();
+    printf("%c",c);
+    goto_ligne_colonne(0,15);
+    system("pause");
+    */
 
-    /*for(int i=0;i<128;i++){
+
+
+    /*
+    for(int i=0;i<128;i++){
         printf("%d : %c\n",i,i);
-    }*/
+    }
+    system("pause");
+    */
+
     /*
     printf("%c,%c,%c,%c\n",0x1B,0x1A,0x18,0x19);
     printf("%c,%c,%c,%c\n",0x06,0x05,0xDB,0x0F);
