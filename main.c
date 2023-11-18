@@ -74,8 +74,7 @@ int main() {
 
 
     ////////////////////////////////////////////////// MARTIN AU DESSUS : FRANKLIN EN DESSOUS
-    int time=120;
-    decompteur(time);
+
 
 
 

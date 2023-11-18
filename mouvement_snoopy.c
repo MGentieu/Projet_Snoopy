@@ -22,7 +22,7 @@ int movesnoopy() {
             switch(key){
                 case 'q':
 
-                    fprintf('s');
+                    printf("%c",'s');
             }
         }
     }
