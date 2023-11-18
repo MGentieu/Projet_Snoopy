@@ -15,4 +15,6 @@ add_executable(Projet_Snoopy main.c
         Structures.h
         Ecriture_fichiers_txt.c
         Lecture_fichiers_txt.c
-        Chargement_Niveaux.h)
+        Chargement_Niveaux.h
+        decompteur.c
+        mouvement_snoopy.c)
