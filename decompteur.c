@@ -15,10 +15,4 @@ void decompteur(int time)
     }
 }
 
-int main()
-{
-    int time=120;
-    decompteur(time);
-
-}
 

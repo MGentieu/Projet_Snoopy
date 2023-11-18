@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include <conio.h>
 
-int main() {
+int movesnoopy() {
     char tab[10][10];
-    char key = ‘p’;
+    char key = 'p';
     FILE *console = fopen("CONOUT$", "w");
     if (console == NULL){
         printf("Erreur lors de l'ouverture de la console externe.\n");
@@ -16,7 +16,7 @@ int main() {
         }
         fprintf(console,"\n");
     }
-    while (key != ’p’){
+    while (key !='p'){
         if (kbhit()){
             key = getch() ;
             switch(key){
@@ -26,8 +26,6 @@ int main() {
             }
         }
     }
-
-    fclose(console);
 
     return 0;
 }
