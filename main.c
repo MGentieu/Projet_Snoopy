@@ -33,7 +33,7 @@ int main() {
 
 
 
-    Plateau p;
+    //Plateau p;
     /*
     p.score=0;
     p.mode_de_jeu=1;
@@ -42,11 +42,12 @@ int main() {
     affiche_plateau_entier(&p);
     saisie_nom_joueur(&p);
     sauvegarder_fichier(&p);
-    */
+
 
     if(lire_fichier_de_sauvegarde(&p)){
         affiche_plateau_entier(&p);
     }
+     */
 
     //suppr_fichier_de_sauvegarde();
     /*
