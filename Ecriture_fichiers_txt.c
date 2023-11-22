@@ -97,9 +97,9 @@ void write_mots_de_passe(){
     }
 
     FILE * pF = fopen("mots_de_passe.txt","w");
-    fprintf(pF,"volcan1\n");
-    fprintf(pF,"siecle2\n");
-    fprintf(pF,"Yesyesyes3\n");
-    fprintf(pF,"Yolo4\n");
+    fprintf(pF,"Valere1\n");
+    fprintf(pF,"Franklin2\n");
+    fprintf(pF,"Keethan3\n");
+    fprintf(pF,"Martin4\n");
     fclose(pF);
 }

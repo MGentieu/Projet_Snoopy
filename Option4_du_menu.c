@@ -16,10 +16,10 @@ void option4_menu(Plateau *ptPlateau){
     Chaine mdp4;
     Chaine mdp_lu;
     read_mots_de_passe(&mdp1, &mdp2, &mdp3, &mdp4);
-    printf("%s\n",mdp1.myStr);
-    printf("%s\n",mdp2.myStr);
-    printf("%s\n",mdp3.myStr);
-    printf("%s\n",mdp4.myStr);
+    //printf("%s\n",mdp1.myStr);
+    //printf("%s\n",mdp2.myStr);
+    //printf("%s\n",mdp3.myStr);
+    //printf("%s\n",mdp4.myStr);
     int n=0;
     do{
         printf("Selectionnez le niveau que vous voulez charger, de 1 a 4 :\n");
@@ -38,7 +38,7 @@ void option4_menu(Plateau *ptPlateau){
                 affiche_plateau_entier(ptPlateau);
             }
             else{
-                printf("Pas de chargement 1.\n");
+                printf("Mauvais mot de passe. Retour au menu.\n");
             }
             break;
         case 2:
@@ -48,7 +48,7 @@ void option4_menu(Plateau *ptPlateau){
                 affiche_plateau_entier(ptPlateau);
             }
             else{
-                printf("Pas de chargement 2.\n");
+                printf("Mauvais mot de passe. Retour au menu.\n");
             }
             break;
         case 3:
@@ -59,7 +59,7 @@ void option4_menu(Plateau *ptPlateau){
                 affiche_plateau_entier(ptPlateau);
             }
             else{
-                printf("Pas de chargement 3.\n");
+                printf("Mauvais mot de passe. Retour au menu.\n");
             }
             break;
         case 4:
@@ -69,7 +69,7 @@ void option4_menu(Plateau *ptPlateau){
                 affiche_plateau_entier(ptPlateau);
             }
             else{
-                printf("Pas de chargement 4.\n");
+                printf("Mauvais mot de passe. Retour au menu.\n");
             }
             break;
         default:
