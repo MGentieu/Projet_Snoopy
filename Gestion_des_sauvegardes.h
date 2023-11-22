@@ -7,7 +7,7 @@
 
 
 void sauvegarder_fichier(Plateau *);
-void lire_fichier_de_sauvegarde(Plateau *);
+int lire_fichier_de_sauvegarde(Plateau *);
 void suppr_fichier_de_sauvegarde();
 
 #endif //PROJET_SNOOPY_GESTION_DES_SAUVEGARDES_H

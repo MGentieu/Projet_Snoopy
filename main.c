@@ -34,12 +34,20 @@ int main() {
 
 
     Plateau p;
+    /*
     p.score=0;
+    p.mode_de_jeu=1;
+    p.nb_de_vies=3;
     charge_plateau_Niveau1_depart(&p);
     affiche_plateau_entier(&p);
     saisie_nom_joueur(&p);
     sauvegarder_fichier(&p);
-    //lire_fichier_de_sauvegarde(&p);
+    */
+
+    if(lire_fichier_de_sauvegarde(&p)){
+        affiche_plateau_entier(&p);
+    }
+
     //suppr_fichier_de_sauvegarde();
     /*
     system("pause");
