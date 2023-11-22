@@ -27,6 +27,8 @@ void option4_menu(){
         saisie_entier_utilisateur(&n);
 
     }while(n<1||n>4);
+    p.mode_de_jeu=n; ///Pour la sauvegarde
+    initialisation_plateau_scores(&p);
     printf("Saisissez le mot de passe du niveau %d:\n",n);
     saisie_chaine_utilisateur(&mdp_lu);
     switch(n){

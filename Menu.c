@@ -42,6 +42,8 @@ int menu(){
             break;
         case 2:
             system("cls");
+            p1.mode_de_jeu=5;
+            initialisation_plateau_scores(&p1);
             //A partir des fichiers, on charge les 4 plateaux des 4 niveaux.
             charge_plateau_Niveau1_depart(&p1);
             charge_plateau_Niveau2_depart(&p2);

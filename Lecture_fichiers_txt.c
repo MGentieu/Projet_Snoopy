@@ -14,6 +14,11 @@ void charge_plateau_Niveau1_depart(Plateau * ptPlateau){
         c=(char)getc(pF);
     }
     fclose(pF);
+    ptPlateau->nb_oiseaux_restants=4;
+    ptPlateau->X_Snoopy=4;
+    ptPlateau->Y_Snoopy=10;
+    ptPlateau->direction_snoopy=1;
+    ptPlateau->temps_restant=120;
 }
 
 void charge_plateau_Niveau2_depart(Plateau * ptPlateau){
@@ -26,6 +31,11 @@ void charge_plateau_Niveau2_depart(Plateau * ptPlateau){
         c=(char)getc(pF);
     }
     fclose(pF);
+    ptPlateau->nb_oiseaux_restants=4;
+    ptPlateau->X_Snoopy=4;
+    ptPlateau->Y_Snoopy=0;
+    ptPlateau->direction_snoopy=1;
+    ptPlateau->temps_restant=120;
 }
 
 void charge_plateau_Niveau3_depart(Plateau * ptPlateau){
@@ -38,6 +48,11 @@ void charge_plateau_Niveau3_depart(Plateau * ptPlateau){
         c=(char)getc(pF);
     }
     fclose(pF);
+    ptPlateau->nb_oiseaux_restants=4;
+    ptPlateau->X_Snoopy=4;
+    ptPlateau->Y_Snoopy=10;
+    ptPlateau->direction_snoopy=1;
+    ptPlateau->temps_restant=120;
 }
 
 void charge_plateau_Niveau4_depart(Plateau * ptPlateau){
@@ -50,6 +65,11 @@ void charge_plateau_Niveau4_depart(Plateau * ptPlateau){
         c=(char)getc(pF);
     }
     fclose(pF);
+    ptPlateau->nb_oiseaux_restants=4;
+    ptPlateau->X_Snoopy=5;
+    ptPlateau->Y_Snoopy=0;
+    ptPlateau->direction_snoopy=1;
+    ptPlateau->temps_restant=120;
 }
 
 void read_mots_de_passe(Chaine *ps1, Chaine *ps2,Chaine *ps3, Chaine *ps4){

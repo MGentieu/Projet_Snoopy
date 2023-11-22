@@ -11,9 +11,7 @@
 
 int main() {
 
-    //mamasauvegarder_fichier();
-    lire_fichier_de_sauvegarde();
-    suppr_fichier_de_sauvegarde();
+
     /*
     //On écrit dans des fichiers .txt les infos de bases concernant les niveaux.
     write_fichier_plateau_Niveau1();
@@ -34,10 +32,16 @@ int main() {
 
 
 
-    /*
+
     Plateau p;
+    p.score=0;
     charge_plateau_Niveau1_depart(&p);
     affiche_plateau_entier(&p);
+    saisie_nom_joueur(&p);
+    sauvegarder_fichier(&p);
+    //lire_fichier_de_sauvegarde(&p);
+    //suppr_fichier_de_sauvegarde();
+    /*
     system("pause");
     goto_ligne_colonne(29,5);
     while(!kbhit()){}
