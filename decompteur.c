@@ -3,16 +3,20 @@
 //
 
 #include <stdio.h>
-#include <Windows.h>
+#include <time.h>
 
-void decompteur(int time)
+int decompte()
 {
-    for(int i=0; i<120; i++)
-    {
-        printf("%d\n",time);
-        time-=1;
-        Sleep(1000);
+    int dec = 120;
+    int stock[1];
+    time_t timer; // entier de type time_t qui stocke le temps système en secondes
+    stock[0]=time(&timer);
+    while(dec!=-1){
+        if(time(&timer)>stock[0]){
+            stock[0]=time(&timer);
+            printf("\t%d", dec);
+            dec-=1;
+        }
     }
+    return 0;
 }
-
-

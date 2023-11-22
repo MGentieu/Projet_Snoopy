@@ -3,26 +3,19 @@
 #include <conio.h>
 
 int movesnoopy() {
-    char tab[10][10];
-    char key = 'p';
-    FILE *console = fopen("CONOUT$", "w");
-    if (console == NULL){
-        printf("Erreur lors de l'ouverture de la console externe.\n");
-        return 1;
-    }
-    for(int i=0;i<10;i++){
-        for(int j=0;j<10;j++){
-            fprintf(console,"o");
-        }
-        fprintf(console,"\n");
-    }
-    while (key !='p'){
+    char key= '';
+    while (key !='l'){
         if (kbhit()){
             key = getch() ;
             switch(key){
+                case 'z':
+                    break;
                 case 'q':
-
-                    printf("%c",'s');
+                    break;
+                case 's':
+                    break;
+                case 'd':
+                    break;
             }
         }
     }
