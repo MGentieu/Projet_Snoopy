@@ -6,10 +6,15 @@
 #include "manip_affichage_console.h"
 #include "manip_fichiers_txt.h"
 #include <conio.h>
+#include "Gestion_des_sauvegardes.h"
 
 
 int main() {
 
+    //mamasauvegarder_fichier();
+    lire_fichier_de_sauvegarde();
+    suppr_fichier_de_sauvegarde();
+    /*
     //On écrit dans des fichiers .txt les infos de bases concernant les niveaux.
     write_fichier_plateau_Niveau1();
     write_fichier_plateau_Niveau2();
@@ -24,6 +29,10 @@ int main() {
         n=menu();
     }while(n==1);
     system("cls");
+
+    */
+
+
 
     /*
     Plateau p;
