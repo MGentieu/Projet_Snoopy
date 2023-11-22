@@ -12,6 +12,7 @@
 
 int menu(){
     int choix = 0;
+    int verif=1;
     do {
         system("cls");
         printf("1. Livret de regles.\n"
@@ -43,21 +44,30 @@ int menu(){
             system("cls");
             p.mode_de_jeu=5;
             initialisation_plateau_scores(&p);
+            saisie_nom_joueur(&p);
             //A partir des fichiers, on charge les 4 plateaux des 4 niveaux.
+            system("cls");
             charge_plateau_Niveau1_depart(&p);
             affiche_plateau_entier(&p);
-            jouer();
+            jouer(&p,&verif);
+            if(!verif){
+                break;
+            }
             charge_plateau_Niveau2_depart(&p);
             affiche_plateau_entier(&p);
-            jouer();
+            jouer(&p,&verif);
+            if(!verif){
+                break;
+            }
             charge_plateau_Niveau3_depart(&p);
             affiche_plateau_entier(&p);
-            jouer();
+            jouer(&p,&verif);
+            if(!verif){
+                break;
+            }
             charge_plateau_Niveau4_depart(&p);
             affiche_plateau_entier(&p);
-            jouer();
-
-
+            jouer(&p,&verif);
             break;
         case 3:
             system("cls");
@@ -66,8 +76,9 @@ int menu(){
             break;
         case 4:
             system("cls");
+            saisie_nom_joueur(&p);
             option4_menu(&p);
-            jouer();
+            jouer(&p,&verif);
             break;
         case 5:
             system("cls");

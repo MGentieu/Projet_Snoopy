@@ -5,6 +5,8 @@
 #ifndef PROJET_SNOOPY_GESTION_DU_JEU_H
 #define PROJET_SNOOPY_GESTION_DU_JEU_H
 
-void jouer();
+#include "Structures.h"
+
+void jouer(Plateau *,int *);
 
 #endif //PROJET_SNOOPY_GESTION_DU_JEU_H

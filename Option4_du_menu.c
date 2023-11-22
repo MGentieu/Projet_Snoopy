@@ -73,6 +73,7 @@ void option4_menu(Plateau *ptPlateau){
             }
             break;
         default:
+            printf("Erreur de saisie. Retour au menu.\n");
             break;
 
     }
