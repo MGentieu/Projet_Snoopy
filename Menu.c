@@ -8,10 +8,12 @@
 #include "manip_fichiers_txt.h"
 #include "saisie_clavier.h"
 #include "Chargement_Niveaux.h"
+#include "Gestion_du_jeu.h"
 
 int menu(){
     int choix = 0;
     do {
+        system("cls");
         printf("1. Livret de regles.\n"
                "2. Commencer une nouvelle partie.\n"
                "3. Charger une sauvegarde.\n"
@@ -22,10 +24,7 @@ int menu(){
         saisie_entier_utilisateur(&choix);
     }while(choix<1||choix>6);
 
-    Plateau p1;
-    Plateau p2;
-    Plateau p3;
-    Plateau p4;
+    Plateau p;
 
     Chaine mdp1;
     Chaine mdp2;
@@ -42,25 +41,22 @@ int menu(){
             break;
         case 2:
             system("cls");
-            p1.mode_de_jeu=5;
-            initialisation_plateau_scores(&p1);
+            p.mode_de_jeu=5;
+            initialisation_plateau_scores(&p);
             //A partir des fichiers, on charge les 4 plateaux des 4 niveaux.
-            charge_plateau_Niveau1_depart(&p1);
-            charge_plateau_Niveau2_depart(&p2);
-            charge_plateau_Niveau3_depart(&p3);
-            charge_plateau_Niveau4_depart(&p4);
-            //On affiche ensuite ces plateaux :
-            printf("\n");
-            affiche_plateau_entier(&p1);
-            printf("\n\n");
-            affiche_plateau_entier(&p2);
-            printf("\n\n");
-            affiche_plateau_entier(&p3);
-            printf("\n\n");
-            affiche_plateau_entier(&p4);
-            printf("\n\n");
-            system("pause");
-            system("cls");
+            charge_plateau_Niveau1_depart(&p);
+            affiche_plateau_entier(&p);
+            jouer();
+            charge_plateau_Niveau2_depart(&p);
+            affiche_plateau_entier(&p);
+            jouer();
+            charge_plateau_Niveau3_depart(&p);
+            affiche_plateau_entier(&p);
+            jouer();
+            charge_plateau_Niveau4_depart(&p);
+            affiche_plateau_entier(&p);
+            jouer();
+
 
             break;
         case 3:
@@ -70,9 +66,8 @@ int menu(){
             break;
         case 4:
             system("cls");
-            option4_menu();
-            system("pause");
-            system("cls");
+            option4_menu(&p);
+            jouer();
             break;
         case 5:
             system("cls");

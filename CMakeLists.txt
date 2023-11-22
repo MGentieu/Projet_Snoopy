@@ -20,4 +20,6 @@ add_executable(Projet_Snoopy main.c
         mouvement_snoopy.c
         Option4_du_menu.c
         Gestion_des_sauvegardes.c
-        Gestion_des_sauvegardes.h)
+        Gestion_des_sauvegardes.h
+        Gestion_du_jeu.h
+        Gestion_du_jeu.c)

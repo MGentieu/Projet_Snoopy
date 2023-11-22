@@ -5,7 +5,9 @@
 #ifndef PROJET_SNOOPY_CHARGEMENT_NIVEAUX_H
 #define PROJET_SNOOPY_CHARGEMENT_NIVEAUX_H
 
+#include "Structures.h"
+
 int menu();
-void option4_menu();
+void option4_menu(Plateau *);
 
 #endif //PROJET_SNOOPY_CHARGEMENT_NIVEAUX_H

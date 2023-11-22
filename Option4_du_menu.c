@@ -9,13 +9,12 @@
 #include "Structures.h"
 #include "Chargement_Niveaux.h"
 
-void option4_menu(){
+void option4_menu(Plateau *ptPlateau){
     Chaine mdp1;
     Chaine mdp2;
     Chaine mdp3;
     Chaine mdp4;
     Chaine mdp_lu;
-    Plateau p;
     read_mots_de_passe(&mdp1, &mdp2, &mdp3, &mdp4);
     printf("%s\n",mdp1.myStr);
     printf("%s\n",mdp2.myStr);
@@ -27,16 +26,16 @@ void option4_menu(){
         saisie_entier_utilisateur(&n);
 
     }while(n<1||n>4);
-    p.mode_de_jeu=n; ///Pour la sauvegarde
-    initialisation_plateau_scores(&p);
+    ptPlateau->mode_de_jeu=n; ///Pour la sauvegarde
+    initialisation_plateau_scores(ptPlateau);
     printf("Saisissez le mot de passe du niveau %d:\n",n);
     saisie_chaine_utilisateur(&mdp_lu);
     switch(n){
         case 1:
             if(compare_mots_de_passe(&mdp_lu,&mdp1)){
                 system("cls");
-                charge_plateau_Niveau1_depart(&p);
-                affiche_plateau_entier(&p);
+                charge_plateau_Niveau1_depart(ptPlateau);
+                affiche_plateau_entier(ptPlateau);
             }
             else{
                 printf("Pas de chargement 1.\n");
@@ -45,8 +44,8 @@ void option4_menu(){
         case 2:
             if(compare_mots_de_passe(&mdp_lu,&mdp2)){
                 system("cls");
-                charge_plateau_Niveau2_depart(&p);
-                affiche_plateau_entier(&p);
+                charge_plateau_Niveau2_depart(ptPlateau);
+                affiche_plateau_entier(ptPlateau);
             }
             else{
                 printf("Pas de chargement 2.\n");
@@ -56,8 +55,8 @@ void option4_menu(){
             if(compare_mots_de_passe(&mdp_lu,&mdp3)){
 
                 system("cls");
-                charge_plateau_Niveau3_depart(&p);
-                affiche_plateau_entier(&p);
+                charge_plateau_Niveau3_depart(ptPlateau);
+                affiche_plateau_entier(ptPlateau);
             }
             else{
                 printf("Pas de chargement 3.\n");
@@ -66,8 +65,8 @@ void option4_menu(){
         case 4:
             if(compare_mots_de_passe(&mdp_lu,&mdp4)){
                 system("cls");
-                charge_plateau_Niveau4_depart(&p);
-                affiche_plateau_entier(&p);
+                charge_plateau_Niveau4_depart(ptPlateau);
+                affiche_plateau_entier(ptPlateau);
             }
             else{
                 printf("Pas de chargement 4.\n");
