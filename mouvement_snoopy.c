@@ -3,7 +3,7 @@
 #include <conio.h>
 
 int movesnoopy() {
-    char key= '';
+    char key= '0';
     while (key !='l'){
         if (kbhit()){
             key = getch() ;

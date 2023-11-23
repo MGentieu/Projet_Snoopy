@@ -14,6 +14,7 @@ int main() {
 
 
     //On écrit dans des fichiers .txt les infos de bases concernant les niveaux.
+    //decompte();
     write_fichier_plateau_Niveau1();
     write_fichier_plateau_Niveau2();
     write_fichier_plateau_Niveau3();

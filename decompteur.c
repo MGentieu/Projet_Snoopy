@@ -3,6 +3,7 @@
 //
 #include <stdio.h>
 #include <time.h>
+#include "gestion_du_temps.h"
 
 int decompte()
 {
@@ -18,4 +19,18 @@ int decompte()
         }
     }
     return 0;
+}
+
+void init_compteur(long long *ptStock,time_t * ptTimer){
+    *ptStock=time(ptTimer);
+}
+
+void decompte_corrige(int *ptDec, long long *ptStock, time_t * ptTimer){
+    //time_t timer;
+    long long temps=time(ptTimer);
+    if(temps>*ptStock){
+        *ptStock=temps;
+        printf("%d\n",*ptDec);
+        (*ptDec)--;
+    }
 }
