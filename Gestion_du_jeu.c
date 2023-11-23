@@ -24,8 +24,10 @@ void affiche_donnees_importantes(){
 
 void jouer(Plateau * ptPlateau,int * ptVerif){
     affiche_donnees_importantes();
+    affiche_temps(ptPlateau->temps_restant);
     char entree='0';
-    int dec=120;
+    ptPlateau->temps_restant=120;
+    //int dec=120;
     long long stock=0;
     time_t timer;
     init_compteur(&stock,&timer);
@@ -33,7 +35,7 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
         while(!kbhit()){
             //Instruction de gestion du temps.
             //decompte();
-            decompte_corrige(&dec,&stock,&timer);
+            decompte_corrige(&(ptPlateau->temps_restant),&stock,&timer);
         }
         entree=(char)getch();
         switch(entree){
