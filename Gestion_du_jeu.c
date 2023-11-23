@@ -45,10 +45,10 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                 *ptVerif=0;
                 break;
             case 'k':
-                while(!kbhit()){}
-                if((char)getch()=='k'){
-                    entree='a';
-                }
+
+                do{
+                    entree=(char)getch();
+                }while(entree!='k');
 
                 break;
             case 'c':
