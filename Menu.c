@@ -3,6 +3,7 @@
 //
 #include <stdio.h>
 #include <stdlib.h>
+#include <Windows.h>
 #include "Structures.h"
 #include "manip_affichage_console.h"
 #include "manip_fichiers_txt.h"
@@ -11,6 +12,8 @@
 #include "Gestion_du_jeu.h"
 
 int menu(){
+    //HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    //SetConsoleTextAttribute(hConsole, WHITENESS | FOREGROUND_INTENSITY);
     int choix = 0;
     int verif=1;
     do {
