@@ -27,7 +27,7 @@ void init_compteur(long long *ptStock,time_t * ptTimer){
 }
 
 void affiche_temps(int dec){
-    goto_ligne_colonne(20,11);
+    goto_ligne_colonne(15,11);
     printf("%3d",dec);
 }
 
