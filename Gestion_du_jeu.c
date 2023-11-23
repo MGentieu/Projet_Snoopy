@@ -23,7 +23,7 @@ void affiche_donnees_importantes(){
 }
 
 int verif_nb_de_vies(Plateau * ptPlateau){
-    return ptPlateau->nb_de_vies>2;
+    return ptPlateau->nb_de_vies>0;
     //return 1;
 }
 
@@ -41,7 +41,7 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
     char entree='0';
     int verif=1; //Check s'il reste des vies.
     int verif2=1; //Check s'il reste du temps.
-    ptPlateau->temps_restant=15;
+    ptPlateau->temps_restant=5;
     affiche_temps(ptPlateau->temps_restant);
     //int dec=120;
     long long stock=0;
@@ -61,19 +61,29 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                 game_over();
                 return;
             }
+            if(!verif2){
+                break;
+            }
         }
-        if(verif_nb_de_vies(ptPlateau)){
+        if(!verif_nb_de_vies(ptPlateau)){
             *ptVerif=0;
             game_over();
             return;
         }
-        else{
-            verif=0;
+        else if(!verif2){
+            //verif=0;
+            goto_ligne_colonne(0,19);
+            printf("Vous n'avez plus de temps!\nAppuyez sur une touche pour continuer.\n");
+            entree=(char)getch();
             entree='c';
+        }
+        else{
+            entree=(char)getch();
         }
 
         switch(entree){
             case 'j':
+                goto_ligne_colonne(0,18);
                 sauvegarder_fichier(ptPlateau);
                 *ptVerif=0;
                 break;
@@ -89,7 +99,7 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                 break;
             case 'c':
                 //Continue. Juste un test.
-                if(!verif){
+                if(!verif||!verif2){
                     break;
                 }
                 else{
@@ -98,6 +108,6 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
         }
     }while(*ptVerif&&entree!='c');
     //if()
-    //system("cls");
+    system("cls");
 }
 
