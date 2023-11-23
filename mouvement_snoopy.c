@@ -17,7 +17,7 @@ int movesnoopy() {
     char key= '0';
     for (int i=0 ; i<10 ; i++){
         for (int j=0 ; j<20 ; j++){
-            if (maMatrice[i][j]
+            if (maMatrice[i][j])
         }
     }
     do{
