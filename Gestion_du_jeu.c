@@ -8,10 +8,22 @@
 #include <time.h>
 #include "Gestion_du_jeu.h"
 #include "Gestion_des_sauvegardes.h"
+#include "manip_affichage_console.h"
 #include "Structures.h"
 #include "gestion_du_temps.h"
 
+void affiche_donnees_importantes(){
+    printf("Temps restant :\n");
+    printf("nb de vies restantes :\n");
+    printf("score_actuel :\n");
+    printf("Appuyez sur j pour sauvegarder.\n");
+    printf("Appuyez sur p pour quitter.\n");
+    printf("Appuyez sur k pour mettre en pause.\n");
+    printf("q pour gauche / s pour bas / d pour droite / z pour haut.\n");
+}
+
 void jouer(Plateau * ptPlateau,int * ptVerif){
+    affiche_donnees_importantes();
     char entree='0';
     int dec=120;
     long long stock=0;
@@ -25,12 +37,19 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
         }
         entree=(char)getch();
         switch(entree){
-            case 'm':
+            case 'j':
                 sauvegarder_fichier(ptPlateau);
                 *ptVerif=0;
                 break;
-            case 'l':
+            case 'p':
                 *ptVerif=0;
+                break;
+            case 'k':
+                while(!kbhit()){}
+                if((char)getch()=='k'){
+                    entree='a';
+                }
+
                 break;
             case 'c':
                 //Continue. Juste un test.

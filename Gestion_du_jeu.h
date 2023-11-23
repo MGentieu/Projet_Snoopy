@@ -7,6 +7,7 @@
 
 #include "Structures.h"
 
+void affiche_donnees_importantes();
 void jouer(Plateau *,int *);
 
 #endif //PROJET_SNOOPY_GESTION_DU_JEU_H
