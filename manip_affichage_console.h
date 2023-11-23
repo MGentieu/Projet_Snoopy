@@ -6,7 +6,7 @@
 #ifndef PROJET_SNOOPY_MANIP_AFFICHAGE_CONSOLE_H
 #define PROJET_SNOOPY_MANIP_AFFICHAGE_CONSOLE_H
 
-
+#include "Structures.h"
 
 void goto_ligne_colonne(short,short);
 
@@ -24,4 +24,9 @@ void affiche_char_selon_entier(char);
 //Caractère 7 Snoopy : 0x02
 //Caractère 8 balle (signe mâle) : 0x0B
 // Caractère 9 oiseau (musique) : 0x0E
+
+void affiche_donnees_plateau_temps(Plateau *);
+void affiche_donnees_plateau_nb_vies(Plateau *);
+void affiche_donnees_plateau_score(Plateau *);
+
 #endif //PROJET_SNOOPY_MANIP_AFFICHAGE_CONSOLE_H

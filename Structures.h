@@ -17,7 +17,7 @@ typedef struct Plateau{
     unsigned char Y_Snoopy;
     unsigned char nb_oiseaux_restants;
     unsigned char mode_de_jeu; ///Pour savoir si on fait une partie complète ou un niveau simple, et à quel niveau on est.
-    unsigned char nb_de_vies;
+    char nb_de_vies;
 }Plateau;
 
 typedef struct Chaine{

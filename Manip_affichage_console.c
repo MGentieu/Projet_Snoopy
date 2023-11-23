@@ -78,3 +78,18 @@ void affiche_char_selon_entier(char n){
             break;
     }
 }
+
+void affiche_donnees_plateau_temps(Plateau * ptPlateau){
+    goto_ligne_colonne(15,11);
+    printf("%3d",ptPlateau->temps_restant);
+}
+
+void affiche_donnees_plateau_nb_vies(Plateau * ptPlateau){
+    goto_ligne_colonne(24,12);
+    printf("%d",ptPlateau->nb_de_vies);
+}
+
+void affiche_donnees_plateau_score(Plateau * ptPlateau){
+    goto_ligne_colonne(14,13);
+    printf("%5d",ptPlateau->score);
+}

@@ -23,7 +23,7 @@ void affiche_donnees_importantes(){
 }
 
 int verif_nb_de_vies(Plateau * ptPlateau){
-    return ptPlateau->nb_de_vies>0;
+    return ptPlateau->nb_de_vies>-1;
     //return 1;
 }
 
@@ -37,7 +37,8 @@ void game_over(){
 
 void jouer(Plateau * ptPlateau,int * ptVerif){
     affiche_donnees_importantes();
-
+    affiche_donnees_plateau_nb_vies(ptPlateau);
+    affiche_donnees_plateau_score(ptPlateau);
     char entree='0';
     int verif=1; //Check s'il reste des vies.
     int verif2=1; //Check s'il reste du temps.
@@ -51,10 +52,12 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
         while(!kbhit()){
             //Instruction de gestion du temps.
             //decompte();
-            decompte_corrige(&(ptPlateau->temps_restant),&stock,&timer);
+            decompte_corrige(&(ptPlateau->temps_restant),&stock,&timer,ptPlateau);
+            //affiche_donnes_plateau(ptPlateau);
             if(verif2&&ptPlateau->temps_restant==0){
                 verif2=0;
                 ptPlateau->nb_de_vies--;
+                affiche_donnees_plateau_nb_vies(ptPlateau);
             }
             if(!verif_nb_de_vies(ptPlateau)){
                 *ptVerif=0;
