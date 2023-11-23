@@ -22,11 +22,27 @@ void affiche_donnees_importantes(){
     printf("q pour gauche / s pour bas / d pour droite / z pour haut.\n");
 }
 
+int verif_nb_de_vies(Plateau * ptPlateau){
+    return ptPlateau->nb_de_vies>2;
+    //return 1;
+}
+
+void game_over(){
+    system("cls");
+    printf("Game Over! Vous n'avez plus de vies!\n"
+           "Nous allons maintenant retourner au menu\n");
+    system("pause");
+    system("cls");
+}
+
 void jouer(Plateau * ptPlateau,int * ptVerif){
     affiche_donnees_importantes();
-    affiche_temps(ptPlateau->temps_restant);
+
     char entree='0';
-    ptPlateau->temps_restant=120;
+    int verif=1; //Check s'il reste des vies.
+    int verif2=1; //Check s'il reste du temps.
+    ptPlateau->temps_restant=15;
+    affiche_temps(ptPlateau->temps_restant);
     //int dec=120;
     long long stock=0;
     time_t timer;
@@ -36,8 +52,26 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
             //Instruction de gestion du temps.
             //decompte();
             decompte_corrige(&(ptPlateau->temps_restant),&stock,&timer);
+            if(verif2&&ptPlateau->temps_restant==0){
+                verif2=0;
+                ptPlateau->nb_de_vies--;
+            }
+            if(!verif_nb_de_vies(ptPlateau)){
+                *ptVerif=0;
+                game_over();
+                return;
+            }
         }
-        entree=(char)getch();
+        if(verif_nb_de_vies(ptPlateau)){
+            *ptVerif=0;
+            game_over();
+            return;
+        }
+        else{
+            verif=0;
+            entree='c';
+        }
+
         switch(entree){
             case 'j':
                 sauvegarder_fichier(ptPlateau);
@@ -55,8 +89,15 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                 break;
             case 'c':
                 //Continue. Juste un test.
-                break;
+                if(!verif){
+                    break;
+                }
+                else{
+                    entree='a';
+                }
         }
     }while(*ptVerif&&entree!='c');
-    system("cls");
+    //if()
+    //system("cls");
 }
+
