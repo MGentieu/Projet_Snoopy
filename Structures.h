@@ -11,7 +11,7 @@ typedef struct Plateau{
     char maMatrice[10][20]; // Matrice d'entiers allant de 0 à 9. donc on peut utiliser char[][].
     char nom_joueur[50];
     unsigned int score;
-    unsigned int temps_restant;
+    int temps_restant;
     unsigned char direction_snoopy; ///Pour savoir où Snoopy regarde, et donc s'il peut interagir avec ce qui est devant.
     unsigned char X_Snoopy;
     unsigned char Y_Snoopy;
