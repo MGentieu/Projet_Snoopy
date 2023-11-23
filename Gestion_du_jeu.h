@@ -8,6 +8,7 @@
 #include "Structures.h"
 
 void affiche_donnees_importantes();
+
 void jouer(Plateau *,int *);
 int verif_nb_de_vies(Plateau *);
 void game_over();
