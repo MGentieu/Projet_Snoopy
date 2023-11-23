@@ -41,14 +41,14 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
     char entree='0';
     int verif=1; //Check s'il reste des vies.
     int verif2=1; //Check s'il reste du temps.
-    ptPlateau->temps_restant=5;
+    ptPlateau->temps_restant=55;
     affiche_temps(ptPlateau->temps_restant);
     //int dec=120;
     long long stock=0;
     time_t timer;
     init_compteur(&stock,&timer);
     do{
-        while(!kbhit()){
+        while(!kbhit()){ //Instructions tant qu'on n'a pas tapé un caractère
             //Instruction de gestion du temps.
             //decompte();
             decompte_corrige(&(ptPlateau->temps_restant),&stock,&timer);
@@ -78,10 +78,10 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
             entree='c';
         }
         else{
-            entree=(char)getch();
+            entree=(char)getch(); //Si tout va bien, on récuoère le caractère tapé
         }
 
-        switch(entree){
+        switch(entree){ //Instructions en fonction du caractère tapé
             case 'j':
                 goto_ligne_colonne(0,18);
                 sauvegarder_fichier(ptPlateau);
@@ -105,9 +105,14 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                 else{
                     entree='a';
                 }
+                break;
+            case 'z':
+                break;
         }
     }while(*ptVerif&&entree!='c');
     //if()
     system("cls");
 }
+
+
 
