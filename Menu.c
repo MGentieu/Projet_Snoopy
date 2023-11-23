@@ -36,9 +36,8 @@ int menu(){
     switch(choix){
         case 1:
             system("cls");
-            printf("Voici les regles.\n");
+            affichage_option_1();
             system("pause");
-            system("cls");
             break;
         case 2:
             system("cls");

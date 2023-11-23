@@ -22,6 +22,6 @@ void affiche_char_selon_entier(char);
 //Caractère 5 Bloc disparition/apparition : 0x0F
 //Caractère 6 Bloc à pousser : 0xC4
 //Caractère 7 Snoopy : 0x02
-//Caractère 8 balle (signe mâle) : 0x0B
+//Caractère 8 balle (!!) : 0x0B
 // Caractère 9 oiseau (musique) : 0x0E
 #endif //PROJET_SNOOPY_MANIP_AFFICHAGE_CONSOLE_H
