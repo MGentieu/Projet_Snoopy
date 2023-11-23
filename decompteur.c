@@ -37,7 +37,9 @@ void decompte_corrige(int *ptDec, long long *ptStock, time_t * ptTimer){
     if(temps>*ptStock){
         *ptStock=temps;
         //printf("%d\n",*ptDec);
-        (*ptDec)--;
+        if(*ptDec>0){
+            (*ptDec)--;
+        }
         affiche_temps(*ptDec);
     }
 }
