@@ -13,6 +13,16 @@
 
 
 void option5_menu(Plateau * ptPlateau, int * ptVerif){
+    int choix_suppr_charge=0;
+    do{
+        printf("Saisissez 1 pour lire un fichier de sauvegarde\n"
+               "2 pour en supprimer un :\n");
+        saisie_entier_utilisateur(&choix_suppr_charge);
+    }while(choix_suppr_charge!=1&&choix_suppr_charge!=2);
+    if(choix_suppr_charge==2){
+        suppr_fichier_de_sauvegarde();
+        return;
+    }
     if(!lire_fichier_de_sauvegarde(ptPlateau)){
         return;
     }
