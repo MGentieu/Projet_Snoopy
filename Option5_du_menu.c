@@ -16,4 +16,35 @@ void option5_menu(Plateau * ptPlateau, int * ptVerif){
     lire_fichier_de_sauvegarde(ptPlateau);
     affiche_plateau_entier(ptPlateau);
     jouer(ptPlateau,ptVerif);
+    if(!*ptVerif){
+        return;
+    }
+    ptPlateau->mode_de_jeu++;
+    if(ptPlateau->mode_de_jeu==6){
+        charge_plateau_Niveau2_depart(ptPlateau);
+        affiche_plateau_entier(ptPlateau);
+        jouer(ptPlateau,ptVerif);
+        if(!*ptVerif){
+            return;
+        }
+        ptPlateau->mode_de_jeu++;
+    }
+    if(ptPlateau->mode_de_jeu==7){
+        charge_plateau_Niveau3_depart(ptPlateau);
+        affiche_plateau_entier(ptPlateau);
+        jouer(ptPlateau,ptVerif);
+        if(!*ptVerif){
+            return;
+        }
+        ptPlateau->mode_de_jeu++;
+    }
+    if(ptPlateau->mode_de_jeu==8){
+        charge_plateau_Niveau2_depart(ptPlateau);
+        affiche_plateau_entier(ptPlateau);
+        jouer(ptPlateau,ptVerif);
+        if(!*ptVerif){
+            return;
+        }
+        ptPlateau->mode_de_jeu++;
+    }
 }
