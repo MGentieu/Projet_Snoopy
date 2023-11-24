@@ -91,7 +91,7 @@ int menu(){
             break;
         case 5:
             system("cls");
-            option5_menu(&p);
+            option5_menu(&p,&verif);
             system("pause");
             system("cls");
             break;

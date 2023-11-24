@@ -12,7 +12,8 @@
 #include "Gestion_du_jeu.h"
 
 
-void option5_menu(Plateau * ptPlateau){
+void option5_menu(Plateau * ptPlateau, int * ptVerif){
     lire_fichier_de_sauvegarde(ptPlateau);
     affiche_plateau_entier(ptPlateau);
+    jouer(ptPlateau,ptVerif);
 }
