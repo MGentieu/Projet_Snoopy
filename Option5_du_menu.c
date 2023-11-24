@@ -13,7 +13,9 @@
 
 
 void option5_menu(Plateau * ptPlateau, int * ptVerif){
-    lire_fichier_de_sauvegarde(ptPlateau);
+    if(!lire_fichier_de_sauvegarde(ptPlateau)){
+        return;
+    }
     affiche_plateau_entier(ptPlateau);
     jouer(ptPlateau,ptVerif);
     if(!*ptVerif){
