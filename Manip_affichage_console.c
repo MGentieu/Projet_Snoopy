@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include "manip_affichage_console.h"
 #include "Structures.h"
+#include "Gestion_du_jeu.h"
 
 void goto_ligne_colonne(short ligne,short colonne){
     COORD mycoord;
@@ -14,7 +15,22 @@ void goto_ligne_colonne(short ligne,short colonne){
 }
 
 void affiche_plateau_entier(Plateau * ptPlateau){
-    printf("\n");
+    system("cls");
+    goto_ligne_colonne(38,0);
+    if(ptPlateau->mode_de_jeu==1||ptPlateau->mode_de_jeu==5){
+        printf("NIVEAU 1");
+    }
+    else if(ptPlateau->mode_de_jeu==2||ptPlateau->mode_de_jeu==6){
+        printf("NIVEAU 2");
+    }
+    else if(ptPlateau->mode_de_jeu==3||ptPlateau->mode_de_jeu==7){
+        printf("NIVEAU 3");
+    }
+    else{
+        printf("NIVEAU 4");
+    }
+    goto_ligne_colonne(0,1);
+    //printf("\n");
 
     for(char i=0;i<10;i++){
         for(char j=0;j<20;j++){
@@ -22,6 +38,10 @@ void affiche_plateau_entier(Plateau * ptPlateau){
         }
         printf("\n");
     }
+    affiche_donnees_importantes();
+    affiche_donnees_plateau_temps(ptPlateau);
+    affiche_donnees_plateau_score(ptPlateau);
+    affiche_donnees_plateau_nb_vies(ptPlateau);
 }
 
 //Caractère 1 bloc cassable pique : 0x06

@@ -95,11 +95,12 @@ int lire_fichier_de_sauvegarde(Plateau * ptPlateau){
         fscanf(pF,"%d",&ptPlateau->nb_oiseaux_restants);
         fscanf(pF,"%d",&ptPlateau->mode_de_jeu);
         fscanf(pF,"%d",&ptPlateau->nb_de_vies);
+        /*
         printf("%s\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n",ptPlateau->nom_joueur,ptPlateau->score
                 ,ptPlateau->temps_restant,ptPlateau->direction_snoopy,ptPlateau->X_Snoopy
                 ,ptPlateau->Y_Snoopy,ptPlateau->nb_oiseaux_restants
                 ,ptPlateau->mode_de_jeu,ptPlateau->nb_de_vies);
-
+        */
         fclose(pF);
         return 1;
     }

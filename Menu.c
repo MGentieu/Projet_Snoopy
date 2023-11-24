@@ -52,17 +52,27 @@ int menu(){
             if(!verif){
                 break;
             }
+            else{
+                p.mode_de_jeu++;
+            }
             charge_plateau_Niveau2_depart(&p);
             affiche_plateau_entier(&p);
             jouer(&p,&verif);
             if(!verif){
                 break;
             }
+            else{
+                p.mode_de_jeu++;
+            }
             charge_plateau_Niveau3_depart(&p);
             affiche_plateau_entier(&p);
+
             jouer(&p,&verif);
             if(!verif){
                 break;
+            }
+            else{
+                p.mode_de_jeu++;
             }
             charge_plateau_Niveau4_depart(&p);
             affiche_plateau_entier(&p);
@@ -81,6 +91,7 @@ int menu(){
             break;
         case 5:
             system("cls");
+            option5_menu(&p);
             system("pause");
             system("cls");
             break;

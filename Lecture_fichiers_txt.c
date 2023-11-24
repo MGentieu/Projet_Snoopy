@@ -18,7 +18,7 @@ void charge_plateau_Niveau1_depart(Plateau * ptPlateau){
     ptPlateau->X_Snoopy=4;
     ptPlateau->Y_Snoopy=10;
     ptPlateau->direction_snoopy=1;
-    ptPlateau->temps_restant=120;
+    ptPlateau->temps_restant=5;
 }
 
 void charge_plateau_Niveau2_depart(Plateau * ptPlateau){
