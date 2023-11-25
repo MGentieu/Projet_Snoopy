@@ -102,5 +102,5 @@ void affichage_option_1(){
     printf("D%cplacement %c gauche : ",130,133);
     SetConsoleTextAttribute(hConsole,FOREGROUND_RED| FOREGROUND_INTENSITY);
     printf("Q\t");
-    SetConsoleTextAttribute(hConsole, FOREGROUND_INTENSITY);
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_INTENSITY);
 }

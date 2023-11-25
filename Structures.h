@@ -22,9 +22,13 @@ typedef struct Plateau{
     unsigned char X_Balle2;
     unsigned char Y_Balle2;
     bool coli_h1;
+    bool coli_b1;
     bool coli_g1;
+    bool coli_d1;
     bool coli_h2;
+    bool coli_b2;
     bool coli_g2;
+    bool coli_d2;
     unsigned char nb_oiseaux_restants;
     unsigned char mode_de_jeu; ///Pour savoir si on fait une partie complète ou un niveau simple, et à quel niveau on est.
     char nb_de_vies;
