@@ -57,6 +57,7 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
     unsigned char xavt=ptPlateau->X_Snoopy;
     unsigned char yavt=ptPlateau->Y_Snoopy;
     char key= '0';
+    int etat =0;
     //affiche_donnees_importantes();
     affiche_donnees_plateau_nb_vies(ptPlateau);
     affiche_donnees_plateau_score(ptPlateau);
@@ -73,6 +74,13 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
         while(!kbhit()){
             //Instruction de gestion du temps.
             if(decompte_corrige(&(ptPlateau->temps_restant),&stock,&timer,ptPlateau)){
+                if(etat=1){
+                    etat=0;
+                }
+                else{
+                    etat=1;
+                }
+                bloc_intermitant(ptPlateau,etat);
                 balle2(ptPlateau);
                 affiche_plateau_entier(ptPlateau);
             }
