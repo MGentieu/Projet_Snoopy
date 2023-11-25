@@ -62,7 +62,7 @@ void write_fichier_plateau_Niveau3(){
     fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",0,0,0,0,0,3,0,0,5,0,0,0,5,0,0,5,5,5,5,5);
     fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",0,0,3,0,0,0,0,0,5,5,5,5,5,0,0,5,0,0,0,0);
     fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",4,4,4,1,0,0,0,0,0,0,3,0,0,0,0,5,0,5,5,5);
-    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",0,0,6,6,0,0,0,8,0,0,0,0,8,0,0,5,0,5,0,0);
+    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",0,0,6,6,0,0,0,8,0,0,0,0,0,0,0,5,0,5,0,0);
     fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",9,0,4,1,0,0,0,0,0,0,0,0,0,0,0,5,0,5,0,9);
     fclose(pF);
 }
@@ -81,7 +81,7 @@ void write_fichier_plateau_Niveau4(){
     fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",0,0,0,0,0,0,0,3,4,0,4,0,0,0,3,0,0,0,0,0);
     fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",4,4,4,4,0,0,0,0,4,0,0,0,0,0,0,0,5,0,0,0);
     fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",7,2,2,5,3,0,0,0,3,0,3,0,0,0,0,4,0,4,4,5);
-    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",4,4,6,0,0,5,0,8,4,4,4,4,0,0,8,0,4,0,0,0);
+    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",4,4,6,0,0,5,0,8,4,4,4,4,0,0,0,0,4,0,0,0);
     fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",0,6,0,4,0,5,2,2,2,2,0,4,3,0,0,0,0,1,1,1);
     fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",1,1,0,4,0,4,0,0,0,0,0,0,0,4,4,6,4,0,0,5);
     fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",9,0,0,0,0,0,4,0,3,0,1,1,5,0,2,2,5,3,0,9);
