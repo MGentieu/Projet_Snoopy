@@ -33,7 +33,7 @@ void affiche_temps(int dec){
     printf("%3d",dec);
 }
 
-void decompte_corrige(int *ptDec, long long *ptStock, time_t * ptTimer, Plateau * ptPlateau){
+int decompte_corrige(int *ptDec, long long *ptStock, time_t * ptTimer, Plateau * ptPlateau){
     //time_t timer;
     long long temps=time(ptTimer);
     if(temps>*ptStock){
@@ -45,6 +45,7 @@ void decompte_corrige(int *ptDec, long long *ptStock, time_t * ptTimer, Plateau 
         }
         //affiche_temps(*ptDec);
         affiche_donnees_plateau_temps(ptPlateau);
+        return 1;
     }
-
+    return 0;
 }

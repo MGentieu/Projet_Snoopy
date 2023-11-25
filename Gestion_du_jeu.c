@@ -54,9 +54,11 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
     do{
         while(!kbhit()){
             //Instruction de gestion du temps.
-            decompte_corrige(&(ptPlateau->temps_restant),&stock,&timer,ptPlateau);
+            if(decompte_corrige(&(ptPlateau->temps_restant),&stock,&timer,ptPlateau)){
+                balle(ptPlateau);
+            }
             //lance la balle
-            balle(ptPlateau);
+
 
             //affiche_donnes_plateau(ptPlateau);
             if(verif2&&ptPlateau->temps_restant==0){

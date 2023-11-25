@@ -3,6 +3,7 @@
 #include "manip_affichage_console.h"
 #include<stdlib.h>
 #include<time.h>
+#include "Structures.h"
 // Initialise la direction de la balle au début du jeu
 int dir_balle(Plateau * ptPlateau){
     int dir_rand = 0;
