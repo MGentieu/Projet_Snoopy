@@ -34,7 +34,15 @@ void game_over(){
     system("cls");
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_INTENSITY);
-    printf("Game Over! Vous n'avez plus de vies!\n");
+    printf("********   ******** ********    ******   **    **\n");
+    printf("**    **   **       **    **    **   *** **    **\n");
+    printf("***    **  ***      ***    **   **    ** **    **\n");
+    printf("*** ****   ******** *** ****    **    ** **    **\n");
+    printf("**         ***      **    ***   **    ** **    **\n");
+    printf("**         **       **    ****  **   *** **    **\n");
+    printf("**         ******** **     **** ******    ****** \n");
+    printf("\n\n\n");
+    printf("Vous n'avez plus de vies!\n");
     SetConsoleTextAttribute(hConsole, FOREGROUND_INTENSITY);
     printf("Nous allons maintenant retourner au menu\n");
     system("pause");
@@ -49,13 +57,14 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
     unsigned char xavt=ptPlateau->X_Snoopy;
     unsigned char yavt=ptPlateau->Y_Snoopy;
     char key= '0';
+    int etat =0;
     //affiche_donnees_importantes();
     affiche_donnees_plateau_nb_vies(ptPlateau);
     affiche_donnees_plateau_score(ptPlateau);
     char entree='0';
     int verif=1; //Check s'il reste des vies.
     int verif2=1; //Check s'il reste du temps.
-    ptPlateau->temps_restant=55;
+    ptPlateau->temps_restant=120;
     affiche_temps(ptPlateau->temps_restant);
     //int dec=120;
     long long stock=0;
@@ -65,6 +74,13 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
         while(!kbhit()){
             //Instruction de gestion du temps.
             if(decompte_corrige(&(ptPlateau->temps_restant),&stock,&timer,ptPlateau)){
+                if(etat=1){
+                    etat=0;
+                }
+                else{
+                    etat=1;
+                }
+                bloc_intermitant(ptPlateau,etat);
                 balle2(ptPlateau);
                 affiche_plateau_entier(ptPlateau);
             }

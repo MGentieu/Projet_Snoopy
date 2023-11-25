@@ -63,6 +63,9 @@ void affiche_char_selon_entier(char n){
         case '0':
             printf(" %c |",' ');
             break;
+        case '20':
+            printf(" %c |",' ');
+            break;
         case '1':
             printf(" %c |",0x06);
             //printf(" %c |",0x3D);
@@ -95,7 +98,9 @@ void affiche_char_selon_entier(char n){
             printf(" %c |",0x14);
             break;
         default :
+            printf(" %c |",' ');
             break;
+
     }
 }
 

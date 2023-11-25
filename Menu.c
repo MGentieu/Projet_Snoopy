@@ -93,8 +93,8 @@ int menu(){
             break;
         case 3:
             system("cls");
+            affichage_option_3();
             system("pause");
-            system("cls");
             break;
         case 4:
             system("cls");

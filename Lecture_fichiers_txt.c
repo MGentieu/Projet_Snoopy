@@ -22,7 +22,8 @@ void charge_plateau_Niveau1_depart(Plateau * ptPlateau){
     ptPlateau->avant_balle='0';
     ptPlateau->avant_snoopy='0';
     ptPlateau->Y_Balle=6;
-    ptPlateau->direction_balle=dir_balle(ptPlateau);
+    //ptPlateau->direction_balle=dir_balle(ptPlateau);
+    ptPlateau->direction_balle=0;
     ptPlateau->temps_restant=120;
 }
 
@@ -44,7 +45,8 @@ void charge_plateau_Niveau2_depart(Plateau * ptPlateau){
     ptPlateau->avant_snoopy='0';
     ptPlateau->X_Balle=5;
     ptPlateau->Y_Balle=11;
-    ptPlateau->direction_balle=dir_balle(ptPlateau);
+    ptPlateau->direction_balle=0;
+    //ptPlateau->direction_balle=dir_balle(ptPlateau);
     ptPlateau->temps_restant=120;
 }
 
@@ -66,7 +68,8 @@ void charge_plateau_Niveau3_depart(Plateau * ptPlateau){
     ptPlateau->Y_Balle=7;
     ptPlateau->avant_balle='0';
     ptPlateau->avant_snoopy='0';
-    ptPlateau->direction_balle=dir_balle(ptPlateau);
+    ptPlateau->direction_balle=0;
+    //ptPlateau->direction_balle=dir_balle(ptPlateau);
     ptPlateau->X_Balle2=8;
     ptPlateau->Y_Balle2=12;
     ptPlateau->direction_balle2=dir_balle(ptPlateau);
@@ -89,7 +92,8 @@ void charge_plateau_Niveau4_depart(Plateau * ptPlateau){
     ptPlateau->direction_snoopy=1;
     ptPlateau->X_Balle=6;
     ptPlateau->Y_Balle=7;
-    ptPlateau->direction_balle=dir_balle(ptPlateau);
+    ptPlateau->direction_balle=0;
+    //ptPlateau->direction_balle=dir_balle(ptPlateau);
     ptPlateau->avant_balle='0';
     ptPlateau->avant_snoopy='0';
     ptPlateau->X_Balle2=6;
