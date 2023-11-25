@@ -65,7 +65,8 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
         while(!kbhit()){
             //Instruction de gestion du temps.
             if(decompte_corrige(&(ptPlateau->temps_restant),&stock,&timer,ptPlateau)){
-                balle(ptPlateau);
+                balle2(ptPlateau);
+                affiche_plateau_entier(ptPlateau);
             }
             //lance la balle
 
@@ -127,7 +128,7 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                 }
                 break;
             case 'z':
-                if(xavt>0){
+                if(xavt>0&& verif_collisions(ptPlateau,ptPlateau->X_Snoopy-1,ptPlateau->Y_Snoopy)){
                     x=xavt-1;
                     ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]=avant;
                     ptPlateau->X_Snoopy=x;
@@ -138,30 +139,40 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                 }
                 break;
             case 'q':
-                if(yavt>0) {
+                if(yavt>0&&verif_collisions(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy-1)) {
                     y = yavt - 1;
-                    ptPlateau->maMatrice[xavt][yavt] = avant;
+                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]=avant;
                     ptPlateau->Y_Snoopy = y;
-                    ptPlateau->maMatrice[x][y] = '7';
+                    avant=ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy];
+                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]='7';
+                    affiche_plateau_entier(ptPlateau);
+                    yavt=y;
                 }
 
                 break;
             case 's':
-                if(xavt<10) {
+                if(xavt<9&&verif_collisions(ptPlateau,ptPlateau->X_Snoopy+1,ptPlateau->Y_Snoopy)) {
                     x = xavt + 1;
-                    ptPlateau->maMatrice[xavt][yavt] = avant;
-                    ptPlateau->X_Snoopy = x;
-                    ptPlateau->maMatrice[x][y] = '7';
+                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]=avant;
+                    ptPlateau->X_Snoopy=x;
+                    avant=ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy];
+                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]='7';
+                    affiche_plateau_entier(ptPlateau);
+                    xavt=x;
                 }
 
                 break;
             case 'd':
-                if(yavt<20) {
+                if(yavt<19&&verif_collisions(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy+1)) {
                     y = yavt + 1;
-                    ptPlateau->maMatrice[xavt][yavt] = avant;
+                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]=avant;
                     ptPlateau->Y_Snoopy = y;
-                    ptPlateau->maMatrice[x][y] = '7';
+                    avant=ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy];
+                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]='7';
+                    affiche_plateau_entier(ptPlateau);
+                    yavt=y;
                 }
+
 
                 break;
             }
@@ -169,6 +180,10 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
         }while(*ptVerif&&entree!='c');
     //if()
     system("cls");
+}
+
+int verif_collisions(Plateau * ptPlateau,unsigned char X_test, unsigned char Y_test){
+    return (ptPlateau->maMatrice[X_test][Y_test]=='0');
 }
 
 /*
