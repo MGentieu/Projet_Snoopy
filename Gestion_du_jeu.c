@@ -172,6 +172,7 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                     yavt=y;
                 }
 
+
                 break;
             }
 
