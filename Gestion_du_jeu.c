@@ -63,7 +63,7 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
     char entree='0';
     int verif=1; //Check s'il reste des vies.
     int verif2=1; //Check s'il reste du temps.
-    ptPlateau->temps_restant=55;
+    ptPlateau->temps_restant=120;
     affiche_temps(ptPlateau->temps_restant);
     //int dec=120;
     long long stock=0;

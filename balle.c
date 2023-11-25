@@ -8,7 +8,7 @@
 int dir_balle(Plateau * ptPlateau){
     int dir_rand = 0;
     srand(time(NULL));
-    dir_rand= 0 + rand() % 4;
+    dir_rand=rand() % 4;
     switch(dir_rand){
         case 0:
             return 0;
