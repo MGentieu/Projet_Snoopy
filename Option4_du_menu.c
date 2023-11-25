@@ -9,7 +9,7 @@
 #include "Structures.h"
 #include "Chargement_Niveaux.h"
 
-void option4_menu(Plateau *ptPlateau){
+int option4_menu(Plateau *ptPlateau){
     Chaine mdp1;
     Chaine mdp2;
     Chaine mdp3;
@@ -36,49 +36,57 @@ void option4_menu(Plateau *ptPlateau){
                 system("cls");
                 charge_plateau_Niveau1_depart(ptPlateau);
                 affiche_plateau_entier(ptPlateau);
+                return 1;
             }
             else{
                 system("cls");
                 printf("Mauvais mot de passe. 'P' pour retourner au menu.\n");
+                return 0;
             }
-            break;
+
         case 2:
             if(compare_mots_de_passe(&mdp_lu,&mdp2)){
                 system("cls");
                 charge_plateau_Niveau2_depart(ptPlateau);
                 affiche_plateau_entier(ptPlateau);
+                return 1;
             }
             else{
                 system("cls");
                 printf("Mauvais mot de passe. 'P' pour retourner au menu.\n");
+                return 0;
             }
-            break;
+
         case 3:
             if(compare_mots_de_passe(&mdp_lu,&mdp3)){
 
                 system("cls");
                 charge_plateau_Niveau3_depart(ptPlateau);
                 affiche_plateau_entier(ptPlateau);
+                return 1;
             }
             else{
                 system("cls");
                 printf("Mauvais mot de passe. 'P' pour retourner au menu.\n");
+                return 0;
             }
-            break;
+
         case 4:
             if(compare_mots_de_passe(&mdp_lu,&mdp4)){
                 system("cls");
                 charge_plateau_Niveau4_depart(ptPlateau);
                 affiche_plateau_entier(ptPlateau);
+                return 1;
             }
             else{
                 system("cls");
                 printf("'P' pour retourner au menu.\n");
+                return 0;
             }
-            break;
+
         default:
             printf("Erreur de saisie. Retour au menu.\n");
-            break;
+            return 0;
 
     }
 }

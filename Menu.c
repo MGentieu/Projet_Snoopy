@@ -86,8 +86,10 @@ int menu(){
         case 4:
             system("cls");
             saisie_nom_joueur(&p);
-            option4_menu(&p);
-            jouer(&p,&verif);
+            if(option4_menu(&p)){
+                jouer(&p,&verif);
+            }
+
             break;
         case 5:
             system("cls");
