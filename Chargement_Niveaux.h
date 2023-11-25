@@ -9,6 +9,7 @@
 
 int menu();
 void affichage_option_1();
+void affichage_option_3();
 int option4_menu(Plateau *);
 void option5_menu(Plateau *, int *);
 

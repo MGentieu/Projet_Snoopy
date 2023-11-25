@@ -34,7 +34,15 @@ void game_over(){
     system("cls");
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_INTENSITY);
-    printf("Game Over! Vous n'avez plus de vies!\n");
+    printf("********   ******** ********    ******   **    **\n");
+    printf("**    **   **       **    **    **   *** **    **\n");
+    printf("***    **  ***      ***    **   **    ** **    **\n");
+    printf("*** ****   ******** *** ****    **    ** **    **\n");
+    printf("**         ***      **    ***   **    ** **    **\n");
+    printf("**         **       **    ****  **   *** **    **\n");
+    printf("**         ******** **     **** ******    ****** \n");
+    printf("\n\n\n");
+    printf("Vous n'avez plus de vies!\n");
     SetConsoleTextAttribute(hConsole, FOREGROUND_INTENSITY);
     printf("Nous allons maintenant retourner au menu\n");
     system("pause");

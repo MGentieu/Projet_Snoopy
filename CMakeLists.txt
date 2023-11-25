@@ -26,4 +26,6 @@ add_executable(Projet_Snoopy main.c
         Option1_du_menu.c
         Option5_du_menu.c
         balle.c
+        interaction_blocs.c
+        Option3_du_menu.c
 )
