@@ -8,6 +8,9 @@
 #include "Structures.h"
 
 int menu();
-void option4_menu(Plateau *);
+void affichage_option_1();
+int option4_menu(Plateau *);
+void option5_menu(Plateau *, int *);
+
 
 #endif //PROJET_SNOOPY_CHARGEMENT_NIVEAUX_H

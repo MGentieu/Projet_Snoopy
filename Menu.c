@@ -3,6 +3,7 @@
 //
 #include <stdio.h>
 #include <stdlib.h>
+#include <Windows.h>
 #include "Structures.h"
 #include "manip_affichage_console.h"
 #include "manip_fichiers_txt.h"
@@ -11,15 +12,17 @@
 #include "Gestion_du_jeu.h"
 
 int menu(){
+    //HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    //SetConsoleTextAttribute(hConsole, WHITENESS | FOREGROUND_INTENSITY);
     int choix = 0;
     int verif=1;
     do {
         system("cls");
         printf("1. Livret de regles.\n"
                "2. Commencer une nouvelle partie.\n"
-               "3. Charger une sauvegarde.\n"
+               "3. Afficher les scores.\n"
                "4. Charger un niveau avec un mot de passe.\n"
-               "5. Afficher les scores.\n"
+               "5. Charger ou supprimer une sauvegarde.\n"
                "6. Quitter.\n\n"
                "Choissez ce que vous voulez faire :\n");
         saisie_entier_utilisateur(&choix);
@@ -36,9 +39,8 @@ int menu(){
     switch(choix){
         case 1:
             system("cls");
-            printf("Voici les regles.\n");
+            affichage_option_1();
             system("pause");
-            system("cls");
             break;
         case 2:
             system("cls");
@@ -53,17 +55,27 @@ int menu(){
             if(!verif){
                 break;
             }
+            else{
+                p.mode_de_jeu++;
+            }
             charge_plateau_Niveau2_depart(&p);
             affiche_plateau_entier(&p);
             jouer(&p,&verif);
             if(!verif){
                 break;
             }
+            else{
+                p.mode_de_jeu++;
+            }
             charge_plateau_Niveau3_depart(&p);
             affiche_plateau_entier(&p);
+
             jouer(&p,&verif);
             if(!verif){
                 break;
+            }
+            else{
+                p.mode_de_jeu++;
             }
             charge_plateau_Niveau4_depart(&p);
             affiche_plateau_entier(&p);
@@ -77,12 +89,15 @@ int menu(){
         case 4:
             system("cls");
             saisie_nom_joueur(&p);
-            option4_menu(&p);
-            jouer(&p,&verif);
+            if(option4_menu(&p)){
+                jouer(&p,&verif);
+            }
+
             break;
         case 5:
             system("cls");
-            system("pause");
+            option5_menu(&p,&verif);
+
             system("cls");
             break;
         case 6:
