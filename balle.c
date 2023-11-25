@@ -56,9 +56,9 @@ void balle(Plateau * ptPlateau){
         // Bas Gauche
         case 0:
             // On  se place à la position de la balle selon sa direction
-            goto_ligne_colonne(ptPlateau->Y_Balle,ptPlateau->X_Balle);
-            printf("A");
-            goto_ligne_colonne((ptPlateau->Y_Balle)+1,ptPlateau->X_Balle+1);
+            goto_ligne_colonne(ptPlateau->Y_Balle*3,ptPlateau->X_Balle);
+            printf(" ");
+            goto_ligne_colonne((ptPlateau->Y_Balle*3)+1,ptPlateau->X_Balle+1);
             case_ecrase=ptPlateau->maMatrice[ptPlateau->Y_Balle*4+1-1][ptPlateau->X_Balle+1];
             printf("%c",0x13);
             ////////////// COLISIONS /////////////////////////
@@ -74,9 +74,9 @@ void balle(Plateau * ptPlateau){
                 break;
             // Bas Droit
         case 1:
-            goto_ligne_colonne(ptPlateau->Y_Balle*4+1,ptPlateau->X_Balle);
+            goto_ligne_colonne(ptPlateau->Y_Balle*3,ptPlateau->X_Balle);
             printf(" ");
-            goto_ligne_colonne(ptPlateau->Y_Balle*(4+1)+1,ptPlateau->X_Balle+1);
+            goto_ligne_colonne(ptPlateau->Y_Balle*(3)+1,ptPlateau->X_Balle+1);
             case_ecrase=ptPlateau->maMatrice[ptPlateau->Y_Balle*4+1-1][ptPlateau->X_Balle+1];
             printf("%c",0x13);
             ////////////// COLISIONS /////////////////////////
@@ -92,9 +92,9 @@ void balle(Plateau * ptPlateau){
             break;
             // Haut Gauche
         case 2:
-            goto_ligne_colonne(ptPlateau->Y_Balle*4+1,ptPlateau->X_Balle);
+            goto_ligne_colonne(ptPlateau->Y_Balle*3,ptPlateau->X_Balle);
             printf(" ");
-            goto_ligne_colonne(ptPlateau->Y_Balle*(4-1)+1,ptPlateau->X_Balle-1);
+            goto_ligne_colonne(ptPlateau->Y_Balle*(3)+1,ptPlateau->X_Balle-1);
             case_ecrase=ptPlateau->maMatrice[ptPlateau->Y_Balle*4+1-1][ptPlateau->X_Balle+1];
             printf("%c",0x13);
             ////////////// COLISIONS /////////////////////////
@@ -110,9 +110,9 @@ void balle(Plateau * ptPlateau){
             break;
         // Haut Droit
         case 3:
-            goto_ligne_colonne(ptPlateau->Y_Balle*4+1,ptPlateau->X_Balle);
+            goto_ligne_colonne(ptPlateau->Y_Balle*3,ptPlateau->X_Balle);
             printf(" ");
-            goto_ligne_colonne(ptPlateau->Y_Balle*(4+1)+1,ptPlateau->X_Balle-1);
+            goto_ligne_colonne(ptPlateau->Y_Balle*(3)+1,ptPlateau->X_Balle-1);
             case_ecrase=ptPlateau->maMatrice[ptPlateau->Y_Balle*4+1-1][ptPlateau->X_Balle+1];
             printf("%c",0x13);
             ////////////// COLISIONS /////////////////////////
