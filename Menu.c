@@ -55,17 +55,27 @@ int menu(){
             if(!verif){
                 break;
             }
+            else{
+                p.mode_de_jeu++;
+            }
             charge_plateau_Niveau2_depart(&p);
             affiche_plateau_entier(&p);
             jouer(&p,&verif);
             if(!verif){
                 break;
             }
+            else{
+                p.mode_de_jeu++;
+            }
             charge_plateau_Niveau3_depart(&p);
             affiche_plateau_entier(&p);
+
             jouer(&p,&verif);
             if(!verif){
                 break;
+            }
+            else{
+                p.mode_de_jeu++;
             }
             charge_plateau_Niveau4_depart(&p);
             affiche_plateau_entier(&p);
@@ -79,12 +89,15 @@ int menu(){
         case 4:
             system("cls");
             saisie_nom_joueur(&p);
-            option4_menu(&p);
-            jouer(&p,&verif);
+            if(option4_menu(&p)){
+                jouer(&p,&verif);
+            }
+
             break;
         case 5:
             system("cls");
-            system("pause");
+            option5_menu(&p,&verif);
+
             system("cls");
             break;
         case 6:

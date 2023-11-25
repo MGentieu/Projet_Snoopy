@@ -27,12 +27,13 @@ int verif_nb_de_vies(Plateau * ptPlateau){
     //return 1;
 }
 
-
-
 void game_over(){
     system("cls");
-    printf("Game Over! Vous n'avez plus de vies!\n"
-           "Nous allons maintenant retourner au menu\n");
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_INTENSITY);
+    printf("Game Over! Vous n'avez plus de vies!\n");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_INTENSITY);
+    printf("Nous allons maintenant retourner au menu\n");
     system("pause");
     system("cls");
 }
@@ -43,23 +44,32 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
     short x=ptPlateau->X_Snoopy, y=ptPlateau->Y_Snoopy, dx, dy;
     short xavt, yavt;
     char key= '0';
+    //affiche_donnees_importantes();
+    //affiche_donnees_plateau_nb_vies(ptPlateau);
+    //affiche_donnees_plateau_score(ptPlateau);
     char entree='0';
     int verif=1; //Check s'il reste des vies.
     int verif2=1; //Check s'il reste du temps.
-    ptPlateau->temps_restant=55;
-    affiche_temps(ptPlateau->temps_restant);
+    //ptPlateau->temps_restant=55;
+    //affiche_temps(ptPlateau->temps_restant);
     //int dec=120;
     long long stock=0;
     time_t timer;
     init_compteur(&stock,&timer);
     do{
-        while(!kbhit()){ //Instructions tant qu'on n'a pas tapé un caractère
+        while(!kbhit()){
             //Instruction de gestion du temps.
-            //decompte();
-            decompte_corrige(&(ptPlateau->temps_restant),&stock,&timer);
+            if(decompte_corrige(&(ptPlateau->temps_restant),&stock,&timer,ptPlateau)){
+                balle(ptPlateau);
+            }
+            //lance la balle
+
+
+            //affiche_donnes_plateau(ptPlateau);
             if(verif2&&ptPlateau->temps_restant==0){
                 verif2=0;
                 ptPlateau->nb_de_vies--;
+                affiche_donnees_plateau_nb_vies(ptPlateau);
             }
             if(!verif_nb_de_vies(ptPlateau)){
                 *ptVerif=0;
@@ -83,10 +93,10 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
             entree='c';
         }
         else{
-            entree=(char)getch(); //Si tout va bien, on récuoère le caractère tapé
+            entree=(char)getch();
         }
 
-        switch(entree){ //Instructions en fonction du caractère tapé
+        switch(entree){
             case 'j':
                 goto_ligne_colonne(0,18);
                 sauvegarder_fichier(ptPlateau);
@@ -110,44 +120,9 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                 else{
                     entree='a';
                 }
-                break;
-            }
-        do{
-            xavt=x;
-            yavt=y;
-            x+=dx;
-            y+=dy;
-            //Gérons maintenant les problèmes de bordure :
-            if(x>20) x=20;
-            if(y>10) y=10;
-            if(x<0) x=0;
-            if(y<0) y=0;
-            //Gérons maintenant l'affichage de Snoopy:
-            //Premièrement, on supprime l'affichage de Snoopy :
-            goto_ligne_colonne(4*xavt,yavt);
-            printf(" ");
-            //On affiche Snoopy après son déplacement :
-            goto_ligne_colonne(4*x,y);
-            printf("%c",0x02);
-            //On note maintenant la valeur de la touche appuyée par le joueur :
-            if (kbhit()){
-                key = getch() ;
-                switch(key){
-                    case 'z': dx=0;dy=1;
-                        break;
-                    case 'q': dx=-1;dy=0;
-                        break;
-                    case 's': dx=0;dy=-1;
-                        break;
-                    case 'd': dx=1;dy=0;
-                        break;
-                }
-            }
-        }while (key !='l');
+        }
     }while(*ptVerif&&entree!='c');
     //if()
     system("cls");
 }
-
-
 

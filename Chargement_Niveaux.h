@@ -9,6 +9,8 @@
 
 int menu();
 void affichage_option_1();
-void option4_menu(Plateau *);
+int option4_menu(Plateau *);
+void option5_menu(Plateau *, int *);
+
 
 #endif //PROJET_SNOOPY_CHARGEMENT_NIVEAUX_H

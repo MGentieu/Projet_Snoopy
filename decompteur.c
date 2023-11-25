@@ -6,6 +6,7 @@
 #include <time.h>
 #include "gestion_du_temps.h"
 #include "manip_affichage_console.h"
+#include "Gestion_du_jeu.h"
 
 int decompte()
 {
@@ -32,7 +33,7 @@ void affiche_temps(int dec){
     printf("%3d",dec);
 }
 
-void decompte_corrige(int *ptDec, long long *ptStock, time_t * ptTimer){
+int decompte_corrige(int *ptDec, long long *ptStock, time_t * ptTimer, Plateau * ptPlateau){
     //time_t timer;
     long long temps=time(ptTimer);
     if(temps>*ptStock){
@@ -40,7 +41,11 @@ void decompte_corrige(int *ptDec, long long *ptStock, time_t * ptTimer){
         //printf("%d\n",*ptDec);
         if(*ptDec>0){
             (*ptDec)--;
+
         }
-        affiche_temps(*ptDec);
+        //affiche_temps(*ptDec);
+        affiche_donnees_plateau_temps(ptPlateau);
+        return 1;
     }
+    return 0;
 }
