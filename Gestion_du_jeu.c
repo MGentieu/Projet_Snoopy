@@ -140,27 +140,36 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
             case 'q':
                 if(yavt>0) {
                     y = yavt - 1;
-                    ptPlateau->maMatrice[xavt][yavt] = avant;
+                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]=avant;
                     ptPlateau->Y_Snoopy = y;
-                    ptPlateau->maMatrice[x][y] = '7';
+                    avant=ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy];
+                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]='7';
+                    affiche_plateau_entier(ptPlateau);
+                    yavt=y;
                 }
 
                 break;
             case 's':
-                if(xavt<10) {
+                if(xavt<9) {
                     x = xavt + 1;
-                    ptPlateau->maMatrice[xavt][yavt] = avant;
-                    ptPlateau->X_Snoopy = x;
-                    ptPlateau->maMatrice[x][y] = '7';
+                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]=avant;
+                    ptPlateau->X_Snoopy=x;
+                    avant=ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy];
+                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]='7';
+                    affiche_plateau_entier(ptPlateau);
+                    xavt=x;
                 }
 
                 break;
             case 'd':
-                if(yavt<20) {
+                if(yavt<19) {
                     y = yavt + 1;
-                    ptPlateau->maMatrice[xavt][yavt] = avant;
+                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]=avant;
                     ptPlateau->Y_Snoopy = y;
-                    ptPlateau->maMatrice[x][y] = '7';
+                    avant=ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy];
+                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]='7';
+                    affiche_plateau_entier(ptPlateau);
+                    yavt=y;
                 }
 
                 break;
