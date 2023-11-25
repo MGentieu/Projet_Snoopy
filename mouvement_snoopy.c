@@ -5,13 +5,6 @@
 #include "Manip_affichage_console.h"
 #include "Structures.h"
 
-void gotoligcol( int lig, int col )
-{
-    COORD mycoord;
-    mycoord.X  = col;
-    mycoord.Y  = lig;
-    SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), mycoord );
-}
 
 int movesnoopy(Plateau *ptPlateau) {
     short x=ptPlateau->X_Snoopy, y=ptPlateau->Y_Snoopy, dx, dy;
@@ -27,10 +20,10 @@ int movesnoopy(Plateau *ptPlateau) {
         if(y<0) y=0;
         //Gérons maintenant l'affichage de Snoopy:
         //Premièrement, on supprime l'affichage de Snoopy :
-        gotoligcol(4*xavt,yavt);
+        goto_ligne_colonne(4*xavt,yavt);
         printf(" ");
         //On affiche Snoopy après son déplacement :
-        gotoligcol(4*x,y);
+        goto_ligne_colonne(4*x,y);
         printf("%c",0x02);
         //On note maintenant la valeur de la touche appuyée par le joueur :
         if (kbhit()){

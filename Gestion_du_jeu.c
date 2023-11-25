@@ -56,7 +56,7 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
     int verif=1; //Check s'il reste des vies.
     int verif2=1; //Check s'il reste du temps.
     ptPlateau->temps_restant=55;
-    //affiche_temps(ptPlateau->temps_restant);
+    affiche_temps(ptPlateau->temps_restant);
     //int dec=120;
     long long stock=0;
     time_t timer;
@@ -138,12 +138,30 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                 }
                 break;
             case 'q':
+                if(yavt>0) {
+                    y = yavt - 1;
+                    ptPlateau->maMatrice[xavt][yavt] = avant;
+                    ptPlateau->Y_Snoopy = y;
+                    ptPlateau->maMatrice[x][y] = '7';
+                }
 
                 break;
             case 's':
+                if(xavt<10) {
+                    x = xavt + 1;
+                    ptPlateau->maMatrice[xavt][yavt] = avant;
+                    ptPlateau->X_Snoopy = x;
+                    ptPlateau->maMatrice[x][y] = '7';
+                }
 
                 break;
             case 'd':
+                if(yavt<20) {
+                    y = yavt + 1;
+                    ptPlateau->maMatrice[xavt][yavt] = avant;
+                    ptPlateau->Y_Snoopy = y;
+                    ptPlateau->maMatrice[x][y] = '7';
+                }
 
                 break;
             }
