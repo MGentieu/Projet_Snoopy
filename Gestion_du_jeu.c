@@ -27,6 +27,8 @@ int verif_nb_de_vies(Plateau * ptPlateau){
     //return 1;
 }
 
+
+
 void game_over(){
     system("cls");
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -40,9 +42,11 @@ void game_over(){
 
 void jouer(Plateau * ptPlateau,int * ptVerif){
     affiche_donnees_importantes();
-
-    short x=ptPlateau->X_Snoopy, y=ptPlateau->Y_Snoopy, dx, dy;
-    short xavt, yavt;
+    char avant='0';
+    unsigned char x=ptPlateau->X_Snoopy;
+    unsigned char y=ptPlateau->Y_Snoopy;
+    unsigned char xavt=ptPlateau->X_Snoopy;
+    unsigned char yavt=ptPlateau->Y_Snoopy;
     char key= '0';
     //affiche_donnees_importantes();
     //affiche_donnees_plateau_nb_vies(ptPlateau);
@@ -50,8 +54,8 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
     char entree='0';
     int verif=1; //Check s'il reste des vies.
     int verif2=1; //Check s'il reste du temps.
-    //ptPlateau->temps_restant=55;
-    //affiche_temps(ptPlateau->temps_restant);
+    ptPlateau->temps_restant=55;
+    affiche_temps(ptPlateau->temps_restant);
     //int dec=120;
     long long stock=0;
     time_t timer;
@@ -120,9 +124,62 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                 else{
                     entree='a';
                 }
-        }
-    }while(*ptVerif&&entree!='c');
+                break;
+            case 'z':
+                if(xavt>0){
+                    x=xavt-1;
+                    ptPlateau->maMatrice[xavt][yavt]=avant;
+                    ptPlateau->X_Snoopy=x;
+                    ptPlateau->maMatrice[x][y]='7';
+                }
+                break;
+            case 'q':
+
+                break;
+            case 's':
+
+                break;
+            case 'd':
+
+                break;
+            }
+
+        }while(*ptVerif&&entree!='c');
     //if()
     system("cls");
 }
+
+/*
+do{
+xavt=x;
+yavt=y;
+x+=dx;
+y+=dy;
+//Gérons maintenant les problèmes de bordure :
+if(x>20) x=20;
+if(y>10) y=10;
+if(x<0) x=0;
+if(y<0) y=0;
+//Gérons maintenant l'affichage de Snoopy:
+//Premièrement, on supprime l'affichage de Snoopy :
+goto_ligne_colonne(4*xavt,yavt);
+printf(" ");
+//On affiche Snoopy après son déplacement :
+goto_ligne_colonne(4*x,y);
+printf("%c",0x02);
+//On note maintenant la valeur de la touche appuyée par le joueur :
+if (kbhit()){
+key = getch() ;
+switch(key){
+case 'z': dx=0;dy=1;
+break;
+case 'q': dx=-1;dy=0;
+break;
+case 's': dx=0;dy=-1;
+break;
+case 'd': dx=1;dy=0;
+break;
+}
+}
+*/
 

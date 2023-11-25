@@ -23,18 +23,18 @@ int main() {
     system("cls");
 
 
-    /*
+
     int n=1;
     do{
         n=menu();
     }while(n==1);
     system("cls");
-    */
 
 
 
 
 
+    /*
     Plateau p;
     p.score=0;
     p.mode_de_jeu=1;
@@ -44,7 +44,7 @@ int main() {
     system("cls");
     affiche_plateau_entier(&p);
     movesnoopy(&p);
-
+    */
     //sauvegarder_fichier(&p);
 
     /*
