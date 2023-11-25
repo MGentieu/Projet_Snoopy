@@ -9,6 +9,7 @@
 #include "Gestion_du_jeu.h"
 #include "Gestion_des_sauvegardes.h"
 #include "manip_affichage_console.h"
+#include "manip_fichiers_txt.h"
 #include "Structures.h"
 #include "gestion_du_temps.h"
 
@@ -41,7 +42,7 @@ void game_over(){
 }
 
 void jouer(Plateau * ptPlateau,int * ptVerif){
-    affiche_donnees_importantes();
+    //affiche_donnees_importantes();
     char avant='0';
     unsigned char x=ptPlateau->X_Snoopy;
     unsigned char y=ptPlateau->Y_Snoopy;
@@ -49,13 +50,13 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
     unsigned char yavt=ptPlateau->Y_Snoopy;
     char key= '0';
     //affiche_donnees_importantes();
-    //affiche_donnees_plateau_nb_vies(ptPlateau);
-    //affiche_donnees_plateau_score(ptPlateau);
+    affiche_donnees_plateau_nb_vies(ptPlateau);
+    affiche_donnees_plateau_score(ptPlateau);
     char entree='0';
     int verif=1; //Check s'il reste des vies.
     int verif2=1; //Check s'il reste du temps.
     ptPlateau->temps_restant=55;
-    affiche_temps(ptPlateau->temps_restant);
+    //affiche_temps(ptPlateau->temps_restant);
     //int dec=120;
     long long stock=0;
     time_t timer;
@@ -73,7 +74,7 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
             if(verif2&&ptPlateau->temps_restant==0){
                 verif2=0;
                 ptPlateau->nb_de_vies--;
-                affiche_donnees_plateau_nb_vies(ptPlateau);
+                //affiche_donnees_plateau_nb_vies(ptPlateau);
             }
             if(!verif_nb_de_vies(ptPlateau)){
                 *ptVerif=0;
@@ -91,7 +92,7 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
         }
         else if(!verif2){
             //verif=0;
-            goto_ligne_colonne(0,19);
+            goto_ligne_colonne(0,20);
             printf("Vous n'avez plus de temps!\nAppuyez sur une touche pour continuer.\n");
             entree=(char)getch();
             entree='c';
@@ -102,7 +103,7 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
 
         switch(entree){
             case 'j':
-                goto_ligne_colonne(0,18);
+                goto_ligne_colonne(0,19);
                 sauvegarder_fichier(ptPlateau);
                 *ptVerif=0;
                 break;
@@ -128,9 +129,12 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
             case 'z':
                 if(xavt>0){
                     x=xavt-1;
-                    ptPlateau->maMatrice[xavt][yavt]=avant;
+                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]=avant;
                     ptPlateau->X_Snoopy=x;
-                    ptPlateau->maMatrice[x][y]='7';
+                    avant=ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy];
+                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]='7';
+                    affiche_plateau_entier(ptPlateau);
+                    xavt=x;
                 }
                 break;
             case 'q':
