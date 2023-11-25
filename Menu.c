@@ -18,6 +18,16 @@ int menu(){
     int verif=1;
     do {
         system("cls");
+        HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+        SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+        printf("**    ** ******** *      * **    ** \n");
+        printf("** ** ** **       **     * **    ** \n");
+        printf("** ** ** ***      * *    * **    ** \n");
+        printf("**    ** ******** *   *  * **    ** \n");
+        printf("**    ** ***      *   *  * **    ** \n");
+        printf("**    ** **       *    * * **    ** \n");
+        printf("**    ** ******** *     **  ******  \n\n");
+        SetConsoleTextAttribute(hConsole, FOREGROUND_RED |FOREGROUND_BLUE |FOREGROUND_GREEN| FOREGROUND_INTENSITY);
         printf("1. Livret de regles.\n"
                "2. Commencer une nouvelle partie.\n"
                "3. Afficher les scores.\n"
