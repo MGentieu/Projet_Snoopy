@@ -74,13 +74,14 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
         while(!kbhit()){
             //Instruction de gestion du temps.
             if(decompte_corrige(&(ptPlateau->temps_restant),&stock,&timer,ptPlateau)){
-                if(etat=1){
+                etat++;
+                if(etat==3){
+                    bloc_intermitant(ptPlateau,etat);
+                }
+                if(etat==6){
+                    bloc_intermitant(ptPlateau,etat);
                     etat=0;
                 }
-                else{
-                    etat=1;
-                }
-                bloc_intermitant(ptPlateau,etat);
                 balle2(ptPlateau);
                 affiche_plateau_entier(ptPlateau);
             }
