@@ -19,7 +19,7 @@ void affiche_donnees_importantes(){
     printf("Appuyez sur j pour sauvegarder.\n");
     printf("Appuyez sur p pour quitter.\n");
     printf("Appuyez sur k pour mettre en pause.\n");
-    printf("q pour gauche / s pour bas / d pour droite / z pour haut.\n");
+    printf("Q pour gauche / S pour bas / D pour droite / Z pour haut.\n");
 }
 
 int verif_nb_de_vies(Plateau * ptPlateau){
@@ -29,8 +29,11 @@ int verif_nb_de_vies(Plateau * ptPlateau){
 
 void game_over(){
     system("cls");
-    printf("Game Over! Vous n'avez plus de vies!\n"
-           "Nous allons maintenant retourner au menu\n");
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_INTENSITY);
+    printf("Game Over! Vous n'avez plus de vies!\n");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_INTENSITY);
+    printf("Nous allons maintenant retourner au menu\n");
     system("pause");
     system("cls");
 }

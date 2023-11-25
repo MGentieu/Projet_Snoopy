@@ -3,7 +3,7 @@
 //
 #include <stdio.h>
 #include "manip_fichiers_txt.h"
-
+#include "gestion_du_temps.h"
 void charge_plateau_Niveau1_depart(Plateau * ptPlateau){
     FILE * pF= fopen("Niveau1_vide.txt","r");
     char c='a';
@@ -18,6 +18,9 @@ void charge_plateau_Niveau1_depart(Plateau * ptPlateau){
     ptPlateau->X_Snoopy=4;
     ptPlateau->Y_Snoopy=10;
     ptPlateau->direction_snoopy=1;
+    ptPlateau->X_Balle=8;
+    ptPlateau->Y_Balle=6;
+    ptPlateau->direction_balle=dir_balle(ptPlateau);
     ptPlateau->temps_restant=120;
 }
 
@@ -35,6 +38,9 @@ void charge_plateau_Niveau2_depart(Plateau * ptPlateau){
     ptPlateau->X_Snoopy=4;
     ptPlateau->Y_Snoopy=0;
     ptPlateau->direction_snoopy=1;
+    ptPlateau->X_Balle=8;
+    ptPlateau->Y_Balle=6;
+    ptPlateau->direction_balle=dir_balle(ptPlateau);
     ptPlateau->temps_restant=120;
 }
 
@@ -52,6 +58,9 @@ void charge_plateau_Niveau3_depart(Plateau * ptPlateau){
     ptPlateau->X_Snoopy=4;
     ptPlateau->Y_Snoopy=10;
     ptPlateau->direction_snoopy=1;
+    ptPlateau->X_Balle=8;
+    ptPlateau->Y_Balle=6;
+    ptPlateau->direction_balle=dir_balle(ptPlateau);
     ptPlateau->temps_restant=120;
 }
 
@@ -69,6 +78,9 @@ void charge_plateau_Niveau4_depart(Plateau * ptPlateau){
     ptPlateau->X_Snoopy=5;
     ptPlateau->Y_Snoopy=0;
     ptPlateau->direction_snoopy=1;
+    ptPlateau->X_Balle=8;
+    ptPlateau->Y_Balle=6;
+    ptPlateau->direction_balle=dir_balle(ptPlateau);
     ptPlateau->temps_restant=120;
 }
 

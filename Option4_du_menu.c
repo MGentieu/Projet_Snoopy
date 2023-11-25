@@ -38,7 +38,8 @@ void option4_menu(Plateau *ptPlateau){
                 affiche_plateau_entier(ptPlateau);
             }
             else{
-                printf("Mauvais mot de passe. Retour au menu.\n");
+                system("cls");
+                printf("Mauvais mot de passe. 'P' pour retourner au menu.\n");
             }
             break;
         case 2:
@@ -48,7 +49,8 @@ void option4_menu(Plateau *ptPlateau){
                 affiche_plateau_entier(ptPlateau);
             }
             else{
-                printf("Mauvais mot de passe. Retour au menu.\n");
+                system("cls");
+                printf("Mauvais mot de passe. 'P' pour retourner au menu.\n");
             }
             break;
         case 3:
@@ -59,7 +61,8 @@ void option4_menu(Plateau *ptPlateau){
                 affiche_plateau_entier(ptPlateau);
             }
             else{
-                printf("Mauvais mot de passe. Retour au menu.\n");
+                system("cls");
+                printf("Mauvais mot de passe. 'P' pour retourner au menu.\n");
             }
             break;
         case 4:
@@ -69,7 +72,8 @@ void option4_menu(Plateau *ptPlateau){
                 affiche_plateau_entier(ptPlateau);
             }
             else{
-                printf("Mauvais mot de passe. Retour au menu.\n");
+                system("cls");
+                printf("'P' pour retourner au menu.\n");
             }
             break;
         default:

@@ -15,6 +15,12 @@ typedef struct Plateau{
     unsigned char direction_snoopy; ///Pour savoir où Snoopy regarde, et donc s'il peut interagir avec ce qui est devant.
     unsigned char X_Snoopy;
     unsigned char Y_Snoopy;
+    unsigned char direction_balle;
+    unsigned char X_Balle;
+    unsigned char Y_Balle;
+    unsigned char direction_balle2;
+    unsigned char X_Balle2;
+    unsigned char Y_Balle2;
     unsigned char nb_oiseaux_restants;
     unsigned char mode_de_jeu; ///Pour savoir si on fait une partie complète ou un niveau simple, et à quel niveau on est.
     char nb_de_vies;
