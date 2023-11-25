@@ -127,7 +127,7 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                 }
                 break;
             case 'z':
-                if(xavt>0){
+                if(xavt>0&& verif_collions(ptPlateau,ptPlateau->X_Snoopy-1,ptPlateau->Y_Snoopy)){
                     x=xavt-1;
                     ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]=avant;
                     ptPlateau->X_Snoopy=x;
@@ -138,7 +138,7 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                 }
                 break;
             case 'q':
-                if(yavt>0) {
+                if(yavt>0&&verif_collions(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy-1)) {
                     y = yavt - 1;
                     ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]=avant;
                     ptPlateau->Y_Snoopy = y;
@@ -150,7 +150,7 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
 
                 break;
             case 's':
-                if(xavt<9) {
+                if(xavt<9&&verif_collions(ptPlateau,ptPlateau->X_Snoopy+1,ptPlateau->Y_Snoopy)) {
                     x = xavt + 1;
                     ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]=avant;
                     ptPlateau->X_Snoopy=x;
@@ -162,7 +162,7 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
 
                 break;
             case 'd':
-                if(yavt<19) {
+                if(yavt<19&&verif_collions(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy+1)) {
                     y = yavt + 1;
                     ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]=avant;
                     ptPlateau->Y_Snoopy = y;
@@ -179,6 +179,10 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
         }while(*ptVerif&&entree!='c');
     //if()
     system("cls");
+}
+
+int verif_collions(Plateau * ptPlateau,unsigned char X_test, unsigned char Y_test){
+    return (ptPlateau->maMatrice[X_test][Y_test]=='0');
 }
 
 /*
