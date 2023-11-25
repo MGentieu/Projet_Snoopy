@@ -27,25 +27,25 @@ int dir_balle(Plateau * ptPlateau){
 // Code de la Balle
 void balle(Plateau * ptPlateau){
     unsigned char case_ecrase;
-    if(ptPlateau->X_Balle<0){
+    if(ptPlateau->X_Balle<=0){
         ptPlateau->coli_h1 = true;
     }
     else{
         ptPlateau->coli_h1 = false;
     }
-    if(ptPlateau->X_Balle>9){
+    if(ptPlateau->X_Balle>=9){
         ptPlateau->coli_b1 = true;
     }
     else{
         ptPlateau->coli_b1 = false;
     }
-    if(ptPlateau->Y_Balle>19){
+    if(ptPlateau->Y_Balle>=19){
         ptPlateau->coli_d1 = true;
     }
     else{
         ptPlateau->coli_d1 = false;
     }
-    if(ptPlateau->Y_Balle<0){
+    if(ptPlateau->Y_Balle<=0){
         ptPlateau->coli_g1 = true;
     }
     else{

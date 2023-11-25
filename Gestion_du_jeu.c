@@ -66,6 +66,7 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
             //Instruction de gestion du temps.
             if(decompte_corrige(&(ptPlateau->temps_restant),&stock,&timer,ptPlateau)){
                 balle(ptPlateau);
+                //affiche_plateau_entier(ptPlateau);
             }
             //lance la balle
 
