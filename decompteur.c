@@ -41,8 +41,10 @@ void decompte_corrige(int *ptDec, long long *ptStock, time_t * ptTimer, Plateau 
         //printf("%d\n",*ptDec);
         if(*ptDec>0){
             (*ptDec)--;
+
         }
         //affiche_temps(*ptDec);
         affiche_donnees_plateau_temps(ptPlateau);
     }
+
 }
