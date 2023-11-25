@@ -62,8 +62,10 @@ void sauvegarder_fichier(Plateau * ptPlateau){
     fprintf(pF,"%d\n",ptPlateau->direction_balle);
     fprintf(pF,"%d\n",ptPlateau->X_Balle);
     fprintf(pF,"%d\n",ptPlateau->Y_Balle);
-    fprintf(pF,"%d\n",ptPlateau->avant_balle);
-    fprintf(pF,"%d\n",ptPlateau->avant_snoopy);
+    fputc(ptPlateau->avant_balle,pF);
+    fputc(ptPlateau->avant_snoopy,pF);
+    //fprintf(pF,"%c",ptPlateau->avant_balle);
+    //fprintf(pF,"%c\n",ptPlateau->avant_snoopy);
     //fprintf(pF,"%d\n",ptPlateau->direction_balle);
     fclose(pF);
 }
@@ -104,16 +106,20 @@ int lire_fichier_de_sauvegarde(Plateau * ptPlateau){
         fscanf(pF,"%d",&ptPlateau->direction_balle);
         fscanf(pF,"%d",&ptPlateau->X_Balle);
         fscanf(pF,"%d",&ptPlateau->Y_Balle);
-        fscanf(pF,"%c",&ptPlateau->avant_balle);
-        fscanf(pF,"%c",&ptPlateau->avant_snoopy);
+        ptPlateau->avant_balle=(char)fgetc(pF);
+        ptPlateau->avant_snoopy=(char)fgetc(pF);
+
+        fgetc(pF);
+        //fscanf(pF,"%c",&ptPlateau->avant_balle);
+        //fscanf(pF,"%c",&ptPlateau->avant_snoopy);
         //fscanf(pF,"%d",&ptPlateau->direction_balle);
 
-        printf("%s\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%c\n%c\n",ptPlateau->nom_joueur,ptPlateau->score
+        printf("%s\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n",ptPlateau->nom_joueur,ptPlateau->score
                 ,ptPlateau->temps_restant,ptPlateau->direction_snoopy,ptPlateau->X_Snoopy
                 ,ptPlateau->Y_Snoopy,ptPlateau->nb_oiseaux_restants
                 ,ptPlateau->mode_de_jeu,ptPlateau->nb_de_vies,
                 ptPlateau->X_Balle,ptPlateau->Y_Balle,
-                ptPlateau->avant_snoopy,ptPlateau->avant_balle
+               ptPlateau->avant_balle,ptPlateau->avant_snoopy
                 );
 
         fclose(pF);
