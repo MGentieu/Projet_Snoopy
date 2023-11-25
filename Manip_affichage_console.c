@@ -98,7 +98,9 @@ void affiche_char_selon_entier(char n){
             printf(" %c |",0x14);
             break;
         default :
+            printf(" %c |",' ');
             break;
+
     }
 }
 
