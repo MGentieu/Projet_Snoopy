@@ -115,6 +115,8 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
         do{
             xavt=x;
             yavt=y;
+            x+=dx;
+            y+=dy;
             //Gérons maintenant les problèmes de bordure :
             if(x>20) x=20;
             if(y>10) y=10;
