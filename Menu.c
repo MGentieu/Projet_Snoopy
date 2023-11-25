@@ -3,6 +3,7 @@
 //
 #include <stdio.h>
 #include <stdlib.h>
+#include <Windows.h>
 #include "Structures.h"
 #include "manip_affichage_console.h"
 #include "manip_fichiers_txt.h"
@@ -11,15 +12,17 @@
 #include "Gestion_du_jeu.h"
 
 int menu(){
+    //HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    //SetConsoleTextAttribute(hConsole, WHITENESS | FOREGROUND_INTENSITY);
     int choix = 0;
     int verif=1;
     do {
         system("cls");
         printf("1. Livret de regles.\n"
                "2. Commencer une nouvelle partie.\n"
-               "3. Charger une sauvegarde.\n"
+               "3. Afficher les scores.\n"
                "4. Charger un niveau avec un mot de passe.\n"
-               "5. Afficher les scores.\n"
+               "5. Charger ou supprimer une sauvegarde.\n"
                "6. Quitter.\n\n"
                "Choissez ce que vous voulez faire :\n");
         saisie_entier_utilisateur(&choix);

@@ -5,6 +5,7 @@
 #include "gestion_du_temps.h"
 #include "manip_affichage_console.h"
 #include "manip_fichiers_txt.h"
+#include "Gestion_du_jeu.h"
 #include <conio.h>
 #include "Gestion_des_sauvegardes.h"
 
@@ -22,6 +23,7 @@ int main() {
     system("cls");
 
 
+
     int n=1;
     do{
         n=menu();
@@ -32,18 +34,20 @@ int main() {
 
 
 
-
-    //Plateau p;
     /*
+    Plateau p;
     p.score=0;
     p.mode_de_jeu=1;
     p.nb_de_vies=3;
     charge_plateau_Niveau1_depart(&p);
-    affiche_plateau_entier(&p);
     saisie_nom_joueur(&p);
-    sauvegarder_fichier(&p);
+    system("cls");
+    affiche_plateau_entier(&p);
+    movesnoopy(&p);
+    */
+    //sauvegarder_fichier(&p);
 
-
+    /*
     if(lire_fichier_de_sauvegarde(&p)){
         affiche_plateau_entier(&p);
     }

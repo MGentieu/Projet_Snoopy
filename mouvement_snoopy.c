@@ -2,10 +2,12 @@
 #include <stdlib.h>
 #include <conio.h>
 #include <windows.h>
-#include "manip_affichage_console.h"
+#include "Manip_affichage_console.h"
+#include "Structures.h"
 
-int movesnoopy() {
-    short x, y, dx, dy;
+
+int movesnoopy(Plateau *ptPlateau) {
+    short x=ptPlateau->X_Snoopy, y=ptPlateau->Y_Snoopy, dx, dy;
     short xavt, yavt;
     char key= '0';
     do{
@@ -18,10 +20,10 @@ int movesnoopy() {
         if(y<0) y=0;
         //Gérons maintenant l'affichage de Snoopy:
         //Premièrement, on supprime l'affichage de Snoopy :
-        goto_ligne_colonne(xavt,yavt);
+        goto_ligne_colonne(4*xavt,yavt);
         printf(" ");
         //On affiche Snoopy après son déplacement :
-        goto_ligne_colonne(x,y);
+        goto_ligne_colonne(4*x,y);
         printf("%c",0x02);
         //On note maintenant la valeur de la touche appuyée par le joueur :
         if (kbhit()){

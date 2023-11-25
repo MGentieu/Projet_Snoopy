@@ -9,6 +9,7 @@
 #include "Gestion_du_jeu.h"
 #include "Gestion_des_sauvegardes.h"
 #include "manip_affichage_console.h"
+#include "manip_fichiers_txt.h"
 #include "Structures.h"
 #include "gestion_du_temps.h"
 
@@ -19,13 +20,15 @@ void affiche_donnees_importantes(){
     printf("Appuyez sur j pour sauvegarder.\n");
     printf("Appuyez sur p pour quitter.\n");
     printf("Appuyez sur k pour mettre en pause.\n");
-    printf("Q pour gauche / S pour bas / D pour droite / Z pour haut.\n");
+    printf("q pour gauche / s pour bas / d pour droite / z pour haut.\n");
 }
 
 int verif_nb_de_vies(Plateau * ptPlateau){
-    return ptPlateau->nb_de_vies>-1;
+    return ptPlateau->nb_de_vies>0;
     //return 1;
 }
+
+
 
 void game_over(){
     system("cls");
@@ -40,13 +43,20 @@ void game_over(){
 
 void jouer(Plateau * ptPlateau,int * ptVerif){
     //affiche_donnees_importantes();
-    //affiche_donnees_plateau_nb_vies(ptPlateau);
-    //affiche_donnees_plateau_score(ptPlateau);
+    char avant='0';
+    unsigned char x=ptPlateau->X_Snoopy;
+    unsigned char y=ptPlateau->Y_Snoopy;
+    unsigned char xavt=ptPlateau->X_Snoopy;
+    unsigned char yavt=ptPlateau->Y_Snoopy;
+    char key= '0';
+    //affiche_donnees_importantes();
+    affiche_donnees_plateau_nb_vies(ptPlateau);
+    affiche_donnees_plateau_score(ptPlateau);
     char entree='0';
     int verif=1; //Check s'il reste des vies.
     int verif2=1; //Check s'il reste du temps.
-    //ptPlateau->temps_restant=5;
-    //affiche_temps(ptPlateau->temps_restant);
+    ptPlateau->temps_restant=55;
+    affiche_temps(ptPlateau->temps_restant);
     //int dec=120;
     long long stock=0;
     time_t timer;
@@ -64,7 +74,7 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
             if(verif2&&ptPlateau->temps_restant==0){
                 verif2=0;
                 ptPlateau->nb_de_vies--;
-                affiche_donnees_plateau_nb_vies(ptPlateau);
+                //affiche_donnees_plateau_nb_vies(ptPlateau);
             }
             if(!verif_nb_de_vies(ptPlateau)){
                 *ptVerif=0;
@@ -82,7 +92,7 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
         }
         else if(!verif2){
             //verif=0;
-            goto_ligne_colonne(0,19);
+            goto_ligne_colonne(0,20);
             printf("Vous n'avez plus de temps!\nAppuyez sur une touche pour continuer.\n");
             entree=(char)getch();
             entree='c';
@@ -93,7 +103,7 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
 
         switch(entree){
             case 'j':
-                goto_ligne_colonne(0,18);
+                goto_ligne_colonne(0,19);
                 sauvegarder_fichier(ptPlateau);
                 *ptVerif=0;
                 break;
@@ -115,9 +125,97 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                 else{
                     entree='a';
                 }
-        }
-    }while(*ptVerif&&entree!='c');
+                break;
+            case 'z':
+                if(xavt>0&& verif_collions(ptPlateau,ptPlateau->X_Snoopy-1,ptPlateau->Y_Snoopy)){
+                    x=xavt-1;
+                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]=avant;
+                    ptPlateau->X_Snoopy=x;
+                    avant=ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy];
+                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]='7';
+                    affiche_plateau_entier(ptPlateau);
+                    xavt=x;
+                }
+                break;
+            case 'q':
+                if(yavt>0&&verif_collions(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy-1)) {
+                    y = yavt - 1;
+                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]=avant;
+                    ptPlateau->Y_Snoopy = y;
+                    avant=ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy];
+                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]='7';
+                    affiche_plateau_entier(ptPlateau);
+                    yavt=y;
+                }
+
+                break;
+            case 's':
+                if(xavt<9&&verif_collions(ptPlateau,ptPlateau->X_Snoopy+1,ptPlateau->Y_Snoopy)) {
+                    x = xavt + 1;
+                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]=avant;
+                    ptPlateau->X_Snoopy=x;
+                    avant=ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy];
+                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]='7';
+                    affiche_plateau_entier(ptPlateau);
+                    xavt=x;
+                }
+
+                break;
+            case 'd':
+                if(yavt<19&&verif_collions(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy+1)) {
+                    y = yavt + 1;
+                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]=avant;
+                    ptPlateau->Y_Snoopy = y;
+                    avant=ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy];
+                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]='7';
+                    affiche_plateau_entier(ptPlateau);
+                    yavt=y;
+                }
+
+
+                break;
+            }
+
+        }while(*ptVerif&&entree!='c');
     //if()
     system("cls");
 }
+
+int verif_collions(Plateau * ptPlateau,unsigned char X_test, unsigned char Y_test){
+    return (ptPlateau->maMatrice[X_test][Y_test]=='0');
+}
+
+/*
+do{
+xavt=x;
+yavt=y;
+x+=dx;
+y+=dy;
+//Gérons maintenant les problèmes de bordure :
+if(x>20) x=20;
+if(y>10) y=10;
+if(x<0) x=0;
+if(y<0) y=0;
+//Gérons maintenant l'affichage de Snoopy:
+//Premièrement, on supprime l'affichage de Snoopy :
+goto_ligne_colonne(4*xavt,yavt);
+printf(" ");
+//On affiche Snoopy après son déplacement :
+goto_ligne_colonne(4*x,y);
+printf("%c",0x02);
+//On note maintenant la valeur de la touche appuyée par le joueur :
+if (kbhit()){
+key = getch() ;
+switch(key){
+case 'z': dx=0;dy=1;
+break;
+case 'q': dx=-1;dy=0;
+break;
+case 's': dx=0;dy=-1;
+break;
+case 'd': dx=1;dy=0;
+break;
+}
+}
+*/
 
