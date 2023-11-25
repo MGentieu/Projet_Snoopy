@@ -22,8 +22,9 @@ int main() {
     write_mots_de_passe();
     system("cls");
 
-
-
+    Plateau p;
+    lire_fichier_de_sauvegarde(&p);
+    system("pause");
     int n=1;
     do{
         n=menu();
