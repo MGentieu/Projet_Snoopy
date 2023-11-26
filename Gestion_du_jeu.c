@@ -206,7 +206,8 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                     affiche_plateau_entier(ptPlateau);
                     xavt = x;
                 }
-
+                verif_tous_les_blocs_pieges_pres_de_snoopy(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy);
+                affiche_donnees_plateau_nb_vies(ptPlateau);
                 break;
             case 'q':
                 if(yavt>0&&verif_collisions(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy-1)) {
@@ -240,7 +241,8 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                     affiche_plateau_entier(ptPlateau);
                     yavt = y;
                 }
-
+                verif_tous_les_blocs_pieges_pres_de_snoopy(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy);
+                affiche_donnees_plateau_nb_vies(ptPlateau);
                 break;
             case 's':
                 if(xavt<9&&verif_collisions(ptPlateau,ptPlateau->X_Snoopy+1,ptPlateau->Y_Snoopy)) {
@@ -274,6 +276,8 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                     affiche_plateau_entier(ptPlateau);
                     xavt = x;
                 }
+                verif_tous_les_blocs_pieges_pres_de_snoopy(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy);
+                affiche_donnees_plateau_nb_vies(ptPlateau);
                 break;
             case 'd':
                 if(yavt<19&&verif_collisions(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy+1)) {
@@ -307,6 +311,8 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                     affiche_plateau_entier(ptPlateau);
                     yavt = y;
                 }
+                verif_tous_les_blocs_pieges_pres_de_snoopy(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy);
+                affiche_donnees_plateau_nb_vies(ptPlateau);
                 break;
             case 'b':
                 bloc_cassable(ptPlateau);
@@ -335,14 +341,24 @@ int verif_fin_niveau(Plateau * ptPlateau){
 }
 
 void verif_bloc_pieges(Plateau * ptPlateau, unsigned char X_test, unsigned char Y_test){
-    if(ptPlateau->maMatrice[X_test][Y_test]=='3'){
-        ptPlateau->maMatrice[X_test][Y_test]='0';
-        vraigotoligcol(X_test,Y_test);
-        affiche_char_selon_entier_simple('0');
-        ptPlateau->nb_de_vies--;
-
+    if(X_test>=0&&X_test<=9&&Y_test>=0&&Y_test<=19){
+        if(ptPlateau->maMatrice[X_test][Y_test]=='3'){
+            ptPlateau->maMatrice[X_test][Y_test]='0';
+            vraigotoligcol(X_test,Y_test);
+            affiche_char_selon_entier_simple('0');
+            ptPlateau->nb_de_vies--;
+        }
     }
-
+}
+void verif_tous_les_blocs_pieges_pres_de_snoopy(Plateau * ptPlateau, unsigned char X_snoopy, unsigned char Y_snoopy){
+    verif_bloc_pieges(ptPlateau,X_snoopy-1,Y_snoopy-1);
+    verif_bloc_pieges(ptPlateau,X_snoopy-1,Y_snoopy);
+    verif_bloc_pieges(ptPlateau,X_snoopy-1,Y_snoopy+1);
+    verif_bloc_pieges(ptPlateau,X_snoopy,Y_snoopy-1);
+    verif_bloc_pieges(ptPlateau,X_snoopy,Y_snoopy+1);
+    verif_bloc_pieges(ptPlateau,X_snoopy+1,Y_snoopy-1);
+    verif_bloc_pieges(ptPlateau,X_snoopy+1,Y_snoopy);
+    verif_bloc_pieges(ptPlateau,X_snoopy+1,Y_snoopy+1);
 }
 
 

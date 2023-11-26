@@ -16,6 +16,7 @@ int verif_banane(Plateau * ptPlateau,unsigned char X_test, unsigned char Y_test)
 void up_score_car_niveau_fini(Plateau *);
 int verif_fin_niveau(Plateau *);
 void verif_bloc_pieges(Plateau *, unsigned char, unsigned char);
+void verif_tous_les_blocs_pieges_pres_de_snoopy(Plateau *, unsigned char, unsigned char);
 // Fonction qui verifie si les blocs collant snoopy sont cassable et les cassent quand 'b' est exécuté
 void bloc_cassable(Plateau* ptPlateau);
 // Fonction balle qui prend en arguments le pointeur plateau, verifie les collisions et redirige la balle en fonctions des collisions Modification matricielle et console
