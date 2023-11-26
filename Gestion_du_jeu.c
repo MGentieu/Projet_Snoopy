@@ -75,8 +75,8 @@ _|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_| """"|_|"""""|_|"""""|
     SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
     printf("...\n\n");
     SetConsoleTextAttribute(hConsole,FOREGROUND_BLUE |FOREGROUND_RED |FOREGROUND_GREEN | FOREGROUND_INTENSITY);
-    system("pause");
-    system("cls");
+    //system("pause");
+    //system("cls");
 }
 
 void jouer(Plateau * ptPlateau,int * ptVerif){

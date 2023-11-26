@@ -70,6 +70,7 @@ int menu(){
     //SetConsoleTextAttribute(hConsole, WHITENESS | FOREGROUND_INTENSITY);
     int choix = 0;
     int verif=1;
+    int verif_gain_partie=0;
     system("pause");
 
     do {
@@ -179,7 +180,9 @@ _|"""""|_|"""""|_|"""""|_|"""""|                 |  `-'  (        /
             if(option4_menu(&p)){
                 jouer(&p,&verif);
             }
-
+            if(verif_gain_partie){
+                append_fichier_scores(&p);
+            }
             break;
         case 5:
             system("cls");

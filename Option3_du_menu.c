@@ -4,9 +4,16 @@
 #include <stdio.h>
 #include "manip_fichiers_txt.h"
 #include <Windows.h>
+#include "Structures.h"
 
 void creer_fichier_scores(){
     FILE * pF=fopen("scores.txt","w");
+    fclose(pF);
+}
+
+void append_fichier_scores(Plateau * ptPlateau){
+    FILE * pF=fopen("scores.txt","a");
+    fprintf(pF,"%s : %d\n",ptPlateau->nom_joueur,ptPlateau->score);
     fclose(pF);
 }
 
