@@ -11,7 +11,6 @@ add_executable(Projet_Snoopy main.c
         manip_affichage_console.h
         Manip_affichage_console.c
         Menu.c
-        Martin_espace_de_travail.c
         Structures.h
         Ecriture_fichiers_txt.c
         Lecture_fichiers_txt.c

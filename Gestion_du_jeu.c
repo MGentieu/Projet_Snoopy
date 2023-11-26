@@ -14,13 +14,50 @@
 #include "gestion_du_temps.h"
 
 void affiche_donnees_importantes(){
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(hConsole,  FOREGROUND_INTENSITY);
     printf("Temps restant :\n");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
     printf("Nb de vies restantes :\n");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED |FOREGROUND_BLUE | FOREGROUND_INTENSITY);
     printf("Score_actuel :\n");
-    printf("Appuyez sur 'J' pour sauvegarder.\n");
-    printf("Appuyez sur 'P' pour quitter.\n");
-    printf("Appuyez sur 'K' pour mettre en pause.\n");
-    printf("'Q' pour gauche / 'S' pour bas / 'D' pour droite / 'Z' pour haut / 'B' pour casser.\n");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+    printf("Appuyez sur");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_INTENSITY);
+    printf(" 'J'");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+    printf(" pour sauvegarder.\n");
+    printf("Appuyez sur");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_INTENSITY);
+    printf(" 'P'");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+    printf(" pour quitter.\n");
+    printf("Appuyez sur");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_INTENSITY);
+    printf(" 'K'");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+    printf(" pour mettre en pause.\n");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_INTENSITY);
+    printf(" 'Q'");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+    printf(" pour gauche / ");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_INTENSITY);
+    printf("'S'");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+    printf(" pour bas / ");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_INTENSITY);
+    printf("'D'");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+    printf(" pour droite / ");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_INTENSITY);
+    printf("'Z'");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+    printf(" pour haut / ");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_INTENSITY);;
+    printf("'B'");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+    printf(" pour casser.\n");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_BLUE |FOREGROUND_RED |FOREGROUND_INTENSITY);
 }
 
 int verif_nb_de_vies(Plateau * ptPlateau){
@@ -31,17 +68,50 @@ void win(){
     system("cls");
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
-    printf(R"EOF(,---.  ,---..-./`)     _______ ,---------.    ,-----.   .-./`) .-------.        .-''-.
-|   /  |   |\ .-.')   /   __  \\          \ .'  .-,  '. \ .-.')|  _ _   \     .'_ _   \
-|  |   |  .'/ `-' \  | ,_/  \__)`--.  ,---'/ ,-.|  \ _ \/ `-' \| ( ' )  |    / ( ` )   '
-|  | _ |  |  `-'`"`,-./  )         |   \  ;  \  '_ /  | :`-'`"`|(_ o _) /   . (_ o _)  |
-|  _( )_  |  .---. \  '_ '`)       :_ _:  |  _`,/ \ _/  |.---. | (_,_).' __ |  (_,_)___|
-\ (_ o._) /  |   |  > (_)  )  __   (_I_)  : (  '\_/ \   ;|   | |  |\ \  |  |'  \   .---.
- \ (_,_) /   |   | (  .  .-'_/  ) (_(=)_)  \ `"/  \  ) / |   | |  | \ `'   / \  `-'    /
-  \     /    |   |  `-'`-'     /   (_I_)    '. \_/``".'  |   | |  |  \    /   \       /
-   `---`     '---'    `._____.'    '---'      '-----'    '---' ''-'   `'-'     `'-..-'
-
-)EOF");
+    printf("                    XXX\n"
+           "                  X    XX\n"
+           "                 X  ***  X                XXXXX\n"
+           "                X  *****  X            XXX     XX\n"
+           "             XXXX ******* XXX      XXXX          XX                     ,---.  ,---..-./`)     _______ ,---------.    ,-----.   .-./`) .-------.        .-''-.\n"
+           "           XX X ******  XXXXXXXXX    El@         XX XXX               |   /  |   |\\ .-.')   /   __  \\\\          \\ .'  .-,  '. \\ .-.')|  _ _   \\     .'_ _   \\\n"
+           "         XX   X ****  X                           X** X                  |  |   |  .'/ `-' \\  | ,_/  \\__)`--.  ,---'/ ,-.|  \\ _ \\/ `-' \\| ( ' )  |    / ( ` )   '\n"
+           "        X        XX    XX     X                      X***X              |  | _ |  |  `-'`\"`,-./  )         |   \\  ;  \\  '_ /  | :`-'`\"`|(_ o _) /   . (_ o _)  |\n"
+           "       X         //XXXX       X                      XXXX               |  _( )_  |  .---. \\  '_ '`)       :_ _:  |  _`,/ \\ _/  |.---. | (_,_).' __ |  (_,_)___|\n"
+           "      X         //   X                             XX                   \\ (_ o._) /   |   |  > (_)  )  __   (_I_)  : (  '\\_/ \\   ;|   | |  |\\ \\  |  |'  \\   .---.\n"
+           "     X         //    X	        XXXXXXXXXXXXXXXXXX/                      \\ (_,_) /   |   | (  .  .-'_/  ) (_(=)_)  \\ `\"/  \\  ) / |   | |  | \\ `'   / \\  `-'    /\n"
+           "     X	   XXX//    X          X                                          \\     /    |   |  `-'`-'     /   (_I_)    '. \\_/``\".'  |   | |  |  \\    /   \\       /\n"
+           "     X	  X   X     X         X                                            `---`     '---'    `._____.'    '---'      '-----'    '---' ''-'   `'-'     `'-..-'\n"
+           "     X    X    X    X        X		      XX\n"
+           "      X   X    X    X        X		       XXX  XX\n"
+           "      X    X   X    X        X		        X  X X  X\n"
+           "       X    XXX      X        X 	        X  X XXXX\n"
+           "       X	     X         X	      XX X  XXXX\n"
+           "        X	      X         XXXXXXXX\\     XX   XX  X\n"
+           "         XX	       XX             X     X    @X  XX\n"
+           "           XX		 XXXX	XXXXXX/     X     XXXX\n"
+           "             XXX	     XX***         X     X\n"
+           "                XXXXXXXXXXXXX *   *       X     X\n"
+           "                             *---* X     X     X\n"
+           "                            *-* *   XXX X     X\n"
+           "                            *- *       XXX   X\n"
+           "                           *- *X	  XXX\n"
+           "                           *- *X  X	     XXX\n"
+           "                          *- *X    X		XX\n"
+           "                          *- *XX    X		  X\n"
+           "                         *  *X* X    X		   X\n"
+           "                         *  *X * X    X 	    X\n"
+           "                        *  * X**  X   XXXX	    X\n"
+           "                        *  * X**  XX	 X	    X\n"
+           "                       *  ** X** X     XX	   X\n"
+           "                       *  **  X*  XXX	X	  X\n"
+           "                      *  **    XX   XXXX       XXX\n"
+           "                     *	* *	 XXXX	   X	 X\n"
+           "                    *	* *	     X	   X	 X\n"
+           "      =======*******   * *	     X	   X	  XXXXXXXX\\\n"
+           "             *	       * *	/XXXXX	    XXXXXXXX\\	   )\n"
+           "        =====**********  *     X		     )	\\  )\n"
+           "          ====* 	*     X 	      \\  \\   )XXXXX\n"
+           "     =========**********       XXXXXXXXXXXXXXXXXXXXXX\n");
     SetConsoleTextAttribute(hConsole, FOREGROUND_RED|FOREGROUND_GREEN| FOREGROUND_INTENSITY);
     printf("\n\nFELICITATION!\n");
     SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE |FOREGROUND_INTENSITY);
@@ -51,17 +121,17 @@ void win(){
     SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE |FOREGROUND_INTENSITY);
     printf(" avec bravoure et il a pu voler TOUTES les");
     SetConsoleTextAttribute(hConsole, FOREGROUND_RED|FOREGROUND_GREEN| FOREGROUND_INTENSITY);
-    printf("bananes");
+    printf(" bananes");
     SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE |FOREGROUND_INTENSITY);
     printf("de");
     SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
     printf(" Babouche Le Vilain");
     SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE |FOREGROUND_INTENSITY);
-    printf(" , sa");
+    printf(", sa");
     SetConsoleTextAttribute(hConsole, FOREGROUND_RED| FOREGROUND_INTENSITY);
     printf(" vengence");
     SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE |FOREGROUND_INTENSITY);
-    printf(" est un succès!\nApres cette");
+    printf(" est un succes!\nApres cette");
     SetConsoleTextAttribute(hConsole, FOREGROUND_RED |FOREGROUND_INTENSITY);
     printf(" vengence");
     SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE|FOREGROUND_INTENSITY);
@@ -77,31 +147,31 @@ void win(){
     SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
     printf(" Babouche Le Vilain");
     SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE| FOREGROUND_INTENSITY);
-    printf(" sous ses ordre.\n\n\nDans le prochain volet :\n\n");
+    printf(" sous ses ordre.\nDans le prochain volet :\n\n");
     SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE|FOREGROUND_RED| FOREGROUND_INTENSITY);
-    printf(R"EOF(
- (                                                                 (        )  (
- )\ )                                                   (          )\ )  ( /(  )\ )   (
-(()/(    )    )     (       (  (    (             (     )\ )  (   (()/(  )\())(()/(   )\
- /(_))( /(   /((   ))\ (    )\))(  ))\ (     (   ))\   (()/( ))\   /(_))((_)\  /(_)|(((_)(
-(_))  )(_)) (_))\ /((_))\ )((_))\ /((_))\ )  )\ /((_)   ((_))((_) (_))_   ((_)(_))  )\ _ )\
-| |  ((_)_  _)((_|_)) _(_/( (()(_|_)) _(_/( ((_|_))     _| (_))    |   \ / _ \| _ \ (_)_\(_)
-| |__/ _` | \ V // -_) ' \)) _` |/ -_) ' \)) _|/ -_)  / _` / -_)   | |) | (_) |   /  / _ \
-|____\__,_|  \_/ \___|_||_|\__, |\___|_||_|\__|\___|  \__,_\___|   |___/ \___/|_|_\ /_/ \_\
-                           |___/
-)EOF");
+    printf(
+            " (                                                                 (        )  (\n"
+            " )\\ )                                                   (          )\\ )  ( /(  )\\ )   (\n"
+            "(()/(    )    )     (       (  (    (             (     )\\ )  (   (()/(  )\\())(()/(   )\\\n"
+            " /(_))( /(   /((   ))\\ (    )\\))(  ))\\ (     (   ))\\   (()/( ))\\   /(_))((_)\  /(_)|(((_)(\n"
+            "(_))  )(_)) (_))\\ /((_))\\ )((_))\\ /((_))\\ )  )\\ /((_)   ((_))((_) (_))_   ((_)(_))  )\\ _ )\\\n"
+            "| |  ((_)_  _)((_|_)) _(_/( (()(_|_)) _(_/( ((_|_))     _| (_))    |   \\ / _ \\| _ \\ (_)_\\(_)\n"
+            "| |__ / _` | \\ V // -_) ' \\)) _` |/ -_) ' \\)) _|/ -_)  / _` / -_) | |) | (_) |   /  / _ \\\n"
+            "|____\\__,_|  \\_/ \\___|_||_|\__, |\\___|_||_|\__|\\___|  \\__,_\\___|   |___/ \\___/|_|_\\ /_/ \\_\\\n"
+            "                           |___/\n"
+    );
 }
 void game_over(){
     system("cls");
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_INTENSITY);
-    printf(R"EOF(   ___     ___   __  __    ___              ___   __   __   ___     ___
-  / __|   /   \ |  \/  |  | __|     o O O  / _ \  \ \ / /  | __|   | _ \
- | (_ |   | - | | |\/| |  | _|     o      | (_) |  \ V /   | _|    |   /
-  \___|   |_|_| |_|__|_|  |___|   TS__[O]  \___/   _\_/_   |___|   |_|_\
-_|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_| """"|_|"""""|_|"""""|
-"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'./o--000'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'
-)EOF");
+    printf("   ___     ___   __  __    ___              ___   __   __   ___     ___\n");
+    printf("  / __|   /   \\ |  \\/  |  | __|     o O O  / _ \\  \\ \\ / /  | __|   | _ \\\n");
+    printf(" | (_ |   | - | | |\\/| |  | _|     o      | (_) |  \\ V /   | _|    |   /\n");
+    printf("  \\___|   |_|_| |_|__|_|  |___|   TS__[O]  \\___/   _\\_/_   |___|   |_|_\\\n");
+    printf("_|\"\"\"\"\"|_|\"\"\"\"\"|_|\"\"\"\"\"|_|\"\"\"\"\"| {======|_|\"\"\"\"\"|_| \"\"\"\"|_|\"\"\"\"\"|_|\"\"\"\"\"|\n");
+    printf("\"`-0-0-'\"`-0-0-'\"`-0-0-'\"`-0-0-'./o--000'\"`-0-0-'\"`-0-0-'\"`-0-0-'\"`-0-0-'\n");
+
     printf("\n\n");
     printf("         _\n"
            "        (:)_\n"
@@ -315,6 +385,7 @@ void jouer(Plateau * ptPlateau,int * ptVerif, int * ptVerifGain){
                     ptPlateau->nb_de_vies--;
                     affiche_donnees_plateau_nb_vies(ptPlateau);
                 }
+                // Boucle qui permet de prendre en compte les blocs poussables
                 else if (ptPlateau->X_Snoopy>=2&&(ptPlateau->maMatrice[ptPlateau->X_Snoopy-1][ptPlateau->Y_Snoopy] == '6')
                          &&(verif_collisions(ptPlateau, ptPlateau->X_Snoopy - 2, ptPlateau->Y_Snoopy))
                          &&(!verif_banane(ptPlateau, ptPlateau->X_Snoopy - 2, ptPlateau->Y_Snoopy))) {
@@ -362,6 +433,7 @@ void jouer(Plateau * ptPlateau,int * ptVerif, int * ptVerifGain){
                     ptPlateau->nb_de_vies--;
                     affiche_donnees_plateau_nb_vies(ptPlateau);
                 }
+                // Boucle qui permet de prendre en compte les blocs poussables
                 else if ((ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy-1] == '6')
                          &&(verif_collisions(ptPlateau, ptPlateau->X_Snoopy, ptPlateau->Y_Snoopy-2))
                            &&(!verif_banane(ptPlateau, ptPlateau->X_Snoopy, ptPlateau->Y_Snoopy-2))) {
@@ -409,6 +481,7 @@ void jouer(Plateau * ptPlateau,int * ptVerif, int * ptVerifGain){
                     ptPlateau->nb_de_vies--;
                     affiche_donnees_plateau_nb_vies(ptPlateau);
                 }
+                // Boucle qui permet de prendre en compte les blocs poussables
                 else if ((ptPlateau->maMatrice[ptPlateau->X_Snoopy+1][ptPlateau->Y_Snoopy] == '6')
                          &&(verif_collisions(ptPlateau, ptPlateau->X_Snoopy + 2, ptPlateau->Y_Snoopy))
                            &&(!verif_banane(ptPlateau, ptPlateau->X_Snoopy + 2, ptPlateau->Y_Snoopy))) {
@@ -456,6 +529,7 @@ void jouer(Plateau * ptPlateau,int * ptVerif, int * ptVerifGain){
                     ptPlateau->nb_de_vies--;
                     affiche_donnees_plateau_nb_vies(ptPlateau);
                 }
+                // Boucle qui permet de prendre en compte les blocs poussables
                 else if ((ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy+1] == '6')
                          &&(verif_collisions(ptPlateau, ptPlateau->X_Snoopy, ptPlateau->Y_Snoopy+2))
                            &&(!verif_banane(ptPlateau, ptPlateau->X_Snoopy, ptPlateau->Y_Snoopy+2))) {

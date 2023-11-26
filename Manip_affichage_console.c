@@ -75,19 +75,25 @@ void affiche_plateau_entier_simple(Plateau * ptPlateau){
 // Caractère 9 oiseau (musique) : 0x0E
 
 void affiche_char_selon_entier(char n){
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     switch(n){
         case '0':
             printf(" %c |",' ');
             break;
         case '1':
-            printf(" %c |",0x06);
-            //printf(" %c |",0x3D);
+            SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+            printf(" %c",0x06);
+            SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN |FOREGROUND_BLUE |FOREGROUND_RED | FOREGROUND_INTENSITY);
+            printf(" |");
             break;
         case '2':
             printf(" %c |",' ');
             break;
         case '3':
-            printf(" %c |",0x05);
+            SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_INTENSITY);
+            printf(" %c",0x05);
+            SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN |FOREGROUND_BLUE |FOREGROUND_RED | FOREGROUND_INTENSITY);
+            printf(" |");
             break;
         case '4':
             //printf(" %c |",0xDC);
@@ -100,15 +106,23 @@ void affiche_char_selon_entier(char n){
             printf(" %c |",0xC4);
             break;
         case '7':
-            printf(" %c |",0x02);
-            //printf(" %c |",0x12);
+            SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN |FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+            printf(" %c",0x02);
+            SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN |FOREGROUND_BLUE |FOREGROUND_RED | FOREGROUND_INTENSITY);
+            printf(" |");
             break;
         case '8':
-            printf(" %c |",0x13);
+            SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_INTENSITY);
+            printf(" %c",0x13);
+            SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN |FOREGROUND_BLUE |FOREGROUND_RED | FOREGROUND_INTENSITY);
+            printf(" |");
             break;
         case '9':
             //printf(" %c |",0x1F);
-            printf(" %c |",0x14);
+            SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN |FOREGROUND_RED | FOREGROUND_INTENSITY);
+            printf(" %c",0x14);
+            SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN |FOREGROUND_BLUE |FOREGROUND_RED | FOREGROUND_INTENSITY);
+            printf(" |");
             break;
         default :
             printf(" %c |",' ');
@@ -118,19 +132,24 @@ void affiche_char_selon_entier(char n){
 }
 
 void affiche_char_selon_entier_simple(char c){
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     switch(c){
         case '0':
             printf("%c",' ');
             break;
         case '1':
+            SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
             printf("%c",0x06);
+            SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN |FOREGROUND_BLUE |FOREGROUND_RED | FOREGROUND_INTENSITY);
             //printf(" %c |",0x3D);
             break;
         case '2':
             printf("%c",' ');
             break;
         case '3':
+            SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_INTENSITY);
             printf("%c",0x05);
+            SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN |FOREGROUND_BLUE |FOREGROUND_RED | FOREGROUND_INTENSITY);
             break;
         case '4':
             //printf(" %c |",0xDC);
@@ -143,15 +162,21 @@ void affiche_char_selon_entier_simple(char c){
             printf("%c",0xC4);
             break;
         case '7':
+            SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN |FOREGROUND_BLUE | FOREGROUND_INTENSITY);
             printf("%c",0x02);
+            SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN |FOREGROUND_BLUE |FOREGROUND_RED | FOREGROUND_INTENSITY);
             //printf(" %c |",0x12);
             break;
         case '8':
+            SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_INTENSITY);
             printf("%c",0x13);
+            SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN |FOREGROUND_BLUE |FOREGROUND_RED | FOREGROUND_INTENSITY);
             break;
         case '9':
             //printf(" %c |",0x1F);
+            SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN |FOREGROUND_RED | FOREGROUND_INTENSITY);
             printf("%c",0x14);
+            SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN |FOREGROUND_BLUE |FOREGROUND_RED | FOREGROUND_INTENSITY);
             break;
         default :
             printf("%c",' ');
