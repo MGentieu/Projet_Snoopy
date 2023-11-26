@@ -70,7 +70,6 @@ int menu(){
     //SetConsoleTextAttribute(hConsole, WHITENESS | FOREGROUND_INTENSITY);
     int choix = 0;
     int verif=1;
-    ecran_lancement();
     system("pause");
 
     do {
