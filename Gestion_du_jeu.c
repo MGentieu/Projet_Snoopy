@@ -101,12 +101,12 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
             }
             if(decompte_corrige(&(ptPlateau->temps_restant),&stock,&timer,ptPlateau)){
                 etat++;
-                if(etat==3){
+                if(etat==2){
                     bloc_intermitant(ptPlateau,etat);
                     //affiche_plateau_entier(ptPlateau);
                     affiche_plateau_entier_simple(ptPlateau);
                 }
-                if(etat==6){
+                if(etat==4){
                     bloc_intermitant(ptPlateau,etat);
                     //affiche_plateau_entier(ptPlateau);
                     affiche_plateau_entier_simple(ptPlateau);
