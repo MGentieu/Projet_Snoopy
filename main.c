@@ -16,6 +16,7 @@ int main() {
         ShowWindow(console, SW_MAXIMIZE); // Maximiser la fenêtre de la console
     }
 
+    //creer_fichier_scores();
     //On écrit dans des fichiers .txt les infos de bases concernant les niveaux.
     write_fichier_plateau_Niveau1();
     write_fichier_plateau_Niveau2();
