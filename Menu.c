@@ -139,7 +139,7 @@ _|"""""|_|"""""|_|"""""|_|"""""|                 |  `-'  (        /
             system("cls");
             charge_plateau_Niveau1_depart(&p);
             affiche_plateau_entier(&p);
-            jouer(&p,&verif);
+            jouer(&p,&verif,&verif_gain_partie);
             if(!verif){
                 break;
             }
@@ -148,7 +148,7 @@ _|"""""|_|"""""|_|"""""|_|"""""|                 |  `-'  (        /
             }
             charge_plateau_Niveau2_depart(&p);
             affiche_plateau_entier(&p);
-            jouer(&p,&verif);
+            jouer(&p,&verif,&verif_gain_partie);
             if(!verif){
                 break;
             }
@@ -158,7 +158,7 @@ _|"""""|_|"""""|_|"""""|_|"""""|                 |  `-'  (        /
             charge_plateau_Niveau3_depart(&p);
             affiche_plateau_entier(&p);
 
-            jouer(&p,&verif);
+            jouer(&p,&verif,&verif_gain_partie);
             if(!verif){
                 break;
             }
@@ -167,7 +167,7 @@ _|"""""|_|"""""|_|"""""|_|"""""|                 |  `-'  (        /
             }
             charge_plateau_Niveau4_depart(&p);
             affiche_plateau_entier(&p);
-            jouer(&p,&verif);
+            jouer(&p,&verif,&verif_gain_partie);
             break;
         case 3:
             system("cls");
@@ -178,7 +178,7 @@ _|"""""|_|"""""|_|"""""|_|"""""|                 |  `-'  (        /
             system("cls");
             saisie_nom_joueur(&p);
             if(option4_menu(&p)){
-                jouer(&p,&verif);
+                jouer(&p,&verif,&verif_gain_partie);
             }
             if(verif_gain_partie){
                 append_fichier_scores(&p);
@@ -186,7 +186,7 @@ _|"""""|_|"""""|_|"""""|_|"""""|                 |  `-'  (        /
             break;
         case 5:
             system("cls");
-            option5_menu(&p,&verif);
+            option5_menu(&p,&verif,&verif_gain_partie);
 
             system("cls");
             break;
