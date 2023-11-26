@@ -51,17 +51,17 @@ void win(){
     SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE |FOREGROUND_INTENSITY);
     printf(" avec bravoure et il a pu voler TOUTES les");
     SetConsoleTextAttribute(hConsole, FOREGROUND_RED|FOREGROUND_GREEN| FOREGROUND_INTENSITY);
-    printf("bananes");
+    printf(" bananes");
     SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE |FOREGROUND_INTENSITY);
     printf("de");
     SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
     printf(" Babouche Le Vilain");
     SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE |FOREGROUND_INTENSITY);
-    printf(" , sa");
+    printf(", sa");
     SetConsoleTextAttribute(hConsole, FOREGROUND_RED| FOREGROUND_INTENSITY);
     printf(" vengence");
     SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE |FOREGROUND_INTENSITY);
-    printf(" est un succès!\nApres cette");
+    printf(" est un succes!\nApres cette");
     SetConsoleTextAttribute(hConsole, FOREGROUND_RED |FOREGROUND_INTENSITY);
     printf(" vengence");
     SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE|FOREGROUND_INTENSITY);
@@ -77,7 +77,7 @@ void win(){
     SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
     printf(" Babouche Le Vilain");
     SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE| FOREGROUND_INTENSITY);
-    printf(" sous ses ordre.\n\n\nDans le prochain volet :\n\n");
+    printf(" sous ses ordre.\nDans le prochain volet :\n\n");
     SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE|FOREGROUND_RED| FOREGROUND_INTENSITY);
     printf(R"EOF(
  (                                                                 (        )  (
