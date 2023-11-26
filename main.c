@@ -23,6 +23,28 @@ int main() {
     system("cls");
 
 
+    Plateau p;
+    charge_plateau_Niveau1_depart(&p);
+    affiche_plateau_entier(&p);
+    system("pause");
+    vraigotoligcol(0,0);
+    printf("a");
+    goto_ligne_colonne(0,21);
+    system("pause");
+    vraigotoligcol(1,1);
+    printf("a");
+    goto_ligne_colonne(0,21);
+    system("pause");
+    vraigotoligcol(2,2);
+    printf("a");
+    goto_ligne_colonne(0,21);
+    system("pause");
+    vraigotoligcol(3,3);
+    printf("a");
+    goto_ligne_colonne(0,21);
+    system("pause");
+    /*
+
     int n=1;
     do{
         n=menu();

@@ -14,6 +14,10 @@ void goto_ligne_colonne(short ligne,short colonne){
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),mycoord);
 }
 
+void vraigotoligcol(unsigned char X, unsigned char Y){
+    goto_ligne_colonne((short)(Y*4+1),(short)(X+1));
+}
+
 void affiche_plateau_entier(Plateau * ptPlateau){
     system("cls");
     goto_ligne_colonne(38,0);
