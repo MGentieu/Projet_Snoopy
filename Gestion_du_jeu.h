@@ -13,6 +13,7 @@ int verif_nb_de_vies(Plateau *);
 void game_over();
 int movesnoopy(Plateau *);
 int verif_collisions(Plateau *,unsigned char, unsigned char);
+int verif_banane(Plateau * ptPlateau,unsigned char X_test, unsigned char Y_test);
 // Fonction qui verifie si les blocs collant snoopy sont cassable et les cassent quand 'b' est exécuté
 void bloc_cassable(Plateau* ptPlateau);
 // Fonction balle qui prend en arguments le pointeur plateau, verifie les collisions et redirige la balle en fonctions des collisions Modification matricielle et console
