@@ -14,11 +14,11 @@ void write_fichier_plateau_Niveau1(){
     FILE * pF = fopen("Niveau1_vide.txt","w");
     fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",9,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,4,0,9);
     fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",4,1,0,0,0,0,0,0,0,0,6,0,0,0,0,0,0,4,1,1);
-    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",0,0,4,0,4,0,0,0,0,6,0,6,0,0,0,0,0,4,0,0);
+    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",0,0,4,0,4,0,0,0,0,6,9,6,0,0,0,0,0,4,0,0);
     fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",0,0,4,0,4,0,0,0,6,0,1,0,6,0,0,0,0,6,0,0);
-    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",4,4,4,0,4,4,0,6,0,1,7,1,0,6,0,0,0,4,4,4);
+    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",4,4,4,0,4,4,0,6,9,1,7,1,9,6,0,0,0,4,4,4);
     fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",0,0,4,0,0,0,0,6,0,0,1,0,0,6,0,0,0,4,0,0);
-    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",0,0,4,0,4,4,0,0,6,0,0,0,6,0,0,0,0,4,0,0);
+    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",0,0,4,0,4,4,0,0,6,0,9,0,6,0,0,0,0,4,0,0);
     fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",0,4,0,4,0,0,0,0,0,6,0,6,0,0,4,4,6,4,0,0);
     fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",1,1,6,4,0,0,8,0,0,0,6,0,0,0,4,0,0,1,0,0);
     fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",9,0,6,0,0,0,0,0,0,0,4,0,0,0,4,0,0,0,0,9);

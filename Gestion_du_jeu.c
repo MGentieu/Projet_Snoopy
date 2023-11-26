@@ -181,27 +181,20 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                     vraigotoligcol(ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy);
                     affiche_char_selon_entier_simple(avant);
                     ptPlateau->X_Snoopy=x;
-                    avant=ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy];
+                    if(verif_banane(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy)){
+                        avant='0';
+                        ptPlateau->nb_oiseaux_restants--;
+                    }
+                    else{
+                        avant=ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy];
+                    }
                     vraigotoligcol(ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy);
                     affiche_char_selon_entier_simple('7');
                     ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]='7';
                     //affiche_plateau_entier(ptPlateau);
                     xavt=x;
                 }
-                else if(xavt>0&& verif_banane(ptPlateau,ptPlateau->X_Snoopy-1,ptPlateau->Y_Snoopy)){
-                    x=xavt-1;
-                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]=avant;
-                    vraigotoligcol(ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy);
-                    affiche_char_selon_entier_simple(avant);
-                    ptPlateau->X_Snoopy=x;
-                    avant='0';
-                    vraigotoligcol(ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy);
-                    affiche_char_selon_entier_simple('7');
-                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]='7';
-                    //affiche_plateau_entier(ptPlateau);
-                    xavt=x;
-                    ptPlateau->nb_oiseaux_restants--;
-                }
+
                 break;
             case 'q':
                 if(yavt>0&&verif_collisions(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy-1)) {
@@ -210,31 +203,19 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                     vraigotoligcol(ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy);
                     affiche_char_selon_entier_simple(avant);
                     ptPlateau->Y_Snoopy = y;
-                    avant=ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy];
+                    if(verif_banane(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy)){
+                        avant='0';
+                        ptPlateau->nb_oiseaux_restants--;
+                    }
+                    else{
+                        avant=ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy];
+                    }
                     vraigotoligcol(ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy);
                     affiche_char_selon_entier_simple('7');
                     ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]='7';
                     //affiche_plateau_entier(ptPlateau);
                     yavt=y;
                 }
-                else if(yavt>0&&verif_banane(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy-1)){
-                    y = yavt - 1;
-                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]=avant;
-                    vraigotoligcol(ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy);
-                    affiche_char_selon_entier_simple(avant);
-                    ptPlateau->Y_Snoopy = y;
-                    avant='0';
-                    vraigotoligcol(ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy);
-                    affiche_char_selon_entier_simple('7');
-                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]='7';
-                    //affiche_plateau_entier(ptPlateau);
-                    yavt=y;
-                    ptPlateau->nb_oiseaux_restants--;
-                }
-
-
-
-
 
                 break;
             case 's':
@@ -244,27 +225,20 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                     vraigotoligcol(ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy);
                     affiche_char_selon_entier_simple(avant);
                     ptPlateau->X_Snoopy=x;
-                    avant=ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy];
+                    if(verif_banane(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy)){
+                        avant='0';
+                        ptPlateau->nb_oiseaux_restants--;
+                    }
+                    else{
+                        avant=ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy];
+                    }
                     vraigotoligcol(ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy);
                     affiche_char_selon_entier_simple('7');
                     ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]='7';
                     //affiche_plateau_entier(ptPlateau);
                     xavt=x;
                 }
-                else if(xavt<9&&verif_banane(ptPlateau,ptPlateau->X_Snoopy+1,ptPlateau->Y_Snoopy)){
-                    x = xavt + 1;
-                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]=avant;
-                    vraigotoligcol(ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy);
-                    affiche_char_selon_entier_simple(avant);
-                    ptPlateau->X_Snoopy=x;
-                    avant='0';
-                    vraigotoligcol(ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy);
-                    affiche_char_selon_entier_simple('7');
-                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]='7';
-                    //affiche_plateau_entier(ptPlateau);
-                    xavt=x;
-                    ptPlateau->nb_oiseaux_restants--;
-                }
+
                 else {
                     if ((ptPlateau->maMatrice[ptPlateau->X_Snoopy+1][ptPlateau->Y_Snoopy] == '6')
                     &&(verif_collisions(ptPlateau, ptPlateau->X_Snoopy + 2, ptPlateau->Y_Snoopy))) {
@@ -299,27 +273,23 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                     vraigotoligcol(ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy);
                     affiche_char_selon_entier_simple(avant);
                     ptPlateau->Y_Snoopy = y;
-                    avant=ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy];
+                    if(verif_banane(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy)){
+                        avant='0';
+                        ptPlateau->nb_oiseaux_restants--;
+                    }
+                    else{
+                        avant=ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy];
+                    }
+
                     vraigotoligcol(ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy);
                     affiche_char_selon_entier_simple('7');
                     ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]='7';
                     //affiche_plateau_entier(ptPlateau);
                     yavt=y;
                 }
-                else if(yavt<19&&verif_banane(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy+1)){
-                    y = yavt + 1;
-                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]=avant;
-                    vraigotoligcol(ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy);
-                    affiche_char_selon_entier_simple(avant);
-                    ptPlateau->Y_Snoopy = y;
-                    avant='0';
-                    vraigotoligcol(ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy);
-                    affiche_char_selon_entier_simple('7');
-                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]='7';
-                    //affiche_plateau_entier(ptPlateau);
-                    yavt=y;
-                    ptPlateau->nb_oiseaux_restants--;
-                }
+
+
+
                 break;
             case 'b':
                 bloc_cassable(ptPlateau);
@@ -332,7 +302,7 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
 }
 
 int verif_collisions(Plateau * ptPlateau,unsigned char X_test, unsigned char Y_test){
-    return (ptPlateau->maMatrice[X_test][Y_test]=='0');
+    return (ptPlateau->maMatrice[X_test][Y_test]=='0'||ptPlateau->maMatrice[X_test][Y_test]=='9');
 }
 
 int verif_banane(Plateau * ptPlateau,unsigned char X_test, unsigned char Y_test){
