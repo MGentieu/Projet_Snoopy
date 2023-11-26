@@ -14,6 +14,7 @@ int verif_nb_de_vies(Plateau *);
 void game_over();
 int verif_collisions(Plateau *,unsigned char, unsigned char);
 int verif_banane(Plateau * ptPlateau,unsigned char X_test, unsigned char Y_test);
+int verif_intermittant(Plateau *,unsigned char, unsigned char);
 void up_score_car_niveau_fini(Plateau *);
 int verif_fin_niveau(Plateau *);
 void verif_bloc_pieges(Plateau *, unsigned char, unsigned char);

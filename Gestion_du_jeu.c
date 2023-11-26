@@ -126,6 +126,10 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                     affiche_plateau_entier_simple(ptPlateau);
                 }
                 if(etat==4){
+                    if(avant=='2'){
+                        ptPlateau->nb_de_vies--;
+                        affiche_donnees_plateau_nb_vies(ptPlateau);
+                    }
                     bloc_intermitant(ptPlateau,etat);
                     //affiche_plateau_entier(ptPlateau);
                     affiche_plateau_entier_simple(ptPlateau);
@@ -194,7 +198,7 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                 }
                 break;
             case 'z':
-                if(xavt>0&& verif_collisions(ptPlateau,ptPlateau->X_Snoopy-1,ptPlateau->Y_Snoopy)){
+                if(xavt>0&& (verif_collisions(ptPlateau,ptPlateau->X_Snoopy-1,ptPlateau->Y_Snoopy)||verif_intermittant(ptPlateau,ptPlateau->X_Snoopy-1,ptPlateau->Y_Snoopy))){
                     x=xavt-1;
                     ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]=avant;
                     vraigotoligcol(ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy);
@@ -236,7 +240,7 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                 affiche_donnees_plateau_nb_vies(ptPlateau);
                 break;
             case 'q':
-                if(yavt>0&&verif_collisions(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy-1)) {
+                if(yavt>0&&(verif_collisions(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy-1)||verif_intermittant(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy-1))) {
                     y = yavt - 1;
                     ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]=avant;
                     vraigotoligcol(ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy);
@@ -278,7 +282,7 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                 affiche_donnees_plateau_nb_vies(ptPlateau);
                 break;
             case 's':
-                if(xavt<9&&verif_collisions(ptPlateau,ptPlateau->X_Snoopy+1,ptPlateau->Y_Snoopy)) {
+                if(xavt<9&&(verif_collisions(ptPlateau,ptPlateau->X_Snoopy+1,ptPlateau->Y_Snoopy)||verif_intermittant(ptPlateau,ptPlateau->X_Snoopy+1,ptPlateau->Y_Snoopy))) {
                     x = xavt + 1;
                     ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]=avant;
                     vraigotoligcol(ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy);
@@ -320,7 +324,7 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                 affiche_donnees_plateau_nb_vies(ptPlateau);
                 break;
             case 'd':
-                if(yavt<19&&verif_collisions(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy+1)) {
+                if(yavt<19&&(verif_collisions(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy+1)||verif_intermittant(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy+1))) {
                     y = yavt + 1;
                     ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]=avant;
                     vraigotoligcol(ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy);
@@ -394,6 +398,10 @@ int verif_collisions(Plateau * ptPlateau,unsigned char X_test, unsigned char Y_t
 
 int verif_banane(Plateau * ptPlateau,unsigned char X_test, unsigned char Y_test){
     return (ptPlateau->maMatrice[X_test][Y_test]=='9');
+}
+
+int verif_intermittant(Plateau * ptPlateau,unsigned char X_test, unsigned char Y_test){
+    return (ptPlateau->maMatrice[X_test][Y_test]=='2');
 }
 
 void up_score_car_niveau_fini(Plateau * ptPlateau){

@@ -127,7 +127,7 @@ void affiche_char_selon_entier_simple(char c){
             //printf(" %c |",0x3D);
             break;
         case '2':
-            printf("%c",(0x1A));
+            printf("%c",' ');
             break;
         case '3':
             printf("%c",0x05);
