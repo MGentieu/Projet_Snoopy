@@ -79,7 +79,7 @@ _|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_| """"|_|"""""|_|"""""|
     //system("cls");
 }
 
-void jouer(Plateau * ptPlateau,int * ptVerif){
+void jouer(Plateau * ptPlateau,int * ptVerif, int * ptVerifGain){
     //affiche_donnees_importantes();
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     char avant='0';

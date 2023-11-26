@@ -12,7 +12,7 @@
 #include "Gestion_du_jeu.h"
 
 
-void option5_menu(Plateau * ptPlateau, int * ptVerif){
+void option5_menu(Plateau * ptPlateau, int * ptVerif, int * ptVerifGain){
     int choix_suppr_charge=0;
     do{
         printf("Saisissez 1 pour lire un fichier de sauvegarde\n"
@@ -27,7 +27,7 @@ void option5_menu(Plateau * ptPlateau, int * ptVerif){
         return;
     }
     affiche_plateau_entier(ptPlateau);
-    jouer(ptPlateau,ptVerif);
+    jouer(ptPlateau,ptVerif,ptVerifGain);
     if(!*ptVerif){
         return;
     }
@@ -35,7 +35,7 @@ void option5_menu(Plateau * ptPlateau, int * ptVerif){
     if(ptPlateau->mode_de_jeu==6){
         charge_plateau_Niveau2_depart(ptPlateau);
         affiche_plateau_entier(ptPlateau);
-        jouer(ptPlateau,ptVerif);
+        jouer(ptPlateau,ptVerif,ptVerifGain);
         if(!*ptVerif){
             return;
         }
@@ -44,7 +44,7 @@ void option5_menu(Plateau * ptPlateau, int * ptVerif){
     if(ptPlateau->mode_de_jeu==7){
         charge_plateau_Niveau3_depart(ptPlateau);
         affiche_plateau_entier(ptPlateau);
-        jouer(ptPlateau,ptVerif);
+        jouer(ptPlateau,ptVerif,ptVerifGain);
         if(!*ptVerif){
             return;
         }
@@ -53,7 +53,7 @@ void option5_menu(Plateau * ptPlateau, int * ptVerif){
     if(ptPlateau->mode_de_jeu==8){
         charge_plateau_Niveau2_depart(ptPlateau);
         affiche_plateau_entier(ptPlateau);
-        jouer(ptPlateau,ptVerif);
+        jouer(ptPlateau,ptVerif,ptVerifGain);
         if(!*ptVerif){
             return;
         }

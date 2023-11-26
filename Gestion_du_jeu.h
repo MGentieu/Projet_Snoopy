@@ -9,7 +9,7 @@
 // fonction qui lance l'écran de lancement
 void ecran_lancement();
 void affiche_donnees_importantes();
-void jouer(Plateau *,int *);
+void jouer(Plateau *,int *,int *);
 int verif_nb_de_vies(Plateau *);
 void game_over();
 int verif_collisions(Plateau *,unsigned char, unsigned char);
