@@ -112,9 +112,26 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                 goto_ligne_colonne(0,23);
                 system("cls");
                 system("pause");
+                SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN |FOREGROUND_RED | FOREGROUND_INTENSITY);
+                printf("                            \n"
+                       "   (                        \n"
+                       " ( )\\  (       )   )        \n"
+                       " )((_) )(   ( /(  /((   (   \n"
+                       "((_)_ (()\\  )(_))(_))\\  )\\  \n"
+                       " | _ ) ((_)((_)_ _)((_)((_) \n"
+                       " | _ \\| '_|/ _` |\\ V // _ \\ \n"
+                       " |___/|_|  \\__,_| \\_/ \\___/ \n"
+                       "                            \n"
+                       "\n");
                 SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
-                printf("BRAVO ! Vous avez fini le niveau!\n"
-                       "Votre score actuel est de %d.\n",ptPlateau->score);
+                printf("Votre ");
+                SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE |FOREGROUND_RED | FOREGROUND_INTENSITY);
+                printf("score ");
+                SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+                printf("actuel est de ");
+                SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE |FOREGROUND_RED | FOREGROUND_INTENSITY);
+                printf("%d.\n",ptPlateau->score);
+                SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE |FOREGROUND_RED|FOREGROUND_GREEN | FOREGROUND_INTENSITY);
                 system("pause");
                 return;
             }
