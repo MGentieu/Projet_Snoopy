@@ -13,7 +13,7 @@ int verif_nb_de_vies(Plateau *);
 void game_over();
 int movesnoopy(Plateau *);
 int verif_collisions(Plateau *,unsigned char, unsigned char);
-
+void bloc_cassable(Plateau* ptPlateau);
 void balle(Plateau *);
 void balle2(Plateau *);
 #endif //PROJET_SNOOPY_GESTION_DU_JEU_H

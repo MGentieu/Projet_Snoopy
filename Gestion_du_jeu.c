@@ -189,8 +189,8 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                     affiche_plateau_entier(ptPlateau);
                     yavt=y;
                 }
-
-
+            case 'b':
+                bloc_cassable(ptPlateau);
                 break;
             }
 

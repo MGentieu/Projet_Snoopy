@@ -15,3 +15,18 @@ void bloc_intermitant(Plateau* ptPlateau, int etat){
         }
     }
 }
+
+void bloc_cassable(Plateau* ptPlateau){
+    if(ptPlateau->maMatrice[ptPlateau->Y_Snoopy][ptPlateau->X_Snoopy+1]=='1'){
+        ptPlateau->maMatrice[ptPlateau->Y_Snoopy][ptPlateau->X_Snoopy+1]='0';
+    }
+    else if (ptPlateau->maMatrice[ptPlateau->Y_Snoopy][ptPlateau->X_Snoopy-1]=='1'){
+        ptPlateau->maMatrice[ptPlateau->Y_Snoopy][ptPlateau->X_Snoopy-1]='0';
+    }
+    else if (ptPlateau->maMatrice[ptPlateau->Y_Snoopy+1][ptPlateau->X_Snoopy]=='1'){
+        ptPlateau->maMatrice[ptPlateau->Y_Snoopy+1][ptPlateau->X_Snoopy]='0';
+    }
+    else if (ptPlateau->maMatrice[ptPlateau->Y_Snoopy-1][ptPlateau->X_Snoopy]=='1'){
+        ptPlateau->maMatrice[ptPlateau->Y_Snoopy-1][ptPlateau->X_Snoopy]='0';
+    }
+}
