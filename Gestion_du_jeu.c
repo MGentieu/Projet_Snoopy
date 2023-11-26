@@ -20,7 +20,7 @@ void affiche_donnees_importantes(){
     printf("Appuyez sur 'J' pour sauvegarder.\n");
     printf("Appuyez sur 'P' pour quitter.\n");
     printf("Appuyez sur 'K' pour mettre en pause.\n");
-    printf("'Q' pour gauche / 'S' pour bas / 'D' pour droite / 'Z' pour haut.\n");
+    printf("'Q' pour gauche / 'S' pour bas / 'D' pour droite / 'Z' pour haut / 'B' pour casser.\n");
 }
 
 int verif_nb_de_vies(Plateau * ptPlateau){
