@@ -274,21 +274,6 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                     affiche_plateau_entier(ptPlateau);
                     xavt = x;
                 }
-                else {
-                        if (kbhit()){
-                            key = getch() ;
-                            switch(key){
-                                case 'q':
-                                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy+1] = '0';
-                                    break;
-                                case 'd':
-                                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy-1] = '0';
-                                    break;
-                            }
-                        }
-
-                }
-
                 break;
             case 'd':
                 if(yavt<19&&verif_collisions(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy+1)) {
