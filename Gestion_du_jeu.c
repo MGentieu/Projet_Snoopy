@@ -136,6 +136,10 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                     etat=0;
                 }
                 balle2(ptPlateau);
+                if(ptPlateau->X_Snoopy==ptPlateau->X_Balle&&ptPlateau->Y_Snoopy==ptPlateau->Y_Balle){
+                    ptPlateau->nb_de_vies--;
+                    affiche_donnees_plateau_nb_vies(ptPlateau);
+                }
                 //affiche_plateau_entier(ptPlateau);
             }
             //lance la balle
@@ -198,7 +202,8 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                 }
                 break;
             case 'z':
-                if(xavt>0&& (verif_collisions(ptPlateau,ptPlateau->X_Snoopy-1,ptPlateau->Y_Snoopy)||verif_intermittant(ptPlateau,ptPlateau->X_Snoopy-1,ptPlateau->Y_Snoopy))){
+                if(verif_balle_est_sur_snoopy(ptPlateau)){}
+                else if(xavt>0&& (verif_collisions(ptPlateau,ptPlateau->X_Snoopy-1,ptPlateau->Y_Snoopy)||verif_intermittant(ptPlateau,ptPlateau->X_Snoopy-1,ptPlateau->Y_Snoopy))){
                     x=xavt-1;
                     ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]=avant;
                     vraigotoligcol(ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy);
@@ -219,6 +224,7 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                 }
                 else if(ptPlateau->X_Snoopy>=1&&verif_deplacement_vers_balle(ptPlateau,ptPlateau->X_Snoopy-1,ptPlateau->Y_Snoopy)){
                     ptPlateau->nb_de_vies--;
+                    affiche_donnees_plateau_nb_vies(ptPlateau);
                 }
                 else if (ptPlateau->X_Snoopy>=2&&(ptPlateau->maMatrice[ptPlateau->X_Snoopy-1][ptPlateau->Y_Snoopy] == '6')
                          &&(verif_collisions(ptPlateau, ptPlateau->X_Snoopy - 2, ptPlateau->Y_Snoopy))
@@ -243,7 +249,8 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                 affiche_donnees_plateau_nb_vies(ptPlateau);
                 break;
             case 'q':
-                if(yavt>0&&(verif_collisions(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy-1)||verif_intermittant(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy-1))) {
+                if(verif_balle_est_sur_snoopy(ptPlateau)){}
+                else if(yavt>0&&(verif_collisions(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy-1)||verif_intermittant(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy-1))) {
                     y = yavt - 1;
                     ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]=avant;
                     vraigotoligcol(ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy);
@@ -264,6 +271,7 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                 }
                 else if(ptPlateau->Y_Snoopy>=1&&verif_deplacement_vers_balle(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy-1)){
                     ptPlateau->nb_de_vies--;
+                    affiche_donnees_plateau_nb_vies(ptPlateau);
                 }
                 else if ((ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy-1] == '6')
                          &&(verif_collisions(ptPlateau, ptPlateau->X_Snoopy, ptPlateau->Y_Snoopy-2))
@@ -288,7 +296,8 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                 affiche_donnees_plateau_nb_vies(ptPlateau);
                 break;
             case 's':
-                if(xavt<9&&(verif_collisions(ptPlateau,ptPlateau->X_Snoopy+1,ptPlateau->Y_Snoopy)||verif_intermittant(ptPlateau,ptPlateau->X_Snoopy+1,ptPlateau->Y_Snoopy))) {
+                if(verif_balle_est_sur_snoopy(ptPlateau)){}
+                else if(xavt<9&&(verif_collisions(ptPlateau,ptPlateau->X_Snoopy+1,ptPlateau->Y_Snoopy)||verif_intermittant(ptPlateau,ptPlateau->X_Snoopy+1,ptPlateau->Y_Snoopy))) {
                     x = xavt + 1;
                     ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]=avant;
                     vraigotoligcol(ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy);
@@ -309,6 +318,7 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                 }
                 else if(ptPlateau->X_Snoopy<=8&&verif_deplacement_vers_balle(ptPlateau,ptPlateau->X_Snoopy+1,ptPlateau->Y_Snoopy)){
                     ptPlateau->nb_de_vies--;
+                    affiche_donnees_plateau_nb_vies(ptPlateau);
                 }
                 else if ((ptPlateau->maMatrice[ptPlateau->X_Snoopy+1][ptPlateau->Y_Snoopy] == '6')
                          &&(verif_collisions(ptPlateau, ptPlateau->X_Snoopy + 2, ptPlateau->Y_Snoopy))
@@ -333,7 +343,8 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                 affiche_donnees_plateau_nb_vies(ptPlateau);
                 break;
             case 'd':
-                if(yavt<19&&(verif_collisions(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy+1)||verif_intermittant(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy+1))) {
+                if(verif_balle_est_sur_snoopy(ptPlateau)){}
+                else if(yavt<19&&(verif_collisions(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy+1)||verif_intermittant(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy+1))) {
                     y = yavt + 1;
                     ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]=avant;
                     vraigotoligcol(ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy);
@@ -354,6 +365,7 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                 }
                 else if(ptPlateau->Y_Snoopy<=18&&verif_deplacement_vers_balle(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy+1)){
                     ptPlateau->nb_de_vies--;
+                    affiche_donnees_plateau_nb_vies(ptPlateau);
                 }
                 else if ((ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy+1] == '6')
                          &&(verif_collisions(ptPlateau, ptPlateau->X_Snoopy, ptPlateau->Y_Snoopy+2))
@@ -447,6 +459,9 @@ void verif_tous_les_blocs_pieges_pres_de_snoopy(Plateau * ptPlateau, unsigned ch
 
 int verif_deplacement_vers_balle(Plateau * ptPlateau, unsigned char X_test, unsigned char Y_test){
     return ptPlateau->maMatrice[X_test][Y_test]=='8';
+}
+int verif_balle_est_sur_snoopy(Plateau *ptPlateau){
+    return ptPlateau->X_Snoopy==ptPlateau->X_Balle&&ptPlateau->Y_Snoopy==ptPlateau->Y_Balle;
 }
 
 /*
