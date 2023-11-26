@@ -281,6 +281,7 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                     }
                 }
 
+
                 break;
             case 'd':
                 if(yavt<19&&verif_collisions(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy+1)) {
