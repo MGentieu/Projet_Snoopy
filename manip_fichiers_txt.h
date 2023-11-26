@@ -7,6 +7,9 @@
 
 #include "Structures.h"
 
+void creer_fichier_scores();
+void append_fichier_scores(Plateau *);
+
 void write_fichier_plateau_Niveau1();
 void write_fichier_plateau_Niveau2();
 void write_fichier_plateau_Niveau3();

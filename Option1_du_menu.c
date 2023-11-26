@@ -13,7 +13,7 @@ void affichage_option_1(){
   |   /   | _|   | (_ |   | |__   | _|    \__ \    o       | |) | | |_| |   o       | || |  | _|   | |_| |
   |_|_\   |___|   \___|   |____|  |___|   |___/   TS__[O]  |___/   \___/   TS__[O]  _\__/   |___|   \___/
 _|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_|"""""| {======|_|"""""|_|"""""|_|"""""|
-"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'./o--000'"`-0-0-'"`-0-0-'./o--000'"`-0-0-'"`-0-0-'"`-0-0-'                                                                                                                                       ░
+"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'./o--000'"`-0-0-'"`-0-0-'./o--000'"`-0-0-'"`-0-0-'"`-0-0-'
 )EOF");
     printf("\n\n");
     SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
@@ -98,10 +98,14 @@ _|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_|"""""| {=====
     SetConsoleTextAttribute(hConsole,FOREGROUND_GREEN| FOREGROUND_INTENSITY);
     printf("Sauvegarde : ");
     SetConsoleTextAttribute(hConsole,FOREGROUND_RED| FOREGROUND_INTENSITY);
-    printf("M\n");
+    printf("J\n");
     SetConsoleTextAttribute(hConsole,FOREGROUND_GREEN| FOREGROUND_INTENSITY);
     printf("D%cplacement %c gauche : ",130,133);
     SetConsoleTextAttribute(hConsole,FOREGROUND_RED| FOREGROUND_INTENSITY);
     printf("Q\t");
+    SetConsoleTextAttribute(hConsole,FOREGROUND_GREEN| FOREGROUND_INTENSITY);
+    printf("Casser les blocs: ",130,133);
+    SetConsoleTextAttribute(hConsole,FOREGROUND_RED| FOREGROUND_INTENSITY);
+    printf("B\t");
     SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE |  FOREGROUND_INTENSITY);
 }

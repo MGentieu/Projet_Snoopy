@@ -8,12 +8,15 @@
 #include "Gestion_du_jeu.h"
 #include <conio.h>
 #include "Gestion_des_sauvegardes.h"
-
+#include "Windows.h"
 
 int main() {
+    HWND console = GetConsoleWindow();
+    if (console != NULL) {
+        ShowWindow(console, SW_MAXIMIZE); // Maximiser la fenêtre de la console
+    }
 
-
-
+    //creer_fichier_scores();
     //On écrit dans des fichiers .txt les infos de bases concernant les niveaux.
     write_fichier_plateau_Niveau1();
     write_fichier_plateau_Niveau2();
@@ -22,137 +25,12 @@ int main() {
     write_mots_de_passe();
     system("cls");
 
-/*
-    Plateau p;
-    charge_plateau_Niveau1_depart(&p);
-    affiche_plateau_entier(&p);
-    system("pause");
-    vraigotoligcol(0,0);
-    printf("a");
-    goto_ligne_colonne(0,21);
-    system("pause");
-    vraigotoligcol(1,1);
-    printf("a");
-    goto_ligne_colonne(0,21);
-    system("pause");
-    vraigotoligcol(2,2);
-    printf("a");
-    goto_ligne_colonne(0,21);
-    system("pause");
-    vraigotoligcol(3,3);
-    printf("a");
-    goto_ligne_colonne(0,21);
-    system("pause");
-
-*/
     int n=1;
+    ecran_lancement();
     do{
         n=menu();
     }while(n==1);
     system("cls");
-
-
-
-
-
-    /*
-    Plateau p;
-    p.score=0;
-    p.mode_de_jeu=1;
-    p.nb_de_vies=3;
-    charge_plateau_Niveau1_depart(&p);
-    saisie_nom_joueur(&p);
-    system("cls");
-    affiche_plateau_entier(&p);
-    movesnoopy(&p);
-    */
-    //sauvegarder_fichier(&p);
-
-    /*
-    if(lire_fichier_de_sauvegarde(&p)){
-        affiche_plateau_entier(&p);
-    }
-     */
-
-    //suppr_fichier_de_sauvegarde();
-    /*
-    system("pause");
-    goto_ligne_colonne(29,5);
-    while(!kbhit()){}
-    char c=(char)getch();
-    printf("%c",c);
-    goto_ligne_colonne(0,15);
-    system("pause");
-    system("cls");
-    charge_plateau_Niveau1_depart(&p);
-    affiche_plateau_entier(&p);
-    system("pause");
-    goto_ligne_colonne(29,5);
-    while(!kbhit()){}
-    c=(char)getch();
-    printf("%c",c);
-    goto_ligne_colonne(0,15);
-    system("pause");
-    */
-
-
-
-    /*
-    for(int i=0;i<128;i++){
-        printf("%d : %c\n",i,i);
-    }
-    system("pause");
-    */
-
-    /*
-    printf("%c,%c,%c,%c\n",0x1B,0x1A,0x18,0x19);
-    printf("%c,%c,%c,%c\n",0x06,0x05,0xDB,0x0F);
-    printf("%c,%c,%c,%c\n",0x06,0x05,0x05,0x0F);
-    printf("%c,%c,%c,%c\n",0x06,0x05,0xDB,0x0F);
-    printf("%c,%c,%c,%c\n",0x06,0x05,0xDB,0x0F);
-    printf("%c,%c,%c,%c\n",0xC4,0x02,0x1F,0x13);
-     */
-
-
-
-
-
-
-
-
-    ////////////////////////////////////////////////// MARTIN AU DESSUS : FRANKLIN EN DESSOUS
-
-
-
-
-
-
-
-
-
-    ////////////////////////////////////////////////// FRANKLIN AU DESSUS : KEETHAN EN DESSOUS
-
-
-
-
-
-
-
-
-
-
-
-    ////////////////////////////////////////////////// KEETHAN AU DESSUS : VALERE EN DESSOUS
-
-
-
-
-
-
-
-
-
-
 
     return 0;
 }
