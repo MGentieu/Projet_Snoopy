@@ -15,9 +15,9 @@ void write_fichier_plateau_Niveau1(){
     fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",9,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,4,0,9);
     fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",4,1,0,0,0,0,0,0,0,0,6,0,0,0,0,0,0,4,1,1);
     fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",0,0,4,0,4,0,0,0,0,6,0,6,0,0,0,0,0,4,0,0);
-    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",0,0,4,0,4,0,0,0,6,0,0,0,6,0,0,0,0,6,0,0);
-    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",4,4,4,0,4,4,0,6,0,0,7,0,0,6,0,0,0,4,4,4);
-    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",0,0,4,0,0,0,0,6,0,0,0,0,0,6,0,0,0,4,0,0);
+    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",0,0,4,0,4,0,0,0,6,0,1,0,6,0,0,0,0,6,0,0);
+    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",4,4,4,0,4,4,0,6,0,1,7,1,0,6,0,0,0,4,4,4);
+    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",0,0,4,0,0,0,0,6,0,0,1,0,0,6,0,0,0,4,0,0);
     fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",0,0,4,0,4,4,0,0,6,0,0,0,6,0,0,0,0,4,0,0);
     fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",0,4,0,4,0,0,0,0,0,6,0,6,0,0,4,4,6,4,0,0);
     fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",1,1,6,4,0,0,8,0,0,0,6,0,0,0,4,0,0,1,0,0);
@@ -37,7 +37,7 @@ void write_fichier_plateau_Niveau2(){
     fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",2,2,2,3,0,0,0,3,0,0,0,0,0,0,0,0,0,6,1,1);
     fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,6,4);
     fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",1,1,6,0,0,0,0,0,0,0,0,0,3,0,0,0,1,0,0,0);
-    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",7,1,0,2,2,2,3,0,0,0,0,3,0,0,0,0,0,6,1,0);
+    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",7,1,0,2,2,2,3,0,0,0,0,0,0,0,0,0,0,6,1,0);
     fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",1,1,6,0,1,2,3,4,5,6,0,8,9,0,3,0,0,1,6,0);
     fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",4,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
     fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",0,0,3,0,0,0,0,0,0,0,0,0,3,0,0,2,2,2,0,4);
@@ -98,8 +98,8 @@ void write_mots_de_passe(){
 
     FILE * pF = fopen("mots_de_passe.txt","w");
     fprintf(pF,"Valere1\n");
-    fprintf(pF,"Franklin2\n");
-    fprintf(pF,"Keethan3\n");
+    fprintf(pF,"Keethan2\n");
+    fprintf(pF,"Franklin3\n");
     fprintf(pF,"Martin4\n");
     fclose(pF);
 }

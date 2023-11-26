@@ -9,8 +9,9 @@
 #include "Structures.h"
 
 void goto_ligne_colonne(short,short);
-
+void vraigotoligcol(unsigned char, unsigned char);
 void affiche_char_selon_entier(char);
+void affiche_char_selon_entier_simple(char);
 //Caractère 1 bloc cassable pique : 0x06
 //Caractère 2 bloc poussable :
 //  vers la gauche : 0x1B

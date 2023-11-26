@@ -11,13 +11,11 @@ add_executable(Projet_Snoopy main.c
         manip_affichage_console.h
         Manip_affichage_console.c
         Menu.c
-        Martin_espace_de_travail.c
         Structures.h
         Ecriture_fichiers_txt.c
         Lecture_fichiers_txt.c
         Chargement_Niveaux.h
-        decompteur.c
-        mouvement_snoopy.c
+        Gestion_du_temps.c
         Option4_du_menu.c
         Gestion_des_sauvegardes.c
         Gestion_des_sauvegardes.h
@@ -28,4 +26,5 @@ add_executable(Projet_Snoopy main.c
         balle.c
         interaction_blocs.c
         Option3_du_menu.c
+        Gestion_du_temps.c
 )

@@ -7,14 +7,14 @@
 void affichage_option_1(){
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_INTENSITY);
-    printf("********    ********  ******* **       ********  *******    ******   **    **        *** ******** **    **\n");
-    printf("**    **    **       **       **       **       **          **   *** **    **         ** **       **    **\n");
-    printf("***    **   ***      **       **       ***      ***         **    ** **    **         ** ***      **    **\n");
-    printf("*** ****    ******** **       **       ********   *****     **    ** **    **         ** ******** **    **\n");
-    printf("**    ***   ***      **   *** **       ***           ***    **    ** **    **         ** ***      **    **\n");
-    printf("**    ****  **       **    ** **       **             **    **   *** **    **   **   *** **       **    **\n");
-    printf("**     **** ********  ******* ******** ******** *******     ******    ******     ******  ********  ****** \n");
-    printf("\n\n\n");
+    printf("   ___     ___     ___     _       ___     ___              ___    _   _                _    ___    _   _\n");
+    printf("  | _ \\   | __|   / __|   | |     | __|   / __|     o O O  |   \\  | | | |    o O O   _ | |  | __|  | | | |\n");
+    printf("  |   /   | _|   | (_ |   | |__   | _|    \\__ \\    o       | |) | | |_| |   o       | || |  | _|   | |_| |\n");
+    printf("  |_|_\\   |___|   \\___|   |____|  |___|   |___/   TS__[O]  |___/   \\___/   TS__[O]  _\\__/   |___|   \\___/\n");
+    printf("_|\"\"\"\"\"|_|\"\"\"\"\"|_|\"\"\"\"\"|_|\"\"\"\"\"|_|\"\"\"\"\"|_|\"\"\"\"\"| {======|_|\"\"\"\"\"|_|\"\"\"\"\"| {======|_|\"\"\"\"\"|_|\"\"\"\"\"|\n");
+    printf("\"`-0-0-'\"`-0-0-'\"`-0-0-'\"`-0-0-'\"`-0-0-'\"`-0-0-'/o--000'\"`-0-0-'\"`-0-0-'/o--000'\"`-0-0-'\"`-0-0-'\"`-0-0-'\n");
+
+    printf("\n\n");
     SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
     printf("Bienvenu cher comp%ctiteur, aujourd'hui vous allez aider", 130);
     SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_INTENSITY);
@@ -97,10 +97,14 @@ void affichage_option_1(){
     SetConsoleTextAttribute(hConsole,FOREGROUND_GREEN| FOREGROUND_INTENSITY);
     printf("Sauvegarde : ");
     SetConsoleTextAttribute(hConsole,FOREGROUND_RED| FOREGROUND_INTENSITY);
-    printf("M\n");
+    printf("J\n");
     SetConsoleTextAttribute(hConsole,FOREGROUND_GREEN| FOREGROUND_INTENSITY);
     printf("D%cplacement %c gauche : ",130,133);
     SetConsoleTextAttribute(hConsole,FOREGROUND_RED| FOREGROUND_INTENSITY);
     printf("Q\t");
+    SetConsoleTextAttribute(hConsole,FOREGROUND_GREEN| FOREGROUND_INTENSITY);
+    printf("Casser les blocs: ",130,133);
+    SetConsoleTextAttribute(hConsole,FOREGROUND_RED| FOREGROUND_INTENSITY);
+    printf("B\t");
     SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE |  FOREGROUND_INTENSITY);
 }
