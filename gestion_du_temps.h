@@ -7,10 +7,10 @@
 
 #include <time.h>
 #include "Structures.h"
-
-int decompte();
+// Fonction qui charge une première valeur de temps
 void init_compteur(long long *,time_t *);
 void affiche_temps(int);
+int decompte();
 int decompte_corrige(int *, long long *,time_t *,Plateau *);
 int dir_balle(Plateau * ptPlateau);
 void bloc_intermitant(Plateau* ptPlateau, int etat);
