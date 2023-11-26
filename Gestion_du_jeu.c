@@ -27,7 +27,70 @@ int verif_nb_de_vies(Plateau * ptPlateau){
     return ptPlateau->nb_de_vies>=0;
     //return 1;
 }
+void win(){
+    system("cls");
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+    printf(R"EOF(,---.  ,---..-./`)     _______ ,---------.    ,-----.   .-./`) .-------.        .-''-.
+|   /  |   |\ .-.')   /   __  \\          \ .'  .-,  '. \ .-.')|  _ _   \     .'_ _   \
+|  |   |  .'/ `-' \  | ,_/  \__)`--.  ,---'/ ,-.|  \ _ \/ `-' \| ( ' )  |    / ( ` )   '
+|  | _ |  |  `-'`"`,-./  )         |   \  ;  \  '_ /  | :`-'`"`|(_ o _) /   . (_ o _)  |
+|  _( )_  |  .---. \  '_ '`)       :_ _:  |  _`,/ \ _/  |.---. | (_,_).' __ |  (_,_)___|
+\ (_ o._) /  |   |  > (_)  )  __   (_I_)  : (  '\_/ \   ;|   | |  |\ \  |  |'  \   .---.
+ \ (_,_) /   |   | (  .  .-'_/  ) (_(=)_)  \ `"/  \  ) / |   | |  | \ `'   / \  `-'    /
+  \     /    |   |  `-'`-'     /   (_I_)    '. \_/``".'  |   | |  |  \    /   \       /
+   `---`     '---'    `._____.'    '---'      '-----'    '---' ''-'   `'-'     `'-..-'
 
+)EOF");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED|FOREGROUND_GREEN| FOREGROUND_INTENSITY);
+    printf("\n\nFELICITATION!\n");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE FOREGROUND_INTENSITY);
+    pritnf("Vous avez aid%c",130);
+    SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+    printf(" Snoopy");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE FOREGROUND_INTENSITY);
+    printf(" avec bravoure et il a pu voler TOUTES les");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED|FOREGROUND_GREEN| FOREGROUND_INTENSITY);
+    printf("bananes");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE FOREGROUND_INTENSITY);
+    printf("de");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+    printf(" Babouche Le Vilain");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE FOREGROUND_INTENSITY);
+    printf(" , sa");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED FOREGROUND_INTENSITY);
+    printf(" vengence");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE FOREGROUND_INTENSITY);
+    printf(" est un succès!\nApres cette");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED FOREGROUND_INTENSITY);
+    printf(" vengence");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE FOREGROUND_INTENSITY);
+    printf(",");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+    printf(" Snoopy");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE FOREGROUND_INTENSITY);
+    printf(" a fait fortune dans le resell de");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED|FOREGROUND_GREEN| FOREGROUND_INTENSITY);
+    printf(" bananes");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE FOREGROUND_INTENSITY);
+    printf(" et engagea");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+    printf(" Babouche Le Vilain");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE FOREGROUND_INTENSITY);
+    printf(" sous ses ordre.\n\n\nDans le prochain volet :\n\n");
+    etConsoleTextAttribute(hConsole, FOREGROUND_BLUE|FOREGROUND_RED| FOREGROUND_INTENSITY);
+    printf(R"EOF(
+ (                                                                 (        )  (
+ )\ )                                                   (          )\ )  ( /(  )\ )   (
+(()/(    )    )     (       (  (    (             (     )\ )  (   (()/(  )\())(()/(   )\
+ /(_))( /(   /((   ))\ (    )\))(  ))\ (     (   ))\   (()/( ))\   /(_))((_)\  /(_)|(((_)(
+(_))  )(_)) (_))\ /((_))\ )((_))\ /((_))\ )  )\ /((_)   ((_))((_) (_))_   ((_)(_))  )\ _ )\
+| |  ((_)_  _)((_|_)) _(_/( (()(_|_)) _(_/( ((_|_))     _| (_))    |   \ / _ \| _ \ (_)_\(_)
+| |__/ _` | \ V // -_) ' \)) _` |/ -_) ' \)) _|/ -_)  / _` / -_)   | |) | (_) |   /  / _ \
+|____\__,_|  \_/ \___|_||_|\__, |\___|_||_|\__|\___|  \__,_\___|   |___/ \___/|_|_\ /_/ \_\
+                           |___/
+)EOF");
+}
 void game_over(){
     system("cls");
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);

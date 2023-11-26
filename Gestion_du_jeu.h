@@ -11,6 +11,7 @@ void ecran_lancement();
 void affiche_donnees_importantes();
 void jouer(Plateau *,int *,int *);
 int verif_nb_de_vies(Plateau *);
+void win();
 void game_over();
 int verif_collisions(Plateau *,unsigned char, unsigned char);
 int verif_banane(Plateau * ptPlateau,unsigned char X_test, unsigned char Y_test);
