@@ -347,6 +347,17 @@ int verif_fin_niveau(Plateau * ptPlateau){
     return ptPlateau->nb_oiseaux_restants<=0;
 }
 
+void verif_bloc_pieges(Plateau * ptPlateau, unsigned char X_test, unsigned char Y_test){
+    if(ptPlateau->maMatrice[X_test][Y_test]=='3'){
+        ptPlateau->maMatrice[X_test][Y_test]='0';
+        vraigotoligcol(X_test,Y_test);
+        affiche_char_selon_entier_simple('0');
+        ptPlateau->nb_de_vies--;
+
+    }
+
+}
+
 
 /*
 do{
