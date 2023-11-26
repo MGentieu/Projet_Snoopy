@@ -75,7 +75,6 @@ _|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_| """"|_|"""""|_|"""""|
     SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
     printf("...\n\n");
     SetConsoleTextAttribute(hConsole,FOREGROUND_BLUE |FOREGROUND_RED |FOREGROUND_GREEN | FOREGROUND_INTENSITY);
-    printf("Nous allons maintenant retourner au menu\n");
     system("pause");
     system("cls");
 }
@@ -111,7 +110,6 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                 verif3=0;
                 goto_ligne_colonne(0,23);
                 system("cls");
-                system("pause");
                 SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN |FOREGROUND_RED | FOREGROUND_INTENSITY);
                 printf("                            \n"
                        "   (                        \n"
@@ -124,15 +122,15 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                        "                            \n"
                        "\n");
                 SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
-                printf("Votre ");
+                printf("\nVOTRE ");
                 SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE |FOREGROUND_RED | FOREGROUND_INTENSITY);
-                printf("score ");
+                printf("SCORE ");
                 SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
-                printf("actuel est de ");
+                printf("ACTUEL EST DE ");
                 SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE |FOREGROUND_RED | FOREGROUND_INTENSITY);
-                printf("%d\n",ptPlateau->score);
+                printf("%d",ptPlateau->score);
                 SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE| FOREGROUND_INTENSITY);
-                printf(".\n");
+                printf(".\n\n");
                 SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE |FOREGROUND_GREEN |FOREGROUND_RED | FOREGROUND_INTENSITY);
                 system("pause");
                 return;
