@@ -49,7 +49,7 @@ void affichage_option_3(){
         while (!feof(fichier_score)) {
             int score;
             char nom_joueur[50];
-            fread(nom_joueur, sizeof(char), 50, fichier_score);
+            fread(&nom_joueur, sizeof(char), 50, fichier_score);
             fread(&score, sizeof(int), 1, fichier_score);
             printf("Nom du joueur : %s\nScore : %d\n", nom_joueur, score);
         }
