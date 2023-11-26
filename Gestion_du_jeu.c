@@ -24,7 +24,7 @@ void affiche_donnees_importantes(){
 }
 
 int verif_nb_de_vies(Plateau * ptPlateau){
-    return ptPlateau->nb_de_vies>0;
+    return ptPlateau->nb_de_vies>=0;
     //return 1;
 }
 
