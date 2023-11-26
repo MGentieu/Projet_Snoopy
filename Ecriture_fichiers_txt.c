@@ -98,8 +98,8 @@ void write_mots_de_passe(){
 
     FILE * pF = fopen("mots_de_passe.txt","w");
     fprintf(pF,"Valere1\n");
-    fprintf(pF,"Franklin2\n");
-    fprintf(pF,"Keethan3\n");
+    fprintf(pF,"Keethan2\n");
+    fprintf(pF,"Franklin3\n");
     fprintf(pF,"Martin4\n");
     fclose(pF);
 }
