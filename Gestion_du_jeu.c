@@ -152,10 +152,14 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                 if(xavt>0&& verif_collisions(ptPlateau,ptPlateau->X_Snoopy-1,ptPlateau->Y_Snoopy)){
                     x=xavt-1;
                     ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]=avant;
+                    vraigotoligcol(ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy);
+                    affiche_char_selon_entier_simple(avant);
                     ptPlateau->X_Snoopy=x;
                     avant=ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy];
+                    vraigotoligcol(ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy);
+                    affiche_char_selon_entier_simple('7');
                     ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]='7';
-                    affiche_plateau_entier(ptPlateau);
+                    //affiche_plateau_entier(ptPlateau);
                     xavt=x;
                 }
                 break;
@@ -163,10 +167,14 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                 if(yavt>0&&verif_collisions(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy-1)) {
                     y = yavt - 1;
                     ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]=avant;
+                    vraigotoligcol(ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy);
+                    affiche_char_selon_entier_simple(avant);
                     ptPlateau->Y_Snoopy = y;
                     avant=ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy];
+                    vraigotoligcol(ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy);
+                    affiche_char_selon_entier_simple('7');
                     ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]='7';
-                    affiche_plateau_entier(ptPlateau);
+                    //affiche_plateau_entier(ptPlateau);
                     yavt=y;
                 }
 
@@ -175,10 +183,14 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                 if(xavt<9&&verif_collisions(ptPlateau,ptPlateau->X_Snoopy+1,ptPlateau->Y_Snoopy)) {
                     x = xavt + 1;
                     ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]=avant;
+                    vraigotoligcol(ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy);
+                    affiche_char_selon_entier_simple(avant);
                     ptPlateau->X_Snoopy=x;
                     avant=ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy];
+                    vraigotoligcol(ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy);
+                    affiche_char_selon_entier_simple('7');
                     ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]='7';
-                    affiche_plateau_entier(ptPlateau);
+                    //affiche_plateau_entier(ptPlateau);
                     xavt=x;
                 }
 
@@ -187,10 +199,14 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                 if(yavt<19&&verif_collisions(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy+1)) {
                     y = yavt + 1;
                     ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]=avant;
+                    vraigotoligcol(ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy);
+                    affiche_char_selon_entier_simple(avant);
                     ptPlateau->Y_Snoopy = y;
                     avant=ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy];
+                    vraigotoligcol(ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy);
+                    affiche_char_selon_entier_simple('7');
                     ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]='7';
-                    affiche_plateau_entier(ptPlateau);
+                    //affiche_plateau_entier(ptPlateau);
                     yavt=y;
                 }
             case 'b':
