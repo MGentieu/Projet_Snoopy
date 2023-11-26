@@ -302,6 +302,10 @@ int verif_banane(Plateau * ptPlateau,unsigned char X_test, unsigned char Y_test)
     return (ptPlateau->maMatrice[X_test][Y_test]=='9');
 }
 
+void up_score_car_niveau_fini(Plateau * ptPlateau){
+    ptPlateau->score+=ptPlateau->temps_restant*100;
+}
+
 
 /*
 do{
