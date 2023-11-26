@@ -204,7 +204,13 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                     ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy] = '7';
                     ptPlateau->maMatrice[ptPlateau->X_Snoopy+1][ptPlateau->Y_Snoopy] = '0';
                     ptPlateau->maMatrice[ptPlateau->X_Snoopy-1][ptPlateau->Y_Snoopy] = '6';
-                    affiche_plateau_entier(ptPlateau);
+                    vraigotoligcol(ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy);
+                    affiche_char_selon_entier_simple('7');
+                    vraigotoligcol(ptPlateau->X_Snoopy+1,ptPlateau->Y_Snoopy);
+                    affiche_char_selon_entier_simple('0');
+                    vraigotoligcol(ptPlateau->X_Snoopy-1,ptPlateau->Y_Snoopy);
+                    affiche_char_selon_entier_simple('6');
+                    //affiche_plateau_entier_simple(ptPlateau);
                     xavt = x;
                 }
                 verif_tous_les_blocs_pieges_pres_de_snoopy(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy);
@@ -240,7 +246,13 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                     ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy] = '7';
                     ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy + 1] = '0';
                     ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy - 1] = '6';
-                    affiche_plateau_entier(ptPlateau);
+                    vraigotoligcol(ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy);
+                    affiche_char_selon_entier_simple('7');
+                    vraigotoligcol(ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy+1);
+                    affiche_char_selon_entier_simple('0');
+                    vraigotoligcol(ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy-1);
+                    affiche_char_selon_entier_simple('6');
+                    //affiche_plateau_entier_simple(ptPlateau);
                     yavt = y;
                 }
                 verif_tous_les_blocs_pieges_pres_de_snoopy(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy);
@@ -276,7 +288,13 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                     ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy] = '7';
                     ptPlateau->maMatrice[ptPlateau->X_Snoopy-1][ptPlateau->Y_Snoopy] = '0';
                     ptPlateau->maMatrice[ptPlateau->X_Snoopy+1][ptPlateau->Y_Snoopy] = '6';
-                    affiche_plateau_entier(ptPlateau);
+                    vraigotoligcol(ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy);
+                    affiche_char_selon_entier_simple('7');
+                    vraigotoligcol(ptPlateau->X_Snoopy-1,ptPlateau->Y_Snoopy);
+                    affiche_char_selon_entier_simple('0');
+                    vraigotoligcol(ptPlateau->X_Snoopy+1,ptPlateau->Y_Snoopy);
+                    affiche_char_selon_entier_simple('6');
+                    //affiche_plateau_entier_simple(ptPlateau);
                     xavt = x;
                 }
                 verif_tous_les_blocs_pieges_pres_de_snoopy(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy);
@@ -312,7 +330,13 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                     ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy] = '7';
                     ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy-1] = '0';
                     ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy+1] = '6';
-                    affiche_plateau_entier(ptPlateau);
+                    vraigotoligcol(ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy);
+                    affiche_char_selon_entier_simple('7');
+                    vraigotoligcol(ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy-1);
+                    affiche_char_selon_entier_simple('0');
+                    vraigotoligcol(ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy+1);
+                    affiche_char_selon_entier_simple('6');
+                    //affiche_plateau_entier_simple(ptPlateau);
                     yavt = y;
                 }
                 verif_tous_les_blocs_pieges_pres_de_snoopy(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy);
