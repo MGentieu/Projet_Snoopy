@@ -40,13 +40,28 @@ _|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_| """"|_|"""""|_|"""""|
 "`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'./o--000'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'
 )EOF");
     printf("\n\n");
-    printf("Vous n'avez plus de vies!\n");
+    printf("         _\n"
+           "        (:)_\n"
+           "      ,'    `.\n"
+           "     :        :  Vous n'avez plus de vies!\n"
+           "     |        |              ___\n"
+           "     |       /|    ______   //  _/ \n"
+           "     ; -  _,' :  ,'      `. //   -/ \n"
+           "    /          /           /  /    :\n"
+           "   (            :  ------.  `-'    |\n"
+           "____/ ___    ____|______   / ______|_______\n"
+           "        |::|           '--`           SSt\n"
+           "        |::|\n"
+           "        |::|\n"
+           "        |::|\n"
+           "        |::;\n"
+           "        `:/\n\n");
     SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
     printf("Par votre faute ");
     SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
     printf("Babouche Le Vilain");
     SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
-    printf("a attrap%c votre ami",130);
+    printf(" a attrap%c votre ami",130);
     SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_INTENSITY);
     printf(" Snoopy");
     SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
@@ -54,12 +69,12 @@ _|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_| """"|_|"""""|_|"""""|
     SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_INTENSITY);
     printf(" Snoopy");
     SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
-    printf("aurait %ct%c appercu %crant dans les favelas m%cxicaines sous les ordres de ",130,130,130,130);
+    printf(" aurait %ct%c appercu %crant dans les favelas m%cxicaines sous les ordres de ",130,130,130,130);
     SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
     printf("Babouche Le Vilain");
     SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
     printf("...\n\n");
-    SetConsoleTextAttribute(hConsole, FOREGROUND_INTENSITY);
+    SetConsoleTextAttribute(hConsole,FOREGROUND_BLUE |FOREGROUND_RED |FOREGROUND_GREEN | FOREGROUND_INTENSITY);
     printf("Nous allons maintenant retourner au menu\n");
     system("pause");
     system("cls");
@@ -67,6 +82,7 @@ _|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_| """"|_|"""""|_|"""""|
 
 void jouer(Plateau * ptPlateau,int * ptVerif){
     //affiche_donnees_importantes();
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     char avant='0';
     unsigned char x=ptPlateau->X_Snoopy;
     unsigned char y=ptPlateau->Y_Snoopy;
@@ -94,6 +110,9 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                 up_score_car_niveau_fini(ptPlateau);
                 verif3=0;
                 goto_ligne_colonne(0,23);
+                system("cls");
+                system("pause");
+                SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
                 printf("BRAVO ! Vous avez fini le niveau!\n"
                        "Votre score actuel est de %d.\n",ptPlateau->score);
                 system("pause");

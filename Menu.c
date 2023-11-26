@@ -11,11 +11,52 @@
 #include "Chargement_Niveaux.h"
 #include "Gestion_du_jeu.h"
 
+void ecran_lancement(){
+    system("cls");
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED |FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+    printf("                 __--XX-\n"
+           "                                 ^XXXXX^^\n"
+           "                             _-XXXX-^\n"
+           "              XXX         --XXX^^                         ______          _      _     _____                               \n"
+           "          XXXX   -XX_--VXXX^^                             | ___ \\        (_)    | |   /  ___|                              \n"
+           "        XX      _-^ .=XX^                                 | |_/ / __ ___  _  ___| |_  \\ `--. _ __   ___   ___  _ __  _   _ \n"
+           "      XX     _-^::XX^^^ XXX-_____     ___                 |  __/ '__/ _ \\| |/ _ \\ __|  `--. \\ '_ \\ / _ \\ / _ \\| '_ \\| | | |\n"
+           "     X    _-^_-^                 ^^^^^   ^^XXXX           | |  | | | (_) | |  __/ |_  /\\__/ / | | | (_) | (_) | |_) | |_| |\n"
+           "    X  _-^_-^                                  X          \\_|  |_|  \\___/| |\\___|\\__| \\____/|_| |_|\\___/ \\___/| .__/ \\__, |\n"
+           "   X_-^_-^              .                       X                       _/ |                                  | |     __/ |\n"
+           " --^_-^                .X                       X----                  |__/                                   |_|    |___/ \n"
+           "-.-                    ^^                       XXXX -\n"
+           " X                                              XXXX-\n"
+           " X                                              X\n"
+           " X                                              X\n"
+           "X      XXX  XX                                 X\n"
+           "X     XXXXX  X                                X\n"
+           "X    XXXXXXX  X                              X\n"
+           "X   XXXXXXXXX X                            XX\n"
+           "X  XXXXXXXXXXX X                       XXXX\n"
+           " X XXXXXXXXXXX X                   XXXX\n"
+           " X XXXXXXXXXXX XXX           XXXXXX\n"
+           " X XXXXXXXXXXX X XX        XX\n"
+           " X XXXXXXXXXXX X   X      X                   ___\n"
+           " X  XXXXXXXXX X     X-XXXXX              __---   ------_\n"
+           "  X  XXXXXXX X     ^---^  X           __- _---^^^----__ --_\n"
+           "  X   XXXXX X       X      X        _- -'^.....   .....^'-_-_\n"
+           "   XX-     XX      X .     XX    _-  _-....   .....   .....= =\n"
+           "      XXXXX       X   X    X   _-  _-...   .....   .....   .= =\n"
+           "                XX    X      XX  _-.   .....   .....   .....= =\n"
+           "               X      X      X/XX....   .....   .....   ....= =\n"
+           "              XXX      XXXXXX^  X   .....   .....   .....  _-_-\n"
+           "             X   XX              /");
+}
 int menu(){
     //HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     //SetConsoleTextAttribute(hConsole, WHITENESS | FOREGROUND_INTENSITY);
     int choix = 0;
     int verif=1;
+    ecran_lancement();
+    system("pause");
+
     do {
         system("cls");
         HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -25,7 +66,7 @@ int menu(){
 | |\/| |  | _|   | .` |  | |_| |
 |_|__|_|  |___|  |_|\_|   \___/
 _|"""""|_|"""""|_|"""""|_|"""""|
-"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'                                                                                                                                      ░
+"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'
 )EOF");
         SetConsoleTextAttribute(hConsole, FOREGROUND_RED |FOREGROUND_BLUE |FOREGROUND_GREEN| FOREGROUND_INTENSITY);
         printf("1. Livret de regles.\n"

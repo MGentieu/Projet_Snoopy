@@ -6,7 +6,8 @@
 #define PROJET_SNOOPY_GESTION_DU_JEU_H
 
 #include "Structures.h"
-
+// fonction qui lance l'écran de lancement
+void ecran_lancement();
 void affiche_donnees_importantes();
 void jouer(Plateau *,int *);
 int verif_nb_de_vies(Plateau *);

@@ -12,7 +12,7 @@ void affichage_option_3(){
   \__ \  | (__   | (_) |  |   /   | _|    \__ \
   |___/   \___|   \___/   |_|_\   |___|   |___/
 _|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|
-"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'                                                                                                                                    ░
+"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'
 )EOF");
     SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN| FOREGROUND_BLUE| FOREGROUND_INTENSITY);
     }
