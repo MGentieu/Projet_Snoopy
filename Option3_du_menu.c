@@ -55,7 +55,5 @@ void affichage_option_3(){
         }
         fclose(fichier_score);
     }
-    fclose(fichier_score);
-
     SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN| FOREGROUND_BLUE| FOREGROUND_INTENSITY);
 }
