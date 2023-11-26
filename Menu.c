@@ -128,7 +128,7 @@ _|"""""|_|"""""|_|"""""|_|"""""|                 |  `-'  (        /
         case 1:
             system("cls");
             affichage_option_1();
-            system("pause");
+
             break;
         case 2:
             system("cls");
