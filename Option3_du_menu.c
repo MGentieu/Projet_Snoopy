@@ -46,5 +46,5 @@ _|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|            ====           //
     }
     fclose(fichier_score);
 
-
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN| FOREGROUND_BLUE| FOREGROUND_INTENSITY);
 }
