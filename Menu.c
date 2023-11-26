@@ -77,13 +77,12 @@ int menu(){
         system("cls");
         HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
         SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
-        printf(R"EOF( __  __    ___    _  _    _   _                     _.---,-..
-|  \/  |  | __|  | \| |  | | | |                  ,'    )(__)\__
-| |\/| |  | _|   | .` |  | |_| |                  /  ,-.',<..-'  `._
-|_|__|_|  |___|  |_|\_|   \___/                  :  |  |' /       (_)
-_|"""""|_|"""""|_|"""""|_|"""""|                 |  `-'  (        /
-"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'                  `.._    >-----''
-)EOF");
+        printf(" __  __    ___    _  _    _   _                     _.---,-..\n");
+        printf("|  \\/  |  | __|  | \\| |  | | | |                  ,'    )(__)\\__\n");
+        printf("| |\\/| |  | _|   | .` |  | |_| |                  /  ,-.',<..-'  `._\n");
+        printf("|_|__|_|  |___|  |_|\\_|   \\___/                  :  |  |' /       (_)\n");
+        printf("_|\"\"\"\"\"|_|\"\"\"\"\"|_|\"\"\"\"\"|_|\"\"\"\"\"|                 |  `-'  (        /\n");
+        printf("\"`-0-0-'\"`-0-0-'\"`-0-0-'\"`-0-0-'                  `.._    >-----''\n");
         SetConsoleTextAttribute(hConsole, FOREGROUND_RED |FOREGROUND_BLUE |FOREGROUND_GREEN| FOREGROUND_INTENSITY);
         printf("1. Livret de regles.");
         SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_INTENSITY);

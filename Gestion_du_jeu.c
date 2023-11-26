@@ -68,52 +68,50 @@ void win(){
     system("cls");
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
-    printf(R"EOF(                    XXX
-                  X    XX
-                 X  ***  X                XXXXX
-                X  *****  X            XXX     XX
-             XXXX ******* XXX      XXXX          XX                     ,---.  ,---..-./`)     _______ ,---------.    ,-----.   .-./`) .-------.        .-''-.
-           XX	X ******  XXXXXXXXX    El@         XX XXX               |   /  |   |\ .-.')   /   __  \\          \ .'  .-,  '. \ .-.')|  _ _   \     .'_ _   \
-         XX	 X ****  X                           X** X                  |  |   |  .'/ `-' \  | ,_/  \__)`--.  ,---'/ ,-.|  \ _ \/ `-' \| ( ' )  |    / ( ` )   '
-        X        XX    XX     X                      X***X              |  | _ |  |  `-'`"`,-./  )         |   \  ;  \  '_ /  | :`-'`"`|(_ o _) /   . (_ o _)  |
-       X         //XXXX       X                      XXXX               |  _( )_  |  .---. \  '_ '`)       :_ _:  |  _`,/ \ _/  |.---. | (_,_).' __ |  (_,_)___|
-      X         //   X                             XX                   \ (_ o._) /  |   |  > (_)  )  __   (_I_)  : (  '\_/ \   ;|   | |  |\ \  |  |'  \   .---.
-     X         //    X	        XXXXXXXXXXXXXXXXXX/                      \ (_,_) /   |   | (  .  .-'_/  ) (_(=)_)  \ `"/  \  ) / |   | |  | \ `'   / \  `-'    /
-     X	   XXX//    X          X                                          \     /    |   |  `-'`-'     /   (_I_)    '. \_/``".'  |   | |  |  \    /   \       /
-     X	  X   X     X         X                                            `---`     '---'    `._____.'    '---'      '-----'    '---' ''-'   `'-'     `'-..-'
-     X    X    X    X        X
-      X   X    X    X        X			  XX
-      X    X   X    X        X		       XXX  XX
-       X    XXX      X        X 	      X  X X  X
-       X	     X         X	      XX X  XXXX
-        X	      X         XXXXXXXX\     XX   XX  X
-         XX	       XX             X     X    @X  XX
-           XX		 XXXX	XXXXXX/     X     XXXX
-             XXX	     XX***         X     X
-                XXXXXXXXXXXXX *   *       X     X
-                             *---* X     X     X
-                            *-* *   XXX X     X
-                            *- *       XXX   X
-                           *- *X	  XXX
-                           *- *X  X	     XXX
-                          *- *X    X		XX
-                          *- *XX    X		  X
-                         *  *X* X    X		   X
-                         *  *X * X    X 	    X
-                        *  * X**  X   XXXX	    X
-                        *  * X**  XX	 X	    X
-                       *  ** X** X     XX	   X
-                       *  **  X*  XXX	X	  X
-                      *  **    XX   XXXX       XXX
-                     *	* *	 XXXX	   X	 X
-                    *	* *	     X	   X	 X
-      =======*******   * *	     X	   X	  XXXXXXXX\
-             *	       * *	/XXXXX	    XXXXXXXX\	   )
-        =====**********  *     X		     )	\  )
-          ====* 	*     X 	      \  \   )XXXXX
-     =========**********       XXXXXXXXXXXXXXXXXXXXXX
-
-)EOF");
+    printf("                    XXX\n"
+           "                  X    XX\n"
+           "                 X  ***  X                XXXXX\n"
+           "                X  *****  X            XXX     XX\n"
+           "             XXXX ******* XXX      XXXX          XX                     ,---.  ,---..-./`)     _______ ,---------.    ,-----.   .-./`) .-------.        .-''-.\n"
+           "           XX X ******  XXXXXXXXX    El@         XX XXX               |   /  |   |\\ .-.')   /   __  \\\\          \\ .'  .-,  '. \\ .-.')|  _ _   \\     .'_ _   \\\n"
+           "         XX   X ****  X                           X** X                  |  |   |  .'/ `-' \\  | ,_/  \\__)`--.  ,---'/ ,-.|  \\ _ \\/ `-' \\| ( ' )  |    / ( ` )   '\n"
+           "        X        XX    XX     X                      X***X              |  | _ |  |  `-'`\"`,-./  )         |   \\  ;  \\  '_ /  | :`-'`\"`|(_ o _) /   . (_ o _)  |\n"
+           "       X         //XXXX       X                      XXXX               |  _( )_  |  .---. \\  '_ '`)       :_ _:  |  _`,/ \\ _/  |.---. | (_,_).' __ |  (_,_)___|\n"
+           "      X         //   X                             XX                   \\ (_ o._) /   |   |  > (_)  )  __   (_I_)  : (  '\\_/ \\   ;|   | |  |\\ \\  |  |'  \\   .---.\n"
+           "     X         //    X	        XXXXXXXXXXXXXXXXXX/                      \\ (_,_) /   |   | (  .  .-'_/  ) (_(=)_)  \\ `\"/  \\  ) / |   | |  | \\ `'   / \\  `-'    /\n"
+           "     X	   XXX//    X          X                                          \\     /    |   |  `-'`-'     /   (_I_)    '. \\_/``\".'  |   | |  |  \\    /   \\       /\n"
+           "     X	  X   X     X         X                                            `---`     '---'    `._____.'    '---'      '-----'    '---' ''-'   `'-'     `'-..-'\n"
+           "     X    X    X    X        X		      XX\n"
+           "      X   X    X    X        X		       XXX  XX\n"
+           "      X    X   X    X        X		        X  X X  X\n"
+           "       X    XXX      X        X 	        X  X XXXX\n"
+           "       X	     X         X	      XX X  XXXX\n"
+           "        X	      X         XXXXXXXX\\     XX   XX  X\n"
+           "         XX	       XX             X     X    @X  XX\n"
+           "           XX		 XXXX	XXXXXX/     X     XXXX\n"
+           "             XXX	     XX***         X     X\n"
+           "                XXXXXXXXXXXXX *   *       X     X\n"
+           "                             *---* X     X     X\n"
+           "                            *-* *   XXX X     X\n"
+           "                            *- *       XXX   X\n"
+           "                           *- *X	  XXX\n"
+           "                           *- *X  X	     XXX\n"
+           "                          *- *X    X		XX\n"
+           "                          *- *XX    X		  X\n"
+           "                         *  *X* X    X		   X\n"
+           "                         *  *X * X    X 	    X\n"
+           "                        *  * X**  X   XXXX	    X\n"
+           "                        *  * X**  XX	 X	    X\n"
+           "                       *  ** X** X     XX	   X\n"
+           "                       *  **  X*  XXX	X	  X\n"
+           "                      *  **    XX   XXXX       XXX\n"
+           "                     *	* *	 XXXX	   X	 X\n"
+           "                    *	* *	     X	   X	 X\n"
+           "      =======*******   * *	     X	   X	  XXXXXXXX\\\n"
+           "             *	       * *	/XXXXX	    XXXXXXXX\\	   )\n"
+           "        =====**********  *     X		     )	\\  )\n"
+           "          ====* 	*     X 	      \\  \\   )XXXXX\n"
+           "     =========**********       XXXXXXXXXXXXXXXXXXXXXX\n");
     SetConsoleTextAttribute(hConsole, FOREGROUND_RED|FOREGROUND_GREEN| FOREGROUND_INTENSITY);
     printf("\n\nFELICITATION!\n");
     SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE |FOREGROUND_INTENSITY);
@@ -151,29 +149,29 @@ void win(){
     SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE| FOREGROUND_INTENSITY);
     printf(" sous ses ordre.\nDans le prochain volet :\n\n");
     SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE|FOREGROUND_RED| FOREGROUND_INTENSITY);
-    printf(R"EOF(
- (                                                                 (        )  (
- )\ )                                                   (          )\ )  ( /(  )\ )   (
-(()/(    )    )     (       (  (    (             (     )\ )  (   (()/(  )\())(()/(   )\
- /(_))( /(   /((   ))\ (    )\))(  ))\ (     (   ))\   (()/( ))\   /(_))((_)\  /(_)|(((_)(
-(_))  )(_)) (_))\ /((_))\ )((_))\ /((_))\ )  )\ /((_)   ((_))((_) (_))_   ((_)(_))  )\ _ )\
-| |  ((_)_  _)((_|_)) _(_/( (()(_|_)) _(_/( ((_|_))     _| (_))    |   \ / _ \| _ \ (_)_\(_)
-| |__/ _` | \ V // -_) ' \)) _` |/ -_) ' \)) _|/ -_)  / _` / -_)   | |) | (_) |   /  / _ \
-|____\__,_|  \_/ \___|_||_|\__, |\___|_||_|\__|\___|  \__,_\___|   |___/ \___/|_|_\ /_/ \_\
-                           |___/
-)EOF");
+    printf(
+            " (                                                                 (        )  (\n"
+            " )\\ )                                                   (          )\\ )  ( /(  )\\ )   (\n"
+            "(()/(    )    )     (       (  (    (             (     )\\ )  (   (()/(  )\\())(()/(   )\\\n"
+            " /(_))( /(   /((   ))\\ (    )\\))(  ))\\ (     (   ))\\   (()/( ))\\   /(_))((_)\  /(_)|(((_)(\n"
+            "(_))  )(_)) (_))\\ /((_))\\ )((_))\\ /((_))\\ )  )\\ /((_)   ((_))((_) (_))_   ((_)(_))  )\\ _ )\\\n"
+            "| |  ((_)_  _)((_|_)) _(_/( (()(_|_)) _(_/( ((_|_))     _| (_))    |   \\ / _ \\| _ \\ (_)_\\(_)\n"
+            "| |__ / _` | \\ V // -_) ' \\)) _` |/ -_) ' \\)) _|/ -_)  / _` / -_) | |) | (_) |   /  / _ \\\n"
+            "|____\\__,_|  \\_/ \\___|_||_|\__, |\\___|_||_|\__|\\___|  \\__,_\\___|   |___/ \\___/|_|_\\ /_/ \\_\\\n"
+            "                           |___/\n"
+    );
 }
 void game_over(){
     system("cls");
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_INTENSITY);
-    printf(R"EOF(   ___     ___   __  __    ___              ___   __   __   ___     ___
-  / __|   /   \ |  \/  |  | __|     o O O  / _ \  \ \ / /  | __|   | _ \
- | (_ |   | - | | |\/| |  | _|     o      | (_) |  \ V /   | _|    |   /
-  \___|   |_|_| |_|__|_|  |___|   TS__[O]  \___/   _\_/_   |___|   |_|_\
-_|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_| """"|_|"""""|_|"""""|
-"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'./o--000'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'
-)EOF");
+    printf("   ___     ___   __  __    ___              ___   __   __   ___     ___\n");
+    printf("  / __|   /   \\ |  \\/  |  | __|     o O O  / _ \\  \\ \\ / /  | __|   | _ \\\n");
+    printf(" | (_ |   | - | | |\\/| |  | _|     o      | (_) |  \\ V /   | _|    |   /\n");
+    printf("  \\___|   |_|_| |_|__|_|  |___|   TS__[O]  \\___/   _\\_/_   |___|   |_|_\\\n");
+    printf("_|\"\"\"\"\"|_|\"\"\"\"\"|_|\"\"\"\"\"|_|\"\"\"\"\"| {======|_|\"\"\"\"\"|_| \"\"\"\"|_|\"\"\"\"\"|_|\"\"\"\"\"|\n");
+    printf("\"`-0-0-'\"`-0-0-'\"`-0-0-'\"`-0-0-'./o--000'\"`-0-0-'\"`-0-0-'\"`-0-0-'\"`-0-0-'\n");
+
     printf("\n\n");
     printf("         _\n"
            "        (:)_\n"

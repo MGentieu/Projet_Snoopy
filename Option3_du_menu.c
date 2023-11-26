@@ -30,13 +30,12 @@ void affichage_option_3(){
 
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN| FOREGROUND_INTENSITY);
-    printf(R"EOF(    ___     ___     ___     ___     ___     ___            ,-~~-.___.
-  / __|   / __|   / _ \   | _ \   | __|   / __|           / |  '     \
-  \__ \  | (__   | (_) |  |   /   | _|    \__ \          (  )         0
-  |___/   \___|   \___/   |_|_\   |___|   |___/          \_/-, ,----'
-_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|            ====           //
-"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'            /  \-'~;    /~~~(O)
-)EOF");
+    printf("    ___     ___     ___     ___     ___     ___            ,-~~-.___.\n");
+    printf("  / __|   / __|   / _ \\   | _ \\   | __|   / __|           / |  '     \\\n");
+    printf("  \\__ \\  | (__   | (_) |  |   /   | _|    \\__ \\          (  )         0\n");
+    printf("  |___/   \\___|   \\___/   |_|_\\   |___|   |___/          \\_/-, ,----'\n");
+    printf("_|\"\"\"\"\"|_|\"\"\"\"\"|_|\"\"\"\"\"|_|\"\"\"\"\"|_|\"\"\"\"\"|_|\"\"\"\"\"|            ====           //\n");
+    printf("\"`-0-0-'\"`-0-0-'\"`-0-0-'\"`-0-0-'\"`-0-0-'\"`-0-0-'            /  \\-'~;    /~~~(O)\n");
     SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN| FOREGROUND_BLUE| FOREGROUND_INTENSITY);
     printf("\n\n");
     SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
