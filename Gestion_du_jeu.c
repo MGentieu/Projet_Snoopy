@@ -14,13 +14,50 @@
 #include "gestion_du_temps.h"
 
 void affiche_donnees_importantes(){
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(hConsole,  FOREGROUND_INTENSITY);
     printf("Temps restant :\n");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
     printf("Nb de vies restantes :\n");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED |FOREGROUND_BLUE | FOREGROUND_INTENSITY);
     printf("Score_actuel :\n");
-    printf("Appuyez sur 'J' pour sauvegarder.\n");
-    printf("Appuyez sur 'P' pour quitter.\n");
-    printf("Appuyez sur 'K' pour mettre en pause.\n");
-    printf("'Q' pour gauche / 'S' pour bas / 'D' pour droite / 'Z' pour haut / 'B' pour casser.\n");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+    printf("Appuyez sur");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_INTENSITY);
+    printf(" 'J'");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+    printf(" pour sauvegarder.\n");
+    printf("Appuyez sur");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_INTENSITY);
+    printf(" 'P'");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+    printf(" pour quitter.\n");
+    printf("Appuyez sur");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_INTENSITY);
+    printf(" 'K'");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+    printf(" pour mettre en pause.\n");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_INTENSITY);
+    printf(" 'Q'");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+    printf(" pour gauche / ");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_INTENSITY);
+    printf("'S'");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+    printf(" pour bas / ");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_INTENSITY);
+    printf("'D'");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+    printf(" pour droite / ");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_INTENSITY);
+    printf("'Z'");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+    printf(" pour haut / ");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_INTENSITY);;
+    printf("'B'");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+    printf(" pour casser.\n");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_BLUE |FOREGROUND_RED |FOREGROUND_INTENSITY);
 }
 
 int verif_nb_de_vies(Plateau * ptPlateau){
@@ -31,15 +68,50 @@ void win(){
     system("cls");
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
-    printf(R"EOF(,---.  ,---..-./`)     _______ ,---------.    ,-----.   .-./`) .-------.        .-''-.
-|   /  |   |\ .-.')   /   __  \\          \ .'  .-,  '. \ .-.')|  _ _   \     .'_ _   \
-|  |   |  .'/ `-' \  | ,_/  \__)`--.  ,---'/ ,-.|  \ _ \/ `-' \| ( ' )  |    / ( ` )   '
-|  | _ |  |  `-'`"`,-./  )         |   \  ;  \  '_ /  | :`-'`"`|(_ o _) /   . (_ o _)  |
-|  _( )_  |  .---. \  '_ '`)       :_ _:  |  _`,/ \ _/  |.---. | (_,_).' __ |  (_,_)___|
-\ (_ o._) /  |   |  > (_)  )  __   (_I_)  : (  '\_/ \   ;|   | |  |\ \  |  |'  \   .---.
- \ (_,_) /   |   | (  .  .-'_/  ) (_(=)_)  \ `"/  \  ) / |   | |  | \ `'   / \  `-'    /
-  \     /    |   |  `-'`-'     /   (_I_)    '. \_/``".'  |   | |  |  \    /   \       /
-   `---`     '---'    `._____.'    '---'      '-----'    '---' ''-'   `'-'     `'-..-'
+    printf(R"EOF(                    XXX
+                  X    XX
+                 X  ***  X                XXXXX
+                X  *****  X            XXX     XX
+             XXXX ******* XXX      XXXX          XX                     ,---.  ,---..-./`)     _______ ,---------.    ,-----.   .-./`) .-------.        .-''-.
+           XX	X ******  XXXXXXXXX    El@         XX XXX               |   /  |   |\ .-.')   /   __  \\          \ .'  .-,  '. \ .-.')|  _ _   \     .'_ _   \
+         XX	 X ****  X                           X** X                  |  |   |  .'/ `-' \  | ,_/  \__)`--.  ,---'/ ,-.|  \ _ \/ `-' \| ( ' )  |    / ( ` )   '
+        X        XX    XX     X                      X***X              |  | _ |  |  `-'`"`,-./  )         |   \  ;  \  '_ /  | :`-'`"`|(_ o _) /   . (_ o _)  |
+       X         //XXXX       X                      XXXX               |  _( )_  |  .---. \  '_ '`)       :_ _:  |  _`,/ \ _/  |.---. | (_,_).' __ |  (_,_)___|
+      X         //   X                             XX                   \ (_ o._) /  |   |  > (_)  )  __   (_I_)  : (  '\_/ \   ;|   | |  |\ \  |  |'  \   .---.
+     X         //    X	        XXXXXXXXXXXXXXXXXX/                      \ (_,_) /   |   | (  .  .-'_/  ) (_(=)_)  \ `"/  \  ) / |   | |  | \ `'   / \  `-'    /
+     X	   XXX//    X          X                                          \     /    |   |  `-'`-'     /   (_I_)    '. \_/``".'  |   | |  |  \    /   \       /
+     X	  X   X     X         X                                            `---`     '---'    `._____.'    '---'      '-----'    '---' ''-'   `'-'     `'-..-'
+     X    X    X    X        X
+      X   X    X    X        X			  XX
+      X    X   X    X        X		       XXX  XX
+       X    XXX      X        X 	      X  X X  X
+       X	     X         X	      XX X  XXXX
+        X	      X         XXXXXXXX\     XX   XX  X
+         XX	       XX             X     X    @X  XX
+           XX		 XXXX	XXXXXX/     X     XXXX
+             XXX	     XX***         X     X
+                XXXXXXXXXXXXX *   *       X     X
+                             *---* X     X     X
+                            *-* *   XXX X     X
+                            *- *       XXX   X
+                           *- *X	  XXX
+                           *- *X  X	     XXX
+                          *- *X    X		XX
+                          *- *XX    X		  X
+                         *  *X* X    X		   X
+                         *  *X * X    X 	    X
+                        *  * X**  X   XXXX	    X
+                        *  * X**  XX	 X	    X
+                       *  ** X** X     XX	   X
+                       *  **  X*  XXX	X	  X
+                      *  **    XX   XXXX       XXX
+                     *	* *	 XXXX	   X	 X
+                    *	* *	     X	   X	 X
+      =======*******   * *	     X	   X	  XXXXXXXX\
+             *	       * *	/XXXXX	    XXXXXXXX\	   )
+        =====**********  *     X		     )	\  )
+          ====* 	*     X 	      \  \   )XXXXX
+     =========**********       XXXXXXXXXXXXXXXXXXXXXX
 
 )EOF");
     SetConsoleTextAttribute(hConsole, FOREGROUND_RED|FOREGROUND_GREEN| FOREGROUND_INTENSITY);

@@ -6,15 +6,24 @@
 #include <Windows.h>
 #include "Structures.h"
 
-void creer_fichier_scores(){
-    FILE * pF=fopen("scores.txt","w");
-    fclose(pF);
+void creer_fichier_scores() {
+    FILE *pF = fopen("scores.bin", "wb");
+    if (pF != NULL) {
+        fclose(pF);
+    } else {
+        printf("Erreur lors de la création du fichier.\n");
+    }
 }
 
-void append_fichier_scores(Plateau * ptPlateau){
-    FILE * pF=fopen("scores.txt","a");
-    fprintf(pF,"%s : %d\n",ptPlateau->nom_joueur,ptPlateau->score);
-    fclose(pF);
+void append_fichier_scores(Plateau *ptPlateau) {
+    FILE *pF = fopen("scores.bin", "ab");
+    if (pF != NULL) {
+        fwrite(&ptPlateau->nom_joueur,50, 1, pF);
+        fwrite(&ptPlateau->score,sizeof(unsigned int), 1, pF);
+        fclose(pF);
+    } else {
+        printf("Erreur lors de l'ouverture du fichier.\n");
+    }
 }
 
 void affichage_option_3(){
@@ -34,16 +43,18 @@ _|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|            ====           //
 
 
 
-    FILE *fichier_score = fopen("scores.txt", "r");
+    FILE *fichier_score = fopen("scores.bin", "rb");
     if (fichier_score == NULL) {
-        printf("Erreur d'ouverture...\n");
-    }
-    else{
-        while(!feof(fichier_score)){
-            char score[150];
-            fgets(score, sizeof(score), fichier_score);
-            printf("%s\n", score);
+        printf("Erreur d'ouverture du fichier...\n");
+    } else {
+        while (!feof(fichier_score)) {
+            int score;
+            char nom_joueur[50];
+            fread(nom_joueur, sizeof(char), 50, fichier_score);
+            fread(&score, sizeof(int), 1, fichier_score);
+            printf("Nom du joueur : %s\nScore : %d\n", nom_joueur, score);
         }
+        fclose(fichier_score);
     }
     fclose(fichier_score);
 
