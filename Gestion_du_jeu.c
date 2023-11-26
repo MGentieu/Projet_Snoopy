@@ -315,6 +315,7 @@ void jouer(Plateau * ptPlateau,int * ptVerif, int * ptVerifGain){
                     ptPlateau->nb_de_vies--;
                     affiche_donnees_plateau_nb_vies(ptPlateau);
                 }
+                // Boucle qui permet de prendre en compte les blocs poussables
                 else if (ptPlateau->X_Snoopy>=2&&(ptPlateau->maMatrice[ptPlateau->X_Snoopy-1][ptPlateau->Y_Snoopy] == '6')
                          &&(verif_collisions(ptPlateau, ptPlateau->X_Snoopy - 2, ptPlateau->Y_Snoopy))
                          &&(!verif_banane(ptPlateau, ptPlateau->X_Snoopy - 2, ptPlateau->Y_Snoopy))) {
@@ -362,6 +363,7 @@ void jouer(Plateau * ptPlateau,int * ptVerif, int * ptVerifGain){
                     ptPlateau->nb_de_vies--;
                     affiche_donnees_plateau_nb_vies(ptPlateau);
                 }
+                // Boucle qui permet de prendre en compte les blocs poussables
                 else if ((ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy-1] == '6')
                          &&(verif_collisions(ptPlateau, ptPlateau->X_Snoopy, ptPlateau->Y_Snoopy-2))
                            &&(!verif_banane(ptPlateau, ptPlateau->X_Snoopy, ptPlateau->Y_Snoopy-2))) {
@@ -409,6 +411,7 @@ void jouer(Plateau * ptPlateau,int * ptVerif, int * ptVerifGain){
                     ptPlateau->nb_de_vies--;
                     affiche_donnees_plateau_nb_vies(ptPlateau);
                 }
+                // Boucle qui permet de prendre en compte les blocs poussables
                 else if ((ptPlateau->maMatrice[ptPlateau->X_Snoopy+1][ptPlateau->Y_Snoopy] == '6')
                          &&(verif_collisions(ptPlateau, ptPlateau->X_Snoopy + 2, ptPlateau->Y_Snoopy))
                            &&(!verif_banane(ptPlateau, ptPlateau->X_Snoopy + 2, ptPlateau->Y_Snoopy))) {
@@ -456,6 +459,7 @@ void jouer(Plateau * ptPlateau,int * ptVerif, int * ptVerifGain){
                     ptPlateau->nb_de_vies--;
                     affiche_donnees_plateau_nb_vies(ptPlateau);
                 }
+                // Boucle qui permet de prendre en compte les blocs poussables
                 else if ((ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy+1] == '6')
                          &&(verif_collisions(ptPlateau, ptPlateau->X_Snoopy, ptPlateau->Y_Snoopy+2))
                            &&(!verif_banane(ptPlateau, ptPlateau->X_Snoopy, ptPlateau->Y_Snoopy+2))) {
