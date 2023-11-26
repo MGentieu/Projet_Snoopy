@@ -178,6 +178,18 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                     //affiche_plateau_entier(ptPlateau);
                     xavt=x;
                 }
+                else if ((ptPlateau->maMatrice[ptPlateau->X_Snoopy-1][ptPlateau->Y_Snoopy] == '6')
+                         &&(verif_collisions(ptPlateau, ptPlateau->X_Snoopy - 2, ptPlateau->Y_Snoopy))) {
+                    x = xavt - 1;
+                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy] = avant;
+                    ptPlateau->X_Snoopy = x;
+                    avant = ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy];
+                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy] = '7';
+                    ptPlateau->maMatrice[ptPlateau->X_Snoopy+1][ptPlateau->Y_Snoopy] = '0';
+                    ptPlateau->maMatrice[ptPlateau->X_Snoopy-1][ptPlateau->Y_Snoopy] = '6';
+                    affiche_plateau_entier(ptPlateau);
+                    xavt = x;
+                }
                 else if(xavt>0&& verif_banane(ptPlateau,ptPlateau->X_Snoopy-1,ptPlateau->Y_Snoopy)){
                     x=xavt-1;
                     ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]=avant;
@@ -207,6 +219,18 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                     //affiche_plateau_entier(ptPlateau);
                     yavt=y;
                 }
+                else if ((ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy-1] == '6')
+                         &&(verif_collisions(ptPlateau, ptPlateau->X_Snoopy, ptPlateau->Y_Snoopy-2))) {
+                    y = yavt - 1;
+                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy] = avant;
+                    ptPlateau->Y_Snoopy = y;
+                    avant = ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy];
+                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy] = '7';
+                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy+1] = '0';
+                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy-1] = '6';
+                    affiche_plateau_entier(ptPlateau);
+                    yavt = y;
+                }
                 else if(yavt>0&&verif_banane(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy-1)){
                     y = yavt - 1;
                     ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]=avant;
@@ -221,10 +245,6 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                     yavt=y;
                     ptPlateau->nb_oiseaux_restants--;
                 }
-
-
-
-
 
                 break;
             case 's':
@@ -241,6 +261,18 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                     //affiche_plateau_entier(ptPlateau);
                     xavt=x;
                 }
+                else if ((ptPlateau->maMatrice[ptPlateau->X_Snoopy+1][ptPlateau->Y_Snoopy] == '6')
+                         &&(verif_collisions(ptPlateau, ptPlateau->X_Snoopy + 2, ptPlateau->Y_Snoopy))) {
+                    x = xavt + 1;
+                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy] = avant;
+                    ptPlateau->X_Snoopy = x;
+                    avant = ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy];
+                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy] = '7';
+                    ptPlateau->maMatrice[ptPlateau->X_Snoopy-1][ptPlateau->Y_Snoopy] = '0';
+                    ptPlateau->maMatrice[ptPlateau->X_Snoopy+1][ptPlateau->Y_Snoopy] = '6';
+                    affiche_plateau_entier(ptPlateau);
+                    xavt = x;
+                }
                 else if(xavt<9&&verif_banane(ptPlateau,ptPlateau->X_Snoopy+1,ptPlateau->Y_Snoopy)){
                     x = xavt + 1;
                     ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]=avant;
@@ -256,15 +288,6 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                     ptPlateau->nb_oiseaux_restants--;
                 }
                 else {
-                    if ((ptPlateau->maMatrice[ptPlateau->X_Snoopy+1][ptPlateau->Y_Snoopy] == '6')
-                    &&(verif_collisions(ptPlateau, ptPlateau->X_Snoopy + 2, ptPlateau->Y_Snoopy))) {
-                        x = xavt + 1;
-                        ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy] = avant;
-                        ptPlateau->X_Snoopy = x;
-                        avant = ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy];
-                        ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy] = '7';
-                        ptPlateau->maMatrice[ptPlateau->X_Snoopy-1][ptPlateau->Y_Snoopy] = '0';
-                        ptPlateau->maMatrice[ptPlateau->X_Snoopy+1][ptPlateau->Y_Snoopy] = '6';
                         if (kbhit()){
                             key = getch() ;
                             switch(key){
@@ -276,9 +299,7 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                                     break;
                             }
                         }
-                        affiche_plateau_entier(ptPlateau);
-                        xavt = x;
-                    }
+
                 }
 
                 break;
@@ -295,6 +316,18 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                     ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]='7';
                     //affiche_plateau_entier(ptPlateau);
                     yavt=y;
+                }
+                else if ((ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy+1] == '6')
+                         &&(verif_collisions(ptPlateau, ptPlateau->X_Snoopy, ptPlateau->Y_Snoopy+2))) {
+                    y = yavt + 1;
+                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy] = avant;
+                    ptPlateau->Y_Snoopy = y;
+                    avant = ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy];
+                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy] = '7';
+                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy-1] = '0';
+                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy+1] = '6';
+                    affiche_plateau_entier(ptPlateau);
+                    yavt = y;
                 }
                 else if(yavt<19&&verif_banane(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy+1)){
                     y = yavt + 1;
