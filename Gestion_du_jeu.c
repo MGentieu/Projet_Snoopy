@@ -57,7 +57,7 @@ _|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_| """"|_|"""""|_|"""""|
            "        |::;\n"
            "        `:/\n\n");
     SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
-    printf("Par votre faute ");
+    printf("Par votre faute, ");
     SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
     printf("Babouche Le Vilain");
     SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
