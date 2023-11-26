@@ -297,7 +297,22 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                     xavt=x;
                     ptPlateau->nb_oiseaux_restants--;
                 }
+                else {
+                        if (kbhit()){
+                            key = getch() ;
+                            switch(key){
+                                case 'q':
+                                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy+1] = '0';
+                                    break;
+                                case 'd':
+                                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy-1] = '0';
+                                    break;
+                            }
+                        }
 
+                }
+
+                break;
             case 'd':
                 if(yavt<19&&verif_collisions(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy+1)) {
                     y = yavt + 1;
