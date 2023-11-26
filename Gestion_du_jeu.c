@@ -130,8 +130,10 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                 SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
                 printf("actuel est de ");
                 SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE |FOREGROUND_RED | FOREGROUND_INTENSITY);
-                printf("%d.\n",ptPlateau->score);
-                SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE |FOREGROUND_RED|FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+                printf("%d\n",ptPlateau->score);
+                SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE| FOREGROUND_INTENSITY);
+                printf(".\n");
+                SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE |FOREGROUND_GREEN |FOREGROUND_RED | FOREGROUND_INTENSITY);
                 system("pause");
                 return;
             }
