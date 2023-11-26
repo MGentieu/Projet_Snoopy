@@ -27,4 +27,5 @@ add_executable(Projet_Snoopy main.c
         balle.c
         interaction_blocs.c
         Option3_du_menu.c
+        Gestion_du_temps.c
 )
