@@ -18,7 +18,7 @@ void saisie_nom_joueur(Plateau * ptPlateau){
 }
 void initialisation_plateau_scores(Plateau * ptPlateau){
     ptPlateau->score=0;
-    ptPlateau->nb_de_vies=100;
+    ptPlateau->nb_de_vies=3;
 }
 
 int compare_mots_de_passe(Chaine * maChaine, Chaine * mdp){
