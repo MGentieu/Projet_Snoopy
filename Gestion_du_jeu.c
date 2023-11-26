@@ -20,7 +20,7 @@ void affiche_donnees_importantes(){
     printf("Appuyez sur 'J' pour sauvegarder.\n");
     printf("Appuyez sur 'P' pour quitter.\n");
     printf("Appuyez sur 'K' pour mettre en pause.\n");
-    printf("'Q' pour gauche / 'S' pour bas / 'D' pour droite / 'Z' pour haut.\n");
+    printf("'Q' pour gauche / 'S' pour bas / 'D' pour droite / 'Z' pour haut / 'B' pour casser.\n");
 }
 
 int verif_nb_de_vies(Plateau * ptPlateau){
@@ -217,6 +217,9 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                     //affiche_plateau_entier(ptPlateau);
                     xavt=x;
                 }
+                else if(ptPlateau->X_Snoopy>=1&&verif_deplacement_vers_balle(ptPlateau,ptPlateau->X_Snoopy-1,ptPlateau->Y_Snoopy)){
+                    ptPlateau->nb_de_vies--;
+                }
                 else if (ptPlateau->X_Snoopy>=2&&(ptPlateau->maMatrice[ptPlateau->X_Snoopy-1][ptPlateau->Y_Snoopy] == '6')
                          &&(verif_collisions(ptPlateau, ptPlateau->X_Snoopy - 2, ptPlateau->Y_Snoopy))
                          &&(!verif_banane(ptPlateau, ptPlateau->X_Snoopy - 2, ptPlateau->Y_Snoopy))) {
@@ -258,6 +261,9 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                     ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]='7';
                     //affiche_plateau_entier(ptPlateau);
                     yavt=y;
+                }
+                else if(ptPlateau->Y_Snoopy>=1&&verif_deplacement_vers_balle(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy-1)){
+                    ptPlateau->nb_de_vies--;
                 }
                 else if ((ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy-1] == '6')
                          &&(verif_collisions(ptPlateau, ptPlateau->X_Snoopy, ptPlateau->Y_Snoopy-2))
@@ -301,6 +307,9 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                     //affiche_plateau_entier(ptPlateau);
                     xavt=x;
                 }
+                else if(ptPlateau->X_Snoopy<=8&&verif_deplacement_vers_balle(ptPlateau,ptPlateau->X_Snoopy+1,ptPlateau->Y_Snoopy)){
+                    ptPlateau->nb_de_vies--;
+                }
                 else if ((ptPlateau->maMatrice[ptPlateau->X_Snoopy+1][ptPlateau->Y_Snoopy] == '6')
                          &&(verif_collisions(ptPlateau, ptPlateau->X_Snoopy + 2, ptPlateau->Y_Snoopy))
                            &&(!verif_banane(ptPlateau, ptPlateau->X_Snoopy + 2, ptPlateau->Y_Snoopy))) {
@@ -342,6 +351,9 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                     ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy]='7';
                     //affiche_plateau_entier(ptPlateau);
                     yavt=y;
+                }
+                else if(ptPlateau->Y_Snoopy<=18&&verif_deplacement_vers_balle(ptPlateau,ptPlateau->X_Snoopy,ptPlateau->Y_Snoopy+1)){
+                    ptPlateau->nb_de_vies--;
                 }
                 else if ((ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy+1] == '6')
                          &&(verif_collisions(ptPlateau, ptPlateau->X_Snoopy, ptPlateau->Y_Snoopy+2))
@@ -433,6 +445,9 @@ void verif_tous_les_blocs_pieges_pres_de_snoopy(Plateau * ptPlateau, unsigned ch
     verif_bloc_pieges(ptPlateau,X_snoopy+1,Y_snoopy+1);
 }
 
+int verif_deplacement_vers_balle(Plateau * ptPlateau, unsigned char X_test, unsigned char Y_test){
+    return ptPlateau->maMatrice[X_test][Y_test]=='8';
+}
 
 /*
 do{
