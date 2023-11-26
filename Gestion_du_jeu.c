@@ -80,6 +80,7 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
     char entree='0';
     int verif=1; //Check s'il reste des vies.
     int verif2=1; //Check s'il reste du temps.
+    int verif3=1; //Check s'il reste des oiseaux à ramasser;
     //ptPlateau->temps_restant=120;
     affiche_temps(ptPlateau->temps_restant);
     //int dec=120;
@@ -89,6 +90,15 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
     do{
         while(!kbhit()){
             //Instruction de gestion du temps.
+            if(verif_fin_niveau(ptPlateau)){
+                up_score_car_niveau_fini(ptPlateau);
+                verif3=0;
+                goto_ligne_colonne(0,23);
+                printf("BRAVO ! Vous avez fini le niveau!\n"
+                       "Votre score actuel est de %d.\n",ptPlateau->score);
+                system("pause");
+                return;
+            }
             if(decompte_corrige(&(ptPlateau->temps_restant),&stock,&timer,ptPlateau)){
                 etat++;
                 if(etat==3){
@@ -332,6 +342,10 @@ int verif_banane(Plateau * ptPlateau,unsigned char X_test, unsigned char Y_test)
 
 void up_score_car_niveau_fini(Plateau * ptPlateau){
     ptPlateau->score+=ptPlateau->temps_restant*100;
+}
+
+int verif_fin_niveau(Plateau * ptPlateau){
+    return ptPlateau->nb_oiseaux_restants<=0;
 }
 
 
