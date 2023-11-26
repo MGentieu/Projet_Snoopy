@@ -7,14 +7,15 @@
 void affichage_option_1(){
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_INTENSITY);
-    printf("********    ********  ******* **       ********  *******    ******   **    **        *** ******** **    **\n");
-    printf("**    **    **       **       **       **       **          **   *** **    **         ** **       **    **\n");
-    printf("***    **   ***      **       **       ***      ***         **    ** **    **         ** ***      **    **\n");
-    printf("*** ****    ******** **       **       ********   *****     **    ** **    **         ** ******** **    **\n");
-    printf("**    ***   ***      **   *** **       ***           ***    **    ** **    **         ** ***      **    **\n");
-    printf("**    ****  **       **    ** **       **             **    **   *** **    **   **   *** **       **    **\n");
-    printf("**     **** ********  ******* ******** ******** *******     ******    ******     ******  ********  ****** \n");
-    printf("\n\n\n");
+    printf(R"EOF(
+   ___     ___     ___     _       ___     ___              ___    _   _                _    ___    _   _
+  | _ \   | __|   / __|   | |     | __|   / __|     o O O  |   \  | | | |    o O O   _ | |  | __|  | | | |
+  |   /   | _|   | (_ |   | |__   | _|    \__ \    o       | |) | | |_| |   o       | || |  | _|   | |_| |
+  |_|_\   |___|   \___|   |____|  |___|   |___/   TS__[O]  |___/   \___/   TS__[O]  _\__/   |___|   \___/
+_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_|"""""| {======|_|"""""|_|"""""|_|"""""|
+"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'./o--000'"`-0-0-'"`-0-0-'./o--000'"`-0-0-'"`-0-0-'"`-0-0-'                                                                                                                                       ░
+)EOF");
+    printf("\n\n");
     SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
     printf("Bienvenu cher comp%ctiteur, aujourd'hui vous allez aider", 130);
     SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_INTENSITY);

@@ -15,12 +15,12 @@
 
 void affiche_donnees_importantes(){
     printf("Temps restant :\n");
-    printf("nb de vies restantes :\n");
-    printf("score_actuel :\n");
-    printf("Appuyez sur j pour sauvegarder.\n");
-    printf("Appuyez sur p pour quitter.\n");
-    printf("Appuyez sur k pour mettre en pause.\n");
-    printf("q pour gauche / s pour bas / d pour droite / z pour haut.\n");
+    printf("Nb de vies restantes :\n");
+    printf("Score_actuel :\n");
+    printf("Appuyez sur 'J' pour sauvegarder.\n");
+    printf("Appuyez sur 'P' pour quitter.\n");
+    printf("Appuyez sur 'K' pour mettre en pause.\n");
+    printf("'Q' pour gauche / 'S' pour bas / 'D' pour droite / 'Z' pour haut.\n");
 }
 
 int verif_nb_de_vies(Plateau * ptPlateau){
@@ -34,15 +34,33 @@ void game_over(){
     system("cls");
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_INTENSITY);
-    printf("********   ******** ********    ******   **    **\n");
-    printf("**    **   **       **    **    **   *** **    **\n");
-    printf("***    **  ***      ***    **   **    ** **    **\n");
-    printf("*** ****   ******** *** ****    **    ** **    **\n");
-    printf("**         ***      **    ***   **    ** **    **\n");
-    printf("**         **       **    ****  **   *** **    **\n");
-    printf("**         ******** **     **** ******    ****** \n");
-    printf("\n\n\n");
+    printf(R"EOF(   ___     ___   __  __    ___              ___   __   __   ___     ___
+  / __|   /   \ |  \/  |  | __|     o O O  / _ \  \ \ / /  | __|   | _ \
+ | (_ |   | - | | |\/| |  | _|     o      | (_) |  \ V /   | _|    |   /
+  \___|   |_|_| |_|__|_|  |___|   TS__[O]  \___/   _\_/_   |___|   |_|_\
+_|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_| """"|_|"""""|_|"""""|
+"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'./o--000'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'
+)EOF");
+    printf("\n\n");
     printf("Vous n'avez plus de vies!\n");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+    printf("Par votre faute ")
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+    printf("Babouche Le Vilain");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+    printf("a attrap%c votre ami",130);
+    SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+    printf(" Snoopy");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+    printf(" les bananes dans le sac!\nAux dernieres nouvelles,");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+    printf(" Snoopy");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+    printf("aurait %ct%c appercu %crant dans les favelas m%cxicaines sous les ordres de ",130,130,130,130);
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+    printf("Babouche Le Vilain");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+    printf("...\n\n");
     SetConsoleTextAttribute(hConsole, FOREGROUND_INTENSITY);
     printf("Nous allons maintenant retourner au menu\n");
     system("pause");

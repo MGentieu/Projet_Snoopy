@@ -20,13 +20,13 @@ int menu(){
         system("cls");
         HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
         SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
-        printf("**    ** ******** *      * **    ** \n");
-        printf("** ** ** **       **     * **    ** \n");
-        printf("** ** ** ***      * *    * **    ** \n");
-        printf("**    ** ******** *   *  * **    ** \n");
-        printf("**    ** ***      *   *  * **    ** \n");
-        printf("**    ** **       *    * * **    ** \n");
-        printf("**    ** ******** *     **  ******  \n\n");
+        printf(R"EOF( __  __    ___    _  _    _   _
+|  \/  |  | __|  | \| |  | | | |
+| |\/| |  | _|   | .` |  | |_| |
+|_|__|_|  |___|  |_|\_|   \___/
+_|"""""|_|"""""|_|"""""|_|"""""|
+"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'                                                                                                                                      ░
+)EOF");
         SetConsoleTextAttribute(hConsole, FOREGROUND_RED |FOREGROUND_BLUE |FOREGROUND_GREEN| FOREGROUND_INTENSITY);
         printf("1. Livret de regles.\n"
                "2. Commencer une nouvelle partie.\n"
