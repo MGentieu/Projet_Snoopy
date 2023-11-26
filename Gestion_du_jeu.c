@@ -224,6 +224,10 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                     ptPlateau->nb_oiseaux_restants--;
                 }
 
+
+
+
+
                 break;
             case 's':
                 if(xavt<9&&verif_collisions(ptPlateau,ptPlateau->X_Snoopy+1,ptPlateau->Y_Snoopy)) {
@@ -252,6 +256,31 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                     //affiche_plateau_entier(ptPlateau);
                     xavt=x;
                     ptPlateau->nb_oiseaux_restants--;
+                }
+                else {
+                    if ((ptPlateau->maMatrice[ptPlateau->X_Snoopy+1][ptPlateau->Y_Snoopy] == '6')
+                    &&(verif_collisions(ptPlateau, ptPlateau->X_Snoopy + 2, ptPlateau->Y_Snoopy))) {
+                        x = xavt + 1;
+                        ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy] = avant;
+                        ptPlateau->X_Snoopy = x;
+                        avant = ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy];
+                        ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy] = '7';
+                        ptPlateau->maMatrice[ptPlateau->X_Snoopy-1][ptPlateau->Y_Snoopy] = '0';
+                        ptPlateau->maMatrice[ptPlateau->X_Snoopy+1][ptPlateau->Y_Snoopy] = '6';
+                        if (kbhit()){
+                            key = getch() ;
+                            switch(key){
+                                case 'q':
+                                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy+1] = '0';
+                                    break;
+                                case 'd':
+                                    ptPlateau->maMatrice[ptPlateau->X_Snoopy][ptPlateau->Y_Snoopy-1] = '0';
+                                    break;
+                            }
+                        }
+                        affiche_plateau_entier(ptPlateau);
+                        xavt = x;
+                    }
                 }
 
                 break;
