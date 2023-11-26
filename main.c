@@ -22,7 +22,7 @@ int main() {
     write_mots_de_passe();
     system("cls");
 
-
+/*
     Plateau p;
     charge_plateau_Niveau1_depart(&p);
     affiche_plateau_entier(&p);
@@ -43,8 +43,8 @@ int main() {
     printf("a");
     goto_ligne_colonne(0,21);
     system("pause");
-    /*
 
+*/
     int n=1;
     do{
         n=menu();

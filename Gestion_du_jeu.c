@@ -77,13 +77,17 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                 etat++;
                 if(etat==3){
                     bloc_intermitant(ptPlateau,etat);
+                    //affiche_plateau_entier(ptPlateau);
+                    affiche_plateau_entier_simple(ptPlateau);
                 }
                 if(etat==6){
                     bloc_intermitant(ptPlateau,etat);
+                    //affiche_plateau_entier(ptPlateau);
+                    affiche_plateau_entier_simple(ptPlateau);
                     etat=0;
                 }
                 balle2(ptPlateau);
-                affiche_plateau_entier(ptPlateau);
+                //affiche_plateau_entier(ptPlateau);
             }
             //lance la balle
 

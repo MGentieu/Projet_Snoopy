@@ -18,6 +18,7 @@ void charge_plateau_Niveau3_depart(Plateau *);
 void charge_plateau_Niveau4_depart(Plateau *);
 
 void affiche_plateau_entier(Plateau *);
+void affiche_plateau_entier_simple(Plateau *);
 
 void write_mots_de_passe();
 void read_mots_de_passe(Chaine *, Chaine *,Chaine *, Chaine *);
