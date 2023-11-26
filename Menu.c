@@ -27,10 +27,26 @@ void ecran_lancement(){
            "   X_-^_-^              .                       X                       _/ |                                  | |     __/ |\n"
            " --^_-^                .X                       X----                  |__/                                   |_|    |___/ \n"
            "-.-                    ^^                       XXXX -\n"
-           " X                                              XXXX-\n"
-           " X                                              X\n"
-           " X                                              X\n"
-           "X      XXX  XX                                 X\n"
+           " X                                              XXXX-");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN |FOREGROUND_RED |FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+        printf("\t\t\tGENTIEU Martin\n");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED |FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+        printf(
+           " X                                              X");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN |FOREGROUND_RED |FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+    printf("\t\t\t\tPINTO DE ALMEIDA Franklin\n");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED |FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+    printf(
+           " X                                              X");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN |FOREGROUND_RED |FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+    printf("\t\t\t\t\tSATHIYAMOORTHY Keethan\n");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED |FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+    printf(
+           "X      XXX  XX                                 X");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN |FOREGROUND_RED |FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+    printf("\t\t\t\t\t\tDELIN Valere\n");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED |FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+    printf(
            "X     XXXXX  X                                X\n"
            "X    XXXXXXX  X                              X\n"
            "X   XXXXXXXXX X                            XX\n"

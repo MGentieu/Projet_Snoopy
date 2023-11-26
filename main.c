@@ -8,11 +8,13 @@
 #include "Gestion_du_jeu.h"
 #include <conio.h>
 #include "Gestion_des_sauvegardes.h"
-
+#include "Windows.h"
 
 int main() {
-
-
+    HWND console = GetConsoleWindow();
+    if (console != NULL) {
+        ShowWindow(console, SW_MAXIMIZE); // Maximiser la fenêtre de la console
+    }
 
     //On écrit dans des fichiers .txt les infos de bases concernant les niveaux.
     write_fichier_plateau_Niveau1();
