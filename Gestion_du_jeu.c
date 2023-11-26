@@ -28,8 +28,6 @@ int verif_nb_de_vies(Plateau * ptPlateau){
     //return 1;
 }
 
-
-
 void game_over(){
     system("cls");
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
