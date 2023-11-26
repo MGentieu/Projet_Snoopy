@@ -11,7 +11,6 @@ void affiche_donnees_importantes();
 void jouer(Plateau *,int *);
 int verif_nb_de_vies(Plateau *);
 void game_over();
-int movesnoopy(Plateau *);
 int verif_collisions(Plateau *,unsigned char, unsigned char);
 int verif_banane(Plateau * ptPlateau,unsigned char X_test, unsigned char Y_test);
 void up_score_car_niveau_fini(Plateau *);

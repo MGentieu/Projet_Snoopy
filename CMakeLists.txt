@@ -17,7 +17,6 @@ add_executable(Projet_Snoopy main.c
         Lecture_fichiers_txt.c
         Chargement_Niveaux.h
         decompteur.c
-        mouvement_snoopy.c
         Option4_du_menu.c
         Gestion_des_sauvegardes.c
         Gestion_des_sauvegardes.h
