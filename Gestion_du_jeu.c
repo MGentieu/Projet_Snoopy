@@ -195,7 +195,16 @@ void jouer(Plateau * ptPlateau,int * ptVerif, int * ptVerifGain){
                 SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE| FOREGROUND_INTENSITY);
                 printf(".\n\n");
                 SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE |FOREGROUND_GREEN |FOREGROUND_RED | FOREGROUND_INTENSITY);
+                if(ptPlateau->mode_de_jeu==8){
+                    append_fichier_scores(ptPlateau);
+                    printf("Votre score a ete enregsitre dans le fichier des scores.\n");
+                }
                 system("pause");
+                if(ptPlateau->mode_de_jeu==8||ptPlateau->mode_de_jeu<=4){
+                    win();
+                }
+
+
                 return;
             }
             if(decompte_corrige(&(ptPlateau->temps_restant),&stock,&timer,ptPlateau)){

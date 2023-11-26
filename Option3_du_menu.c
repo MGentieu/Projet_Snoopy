@@ -33,13 +33,14 @@ _|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|            ====           //
     SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
 
 
-    char score[100];
+
     FILE *fichier_score = fopen("scores.txt", "r");
     if (fichier_score == NULL) {
         printf("Erreur d'ouverture...\n");
     }
     else{
         while(!feof(fichier_score)){
+            char score[150];
             fgets(score, sizeof(score), fichier_score);
             printf("%s\n", score);
         }
