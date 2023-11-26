@@ -44,7 +44,7 @@ void ecran_lancement(){
     printf(
            "X      XXX  XX                                 X");
     SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN |FOREGROUND_RED |FOREGROUND_BLUE | FOREGROUND_INTENSITY);
-    printf("\t\t\t\t\t\tDELIN Valere\n");
+    printf("\t\t\t\t\t\t\tDELIN Valere\n");
     SetConsoleTextAttribute(hConsole, FOREGROUND_RED |FOREGROUND_BLUE | FOREGROUND_INTENSITY);
     printf(
            "X     XXXXX  X                                X\n"
@@ -77,21 +77,42 @@ int menu(){
         system("cls");
         HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
         SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
-        printf(R"EOF( __  __    ___    _  _    _   _
-|  \/  |  | __|  | \| |  | | | |
-| |\/| |  | _|   | .` |  | |_| |
-|_|__|_|  |___|  |_|\_|   \___/
-_|"""""|_|"""""|_|"""""|_|"""""|
-"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'
+        printf(R"EOF( __  __    ___    _  _    _   _                     _.---,-..
+|  \/  |  | __|  | \| |  | | | |                  ,'    )(__)\__
+| |\/| |  | _|   | .` |  | |_| |                  /  ,-.',<..-'  `._
+|_|__|_|  |___|  |_|\_|   \___/                  :  |  |' /       (_)
+_|"""""|_|"""""|_|"""""|_|"""""|                 |  `-'  (        /
+"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'                  `.._    >-----''
 )EOF");
         SetConsoleTextAttribute(hConsole, FOREGROUND_RED |FOREGROUND_BLUE |FOREGROUND_GREEN| FOREGROUND_INTENSITY);
-        printf("1. Livret de regles.\n"
-               "2. Commencer une nouvelle partie.\n"
-               "3. Afficher les scores.\n"
-               "4. Charger un niveau avec un mot de passe.\n"
-               "5. Charger ou supprimer une sauvegarde.\n"
-               "6. Quitter.\n\n"
-               "Choissez ce que vous voulez faire :\n");
+        printf("1. Livret de regles.");
+        SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+        printf("\t\t\t           _..).-(\n");
+        SetConsoleTextAttribute(hConsole, FOREGROUND_RED |FOREGROUND_BLUE |FOREGROUND_GREEN| FOREGROUND_INTENSITY);
+        printf("2. Commencer une nouvelle partie.");
+        SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+        printf("\t     ,-._,'_.;.--':   _\n");
+        SetConsoleTextAttribute(hConsole, FOREGROUND_RED |FOREGROUND_BLUE |FOREGROUND_GREEN| FOREGROUND_INTENSITY);
+        printf("3. Afficher les scores.");
+        SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+        printf("\t\t\t__.-' ,._,' /  _.,'.(( ,-.\n");
+        SetConsoleTextAttribute(hConsole, FOREGROUND_RED |FOREGROUND_BLUE |FOREGROUND_GREEN| FOREGROUND_INTENSITY);
+        printf("4. Charger un niveau avec un mot de passe.");
+        SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+        printf(" -'),'     :.   / /,\\_. <\n");
+        SetConsoleTextAttribute(hConsole, FOREGROUND_RED |FOREGROUND_BLUE |FOREGROUND_GREEN| FOREGROUND_INTENSITY);
+        printf("5. Charger ou supprimer une sauvegarde.");
+        SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+        printf("\t  `'       |:  '\\    ::`'\n");
+        SetConsoleTextAttribute(hConsole, FOREGROUND_RED |FOREGROUND_BLUE |FOREGROUND_GREEN| FOREGROUND_INTENSITY);
+        printf("6. Quitter.");
+        SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+        printf("\t\t\t\t           :   --'   ||\n");
+        SetConsoleTextAttribute(hConsole, FOREGROUND_RED |FOREGROUND_BLUE |FOREGROUND_GREEN| FOREGROUND_INTENSITY);
+        printf("Choissez ce que vous voulez faire :");
+        SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+        printf("\t   ___,-':.-`________;;________\n");
+        SetConsoleTextAttribute(hConsole, FOREGROUND_RED |FOREGROUND_BLUE |FOREGROUND_GREEN| FOREGROUND_INTENSITY);
         saisie_entier_utilisateur(&choix);
     }while(choix<1||choix>6);
 
