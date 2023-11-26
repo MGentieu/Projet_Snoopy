@@ -194,7 +194,7 @@ void jouer(Plateau * ptPlateau,int * ptVerif){
                     //affiche_plateau_entier(ptPlateau);
                     xavt=x;
                 }
-                else if ((ptPlateau->maMatrice[ptPlateau->X_Snoopy-1][ptPlateau->Y_Snoopy] == '6')
+                else if (ptPlateau->X_Snoopy>=2&&(ptPlateau->maMatrice[ptPlateau->X_Snoopy-1][ptPlateau->Y_Snoopy] == '6')
                          &&(verif_collisions(ptPlateau, ptPlateau->X_Snoopy - 2, ptPlateau->Y_Snoopy))
                          &&(!verif_banane(ptPlateau, ptPlateau->X_Snoopy - 2, ptPlateau->Y_Snoopy))) {
                     x = xavt - 1;
