@@ -181,13 +181,18 @@ void balle2(Plateau * ptPlateau){
     switch(ptPlateau->direction_balle){
         case 0:
             ptPlateau->maMatrice[ptPlateau->X_Balle][ptPlateau->Y_Balle]=ptPlateau->avant_balle;
+            vraigotoligcol(ptPlateau->X_Balle,ptPlateau->Y_Balle);
+            affiche_char_selon_entier_simple(ptPlateau->avant_balle);
             ptPlateau->avant_balle=ptPlateau->maMatrice[ptPlateau->X_Balle-1][ptPlateau->Y_Balle+1];
             ptPlateau->maMatrice[ptPlateau->X_Balle-1][ptPlateau->Y_Balle+1]='8';
             ptPlateau->X_Balle--;
             ptPlateau->Y_Balle++;
+
             break;
         case 1:
             ptPlateau->maMatrice[ptPlateau->X_Balle][ptPlateau->Y_Balle]=ptPlateau->avant_balle;
+            vraigotoligcol(ptPlateau->X_Balle,ptPlateau->Y_Balle);
+            affiche_char_selon_entier_simple(ptPlateau->avant_balle);
             ptPlateau->avant_balle=ptPlateau->maMatrice[ptPlateau->X_Balle-1][ptPlateau->Y_Balle-1];
             ptPlateau->maMatrice[ptPlateau->X_Balle-1][ptPlateau->Y_Balle-1]='8';
             ptPlateau->X_Balle--;
@@ -195,6 +200,8 @@ void balle2(Plateau * ptPlateau){
             break;
         case 2:
             ptPlateau->maMatrice[ptPlateau->X_Balle][ptPlateau->Y_Balle]=ptPlateau->avant_balle;
+            vraigotoligcol(ptPlateau->X_Balle,ptPlateau->Y_Balle);
+            affiche_char_selon_entier_simple(ptPlateau->avant_balle);
             ptPlateau->avant_balle=ptPlateau->maMatrice[ptPlateau->X_Balle+1][ptPlateau->Y_Balle-1];
             ptPlateau->maMatrice[ptPlateau->X_Balle+1][ptPlateau->Y_Balle-1]='8';
             ptPlateau->X_Balle++;
@@ -202,12 +209,16 @@ void balle2(Plateau * ptPlateau){
             break;
         case 3:
             ptPlateau->maMatrice[ptPlateau->X_Balle][ptPlateau->Y_Balle]=ptPlateau->avant_balle;
+            vraigotoligcol(ptPlateau->X_Balle,ptPlateau->Y_Balle);
+            affiche_char_selon_entier_simple(ptPlateau->avant_balle);
             ptPlateau->avant_balle=ptPlateau->maMatrice[ptPlateau->X_Balle+1][ptPlateau->Y_Balle+1];
             ptPlateau->maMatrice[ptPlateau->X_Balle+1][ptPlateau->Y_Balle+1]='8';
             ptPlateau->X_Balle++;
             ptPlateau->Y_Balle++;
             break;
     }
+    vraigotoligcol(ptPlateau->X_Balle,ptPlateau->Y_Balle);
+    affiche_char_selon_entier_simple('8');
 }
 
 

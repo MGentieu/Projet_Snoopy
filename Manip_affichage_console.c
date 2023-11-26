@@ -14,6 +14,10 @@ void goto_ligne_colonne(short ligne,short colonne){
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),mycoord);
 }
 
+void vraigotoligcol(unsigned char X, unsigned char Y){
+    goto_ligne_colonne((short)(Y*4+1),(short)(X+1));
+}
+
 void affiche_plateau_entier(Plateau * ptPlateau){
     system("cls");
     goto_ligne_colonne(38,0);
@@ -42,6 +46,18 @@ void affiche_plateau_entier(Plateau * ptPlateau){
     affiche_donnees_plateau_temps(ptPlateau);
     affiche_donnees_plateau_score(ptPlateau);
     affiche_donnees_plateau_nb_vies(ptPlateau);
+}
+
+void affiche_plateau_entier_simple(Plateau * ptPlateau){
+    goto_ligne_colonne(0,1);
+    //printf("\n");
+
+    for(char i=0;i<10;i++){
+        for(char j=0;j<20;j++){
+            affiche_char_selon_entier(ptPlateau->maMatrice[i][j]);
+        }
+        printf("\n");
+    }
 }
 
 //Caractère 1 bloc cassable pique : 0x06
@@ -96,6 +112,49 @@ void affiche_char_selon_entier(char n){
             break;
         default :
             printf(" %c |",' ');
+            break;
+
+    }
+}
+
+void affiche_char_selon_entier_simple(char c){
+    switch(c){
+        case '0':
+            printf("%c",' ');
+            break;
+        case '1':
+            printf("%c",0x06);
+            //printf(" %c |",0x3D);
+            break;
+        case '2':
+            printf("%c",0x1A);
+            break;
+        case '3':
+            printf("%c",0x05);
+            break;
+        case '4':
+            //printf(" %c |",0xDC);
+            printf("%c",0x16);
+            break;
+        case '5':
+            printf("%c",0x04);
+            break;
+        case '6':
+            printf("%c",0xC4);
+            break;
+        case '7':
+            printf("%c",0x02);
+            //printf(" %c |",0x12);
+            break;
+        case '8':
+            printf("%c",0x13);
+            break;
+        case '9':
+            //printf(" %c |",0x1F);
+            printf("%c",0x14);
+            break;
+        default :
+            printf("%c",' ');
             break;
 
     }
