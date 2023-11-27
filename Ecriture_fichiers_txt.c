@@ -34,14 +34,14 @@ void write_fichier_plateau_Niveau2(){
     }
     FILE * pF = fopen("Niveau2_vide.txt","w");
     fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,4,9);
-    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",2,2,2,3,0,0,0,3,0,0,0,0,0,0,0,0,0,6,1,1);
+    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",5,5,5,3,0,0,0,3,0,0,0,0,0,0,0,0,0,6,1,1);
     fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,6,4);
     fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",1,1,6,0,0,0,0,0,0,0,0,0,3,0,0,0,1,0,0,0);
-    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",7,1,0,2,2,2,3,0,0,0,0,0,0,0,0,0,0,6,1,0);
-    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",1,1,6,0,1,2,3,4,5,6,0,8,9,0,3,0,0,1,6,0);
+    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",7,1,0,5,5,5,3,0,0,0,0,0,0,0,0,0,0,6,1,0);
+    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",1,1,6,0,1,5,3,4,5,6,0,8,9,0,3,0,0,1,6,0);
     fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",4,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
-    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",0,0,3,0,0,0,0,0,0,0,0,0,3,0,0,2,2,2,0,4);
-    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",2,2,0,0,0,0,0,0,0,0,2,2,0,0,6,4,6,0,0,4);
+    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",0,0,3,0,0,0,0,0,0,0,0,0,3,0,0,5,5,5,0,4);
+    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",5,5,0,0,0,0,0,0,0,0,5,5,0,0,6,4,6,0,0,4);
     fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",9,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,3,0,0,9);
     fclose(pF);
 }
@@ -55,7 +55,7 @@ void write_fichier_plateau_Niveau3(){
     }
     FILE * pF = fopen("Niveau3_vide.txt","w");
     fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",9,1,5,0,5,0,0,0,0,0,0,0,0,0,0,0,0,5,1,9);
-    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",1,0,5,0,5,0,3,0,0,0,3,0,0,0,2,2,2,0,0,0);
+    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",1,0,5,0,5,0,3,0,0,0,3,0,0,0,5,5,5,0,0,0);
     fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",5,5,5,0,5,0,0,0,5,5,5,5,5,0,0,0,0,3,4,4);
     fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",0,0,0,0,5,0,0,0,5,0,0,0,5,0,0,0,0,0,0,0);
     fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",5,5,5,5,5,0,0,0,5,0,7,0,5,0,0,0,0,0,0,0);
@@ -75,16 +75,16 @@ void write_fichier_plateau_Niveau4(){
         printf("Erreur de suppression");
     }
     FILE * pF = fopen("Niveau4_vide.txt","w");
-    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",9,0,5,0,0,4,0,0,6,5,0,2,5,0,1,1,0,1,5,9);
-    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",2,2,0,0,0,0,0,0,6,0,4,0,0,0,1,1,0,0,5,5);
-    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",0,0,3,0,2,2,2,0,0,0,4,2,2,5,0,0,2,5,3,0);
+    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",9,0,5,0,0,4,0,6,0,5,0,5,5,0,1,1,0,1,5,9);
+    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",5,5,0,0,0,0,0,0,6,0,4,0,0,0,1,1,0,0,5,5);
+    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",0,0,3,0,5,5,5,0,0,0,4,5,5,5,0,0,5,5,3,0);
     fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",0,0,0,0,0,0,0,3,4,0,4,0,0,0,3,0,0,0,0,0);
     fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",4,4,4,4,0,0,0,0,4,0,0,0,0,0,0,0,5,0,0,0);
-    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",7,2,2,5,3,0,0,0,3,0,3,0,0,0,0,4,0,4,4,5);
-    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",4,4,6,0,0,5,0,8,4,4,4,4,0,0,0,0,4,0,0,0);
-    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",0,6,0,4,0,5,2,2,2,2,0,4,3,0,0,0,0,1,1,1);
-    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",1,1,0,4,0,4,0,0,0,0,0,0,0,4,4,6,4,0,0,5);
-    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",9,0,0,0,0,0,4,0,3,0,1,1,5,0,2,2,5,3,0,9);
+    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",7,5,5,5,3,0,0,0,3,0,3,0,0,0,0,4,0,4,4,5);
+    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",4,4,0,0,0,5,0,8,4,4,4,4,0,0,0,0,4,0,0,0);
+    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",0,6,6,4,0,5,5,5,5,5,0,4,3,0,0,6,0,1,1,1);
+    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",1,1,0,4,0,4,0,0,0,0,0,0,0,4,4,0,4,0,0,5);
+    fprintf(pF,"%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d\n",9,0,0,0,0,0,4,0,3,0,1,1,5,0,5,5,5,3,0,9);
     fclose(pF);
 }
 
